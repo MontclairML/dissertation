@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  jou]{apa6}
+  man]{apa7}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -159,10 +159,21 @@
   }
 {}{\PatchFailed}
 \keywords{Employee turnover, machine learning\newline\indent Word count: X}
-\usepackage{dblfloatfix}
-
-
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
 \usepackage{csquotes}
+\newcommand{\bcenter}{\begin{center}}
+\newcommand{\ecenter}{\end{center}}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\setlength{\columnsep}{5cm}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\pagestyle{fancy}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -186,9 +197,6 @@
 
 \authornote{
 
-Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-Enter author note here.
-
 Correspondence concerning this article should be addressed to Diego Figueiras, Dickson Hall 226. E-mail: \href{mailto:figueirasd1@montclair.edu}{\nolinkurl{figueirasd1@montclair.edu}}
 
 }
@@ -197,6 +205,179 @@ Correspondence concerning this article should be addressed to Diego Figueiras, D
 
 \begin{document}
 \maketitle
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagenumbering{gobble}
+\phantom{i'm a ghost}
+\vskip 1.0in
+\begin{center}
+
+\textbf{Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression}
+
+\vskip 0.8in
+
+A DISSERTATION
+
+\vskip 0.8in
+
+Submitted to the Faculty of
+
+Montclair State University in partial fulfillment
+
+of the requirements
+
+for the degree of Doctor of Philosophy
+
+\vskip 0.4in
+
+by
+
+Diego Figueiras
+
+Montclair State University
+
+Montclair, NJ
+
+May 2024
+
+\end{center}
+
+\vskip 1.0in
+
+Dissertation Chair: Dr.~Michael Bixter
+
+\newpage
+
+\section{}
+\pagenumbering{roman}
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\cfoot{}
+\rhead{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\onehalfspacing
+
+\begin{center}
+
+MONTCLAIR STATE UNIVERSITY
+
+THE GRADUATE SCHOOL
+
+DISSERTATION APPROVAL
+
+\vskip 0.2in
+
+We hereby approve the Dissertation
+
+\vskip 0.2in
+
+\textbf{Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression}
+
+of
+
+Diego Figueiras
+
+Candidate for the Degree:
+
+Doctor of Philosophy
+
+\end{center}
+
+\begin{multicols}{2}  
+
+Graduate Programs:
+\newline
+Counseling
+
+\vskip 0.6in
+
+Certified by:
+
+\vskip 0.6in  
+
+\linespread{1.0}\selectfont
+\rule{6cm}{0.2mm}
+\newline
+Dr. Scott Herness
+\newline
+Vice Provost for Research and
+\newline
+Dean of the Graduate School
+
+\vskip 0.3in
+
+\rule{6cm}{0.2mm}
+\newline
+Date
+
+\columnbreak
+
+Dissertation Committee:
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. Michael Bixter
+\newline
+Dissertation Chair
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. Kevin Askew
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. John T. Kulas
+
+
+\end{multicols}
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{center}
+
+\phantom{i'm a ghost}
+
+\vskip 1.6in
+
+\href{mailto:Copyright@2024}{\nolinkurl{Copyright@2024}} by Diego Figueiras. All rights reserved.
+
+\end{center}
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{center}
+
+\textbf{Abstract}
+
+\end{center}
+
+This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the ``garbage in garbage out'' concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, Support Vector Machines, and logistic regression. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\pagenumbering{arabic}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\tableofcontents
+
+\section{Chapter 1 (Heading 1)}
+\newpage
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -690,6 +871,484 @@ In addition, a baseline series of models will be trained using biodata features 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
+\hypertarget{sample-size-100000-and-epv-10000}{%
+\subsection{Sample Size 100,000 and EPV 10,000}\label{sample-size-100000-and-epv-10000}}
+
+\begin{table}
+\centering
+\caption{\label{tab:logitable100k}Logistic Regression Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.71 & 0.45 & 0.55 & 11812\\
+\hline
+1 & 0.78 & 0.91 & 0.84 & 24862\\
+\hline
+Accuracy & NA & NA & 0.76 & 36674\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.69 & 36674\\
+\hline
+Weighted Avg & 0.75 & 0.76 & 0.75 & 36674\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.70 & 0.48 & 0.57 & 11812\\
+\hline
+1 & 0.78 & 0.90 & 0.84 & 24862\\
+\hline
+Accuracy & NA & NA & 0.77 & 36674\\
+\hline
+Macro Avg & 0.74 & 0.69 & 0.70 & 36674\\
+\hline
+Weighted Avg & 0.76 & 0.77 & 0.75 & 36674\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:nn100k}Neural Network Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.69 & 0.49 & 0.57 & 11812\\
+\hline
+1 & 0.79 & 0.90 & 0.84 & 24862\\
+\hline
+Accuracy & NA & NA & 0.76 & 36674\\
+\hline
+Macro Avg & 0.74 & 0.69 & 0.71 & 36674\\
+\hline
+Weighted Avg & 0.76 & 0.76 & 0.75 & 36674\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:svm100k}SVM Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.71 & 0.44 & 0.54 & 11812\\
+\hline
+1 & 0.77 & 0.92 & 0.84 & 24862\\
+\hline
+Accuracy & NA & NA & 0.76 & 36674\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.69 & 36674\\
+\hline
+Weighted Avg & 0.75 & 0.76 & 0.74 & 36674\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:rf100k}Random Forest Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.70 & 0.43 & 0.53 & 11812\\
+\hline
+1 & 0.77 & 0.91 & 0.83 & 24862\\
+\hline
+Accuracy & NA & NA & 0.76 & 36674\\
+\hline
+Macro Avg & 0.73 & 0.67 & 0.68 & 36674\\
+\hline
+Weighted Avg & 0.75 & 0.76 & 0.74 & 36674\\
+\hline
+\end{tabular}
+\end{table}
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was 0.76, as can be seen in table \ref{tab:logitable100k}. The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting a moderate level of prediction consistency across categories.
+The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref@(tab:xgb100k). The macro average precision was 0.74, with a recall of 0.69 and an F1 score of 0.70, suggesting moderate levels of predictive accuracy.
+The performance of a neural network model across categories was 0.76, as can be seen in table \ref@(tab:nn100k). The macro average precision was 0.74, with a recall of 0.69 and an F1 score of 0.71, suggesting moderate levels of predictive accuracy.
+The performance of a SVM model across categories was 0.76, as can be seen in table \ref@(tab:svm100k). The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was 0.76, as can be seen in table \ref@(tab:rf100k). The macro average precision was 0.73, with a recall of 0.67 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
+
+\hypertarget{sample-size-10000-and-epv-1000}{%
+\subsection{Sample Size 10,000 and EPV 1,000}\label{sample-size-10000-and-epv-1000}}
+
+\begin{table}
+\centering
+\caption{\label{tab:logitable10k}Logistic Regression Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.72 & 0.45 & 0.55 & 1079\\
+\hline
+1 & 0.77 & 0.91 & 0.84 & 2221\\
+\hline
+Accuracy & NA & NA & 0.76 & 3300\\
+\hline
+Macro Avg & 0.75 & 0.68 & 0.70 & 3300\\
+\hline
+Weighted Avg & 0.76 & 0.76 & 0.74 & 3300\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:xgbtable10k}xgboosting Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.71 & 0.46 & 0.56 & 1079\\
+\hline
+1 & 0.78 & 0.91 & 0.84 & 2221\\
+\hline
+Accuracy & NA & NA & 0.76 & 3300\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.70 & 3300\\
+\hline
+Weighted Avg & 0.76 & 0.76 & 0.75 & 3300\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:nn10k}Neural Network Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.77 & 0.35 & 0.49 & 1079\\
+\hline
+1 & 0.75 & 0.95 & 0.84 & 2221\\
+\hline
+Accuracy & NA & NA & 0.75 & 3300\\
+\hline
+Macro Avg & 0.76 & 0.65 & 0.66 & 3300\\
+\hline
+Weighted Avg & 0.76 & 0.75 & 0.72 & 3300\\
+\hline
+\end{tabular}
+\end{table}
+
+Note: nn10k was a bit different from nn100k
+
+\begin{table}
+\centering
+\caption{\label{tab:svm10k}SVM Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.72 & 0.44 & 0.54 & 1079\\
+\hline
+1 & 0.77 & 0.92 & 0.84 & 2221\\
+\hline
+Accuracy & NA & NA & 0.76 & 3300\\
+\hline
+Macro Avg & 0.75 & 0.68 & 0.69 & 3300\\
+\hline
+Weighted Avg & 0.75 & 0.76 & 0.74 & 3300\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:rf10k}Random Forest Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.70 & 0.41 & 0.52 & 1079\\
+\hline
+1 & 0.76 & 0.91 & 0.83 & 2221\\
+\hline
+Accuracy & NA & NA & 0.75 & 3300\\
+\hline
+Macro Avg & 0.73 & 0.66 & 0.68 & 3300\\
+\hline
+Weighted Avg & 0.74 & 0.75 & 0.73 & 3300\\
+\hline
+\end{tabular}
+\end{table}
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was 0.76, as can be seen in Table \ref{tab:logitable10k}. The macro average precision was 0.75, with a recall of 0.68 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
+The performance of a xgboosting model across categories was 0.76, as can be seen in table \ref@(tab:xgb10k). The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.70, suggesting moderate levels of predictive accuracy.
+The performance of a neural network model across categories was 0.75, as can be seen in table \ref@(tab:nn10k). The macro average precision was 0.76, with a recall of 0.65 and an F1 score of 0.66, suggesting moderate levels of predictive accuracy.
+The performance of a SVM model across categories was 0.76, as can be seen in table \ref@(tab:svm10k). The macro average precision was 0.75, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was 0.75, as can be seen in table \ref@(tab:rf10k). The macro average precision was 0.73, with a recall of 0.66 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
+
+\hypertarget{sample-size-1000-and-epv-100}{%
+\subsection{Sample Size 1,000 and EPV 100}\label{sample-size-1000-and-epv-100}}
+
+\begin{table}
+\centering
+\caption{\label{tab:logitable1k}Logistic Regression Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.70 & 0.45 & 0.55 & 110\\
+\hline
+1 & 0.77 & 0.90 & 0.83 & 220\\
+\hline
+Accuracy & NA & NA & 0.75 & 330\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.69 & 330\\
+\hline
+Weighted Avg & 0.75 & 0.75 & 0.74 & 330\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:xgbtable1k}xgboosting Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.72 & 0.44 & 0.54 & 110\\
+\hline
+1 & 0.76 & 0.91 & 0.83 & 220\\
+\hline
+Accuracy & NA & NA & 0.75 & 330\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.69 & 330\\
+\hline
+Weighted Avg & 0.75 & 0.75 & 0.74 & 330\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:nn1k}Neural Network Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.66 & 0.46 & 0.55 & 110\\
+\hline
+1 & 0.77 & 0.88 & 0.82 & 220\\
+\hline
+Accuracy & NA & NA & 0.74 & 330\\
+\hline
+Macro Avg & 0.71 & 0.67 & 0.68 & 330\\
+\hline
+Weighted Avg & 0.73 & 0.74 & 0.73 & 330\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:svm1k}SVM Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.71 & 0.45 & 0.56 & 110\\
+\hline
+1 & 0.77 & 0.91 & 0.83 & 220\\
+\hline
+Accuracy & NA & NA & 0.76 & 330\\
+\hline
+Macro Avg & 0.74 & 0.68 & 0.69 & 330\\
+\hline
+Weighted Avg & 0.75 & 0.76 & 0.74 & 330\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:rf1k}Random Forest Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.69 & 0.43 & 0.53 & 110\\
+\hline
+1 & 0.76 & 0.90 & 0.83 & 220\\
+\hline
+Accuracy & NA & NA & 0.75 & 330\\
+\hline
+Macro Avg & 0.73 & 0.67 & 0.68 & 330\\
+\hline
+Weighted Avg & 0.74 & 0.75 & 0.73 & 330\\
+\hline
+\end{tabular}
+\end{table}
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was 0.75, as can be seen in Table \ref{tab:logitable1k}. The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting a moderate level of prediction consistency across categories.
+The performance of a xgboosting model across categories was 0.75, as can be seen in table \ref@(tab:xgb1k). The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
+The performance of a neural network model across categories was 0.74, as can be seen in table \ref@(tab:nn1k). The macro average precision was 0.71, with a recall of 0.67 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
+The performance of a SVM model across categories was 0.76, as can be seen in table \ref@(tab:svm1k). The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was 0.75, as can be seen in table \ref@(tab:rf1k). The macro average precision was 0.73, with a recall of 0.67 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
+
+\hypertarget{sample-size-200-and-epv-20}{%
+\subsection{Sample Size 200 and EPV 20}\label{sample-size-200-and-epv-20}}
+
+\begin{table}
+\centering
+\caption{\label{tab:logitable200}Logistic Regression Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.59 & 0.56 & 0.57 & 18\\
+\hline
+1 & 0.84 & 0.85 & 0.85 & 48\\
+\hline
+Accuracy & NA & NA & 0.77 & 66\\
+\hline
+Macro Avg & 0.71 & 0.70 & 0.71 & 66\\
+\hline
+Weighted Avg & 0.77 & 0.77 & 0.77 & 66\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:xgbtable200}xgboosting Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.67 & 0.33 & 0.44 & 18\\
+\hline
+1 & 0.79 & 0.94 & 0.86 & 48\\
+\hline
+Accuracy & NA & NA & 0.77 & 66\\
+\hline
+Macro Avg & 0.73 & 0.64 & 0.65 & 66\\
+\hline
+Weighted Avg & 0.76 & 0.77 & 0.74 & 66\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:nn200}Neural Network Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.47 & 0.50 & 0.49 & 18\\
+\hline
+1 & 0.81 & 0.79 & 0.80 & 48\\
+\hline
+Accuracy & NA & NA & 0.71 & 66\\
+\hline
+Macro Avg & 0.64 & 0.65 & 0.64 & 66\\
+\hline
+Weighted Avg & 0.72 & 0.71 & 0.71 & 66\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:svm200}SVM Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.58 & 0.61 & 0.59 & 18\\
+\hline
+1 & 0.85 & 0.83 & 0.84 & 48\\
+\hline
+Accuracy & NA & NA & 0.77 & 66\\
+\hline
+Macro Avg & 0.72 & 0.72 & 0.72 & 66\\
+\hline
+Weighted Avg & 0.78 & 0.77 & 0.77 & 66\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:rf200}Random Forest Predictive Metrics}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Class & Precision & Recall & F1-Score & Support\\
+\hline
+0 & 0.59 & 0.56 & 0.57 & 18\\
+\hline
+1 & 0.84 & 0.85 & 0.85 & 48\\
+\hline
+Accuracy & NA & NA & 0.77 & 66\\
+\hline
+Macro Avg & 0.71 & 0.70 & 0.71 & 66\\
+\hline
+Weighted Avg & 0.77 & 0.77 & 0.77 & 66\\
+\hline
+\end{tabular}
+\end{table}
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable200}. The macro average precision was 0.71, with a recall of 0.7 and an F1 score of 0.71, suggesting a moderate level of prediction consistency across categories.
+The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref@(tab:xgb200). The macro average precision was 0.73, with a recall of 0.64 and an F1 score of 0.65, suggesting moderate levels of predictive accuracy.
+The performance of a neural network model across categories was 0.71, as can be seen in table \ref@(tab:nn200). The macro average precision was 0.64, with a recall of 0.65 and an F1 score of 0.64, suggesting moderate levels of predictive accuracy.
+The performance of a SVM model across categories was 0.77, as can be seen in table \ref@(tab:svm200). The macro average precision was 0.72, with a recall of 0.72 and an F1 score of 0.72, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was 0.77, as can be seen in table \ref@(tab:rf200). The macro average precision was 0.71, with a recall of 0.7 and an F1 score of 0.71, suggesting moderate levels of predictive accuracy.
+
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
@@ -710,6 +1369,10 @@ Using variables supported by previous research would be best practice in buildin
 
 \hypertarget{references}{%
 \section{References}\label{references}}
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
@@ -945,6 +1608,13 @@ Wynen, J., \& Op de Beeck, S. (2014). The impact of the financial and economic c
 Xu, X., Jiang, X., Ma, C., Du, P., Li, X., Lv, S., Yu, L., Ni, Q., Chen, Y., Su, J., et al. (2020). A deep learning system to screen novel coronavirus disease 2019 pneumonia. \emph{Engineering}, \emph{6}(10), 1122--1129.
 
 \end{CSLReferences}
+
+\endgroup
+
+\newpage
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
 
 
 \end{document}

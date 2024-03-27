@@ -10,11 +10,7 @@ author:
 affiliation:
   - id            : "1"
     institution   : "Montclai State University"
-authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-  Enter author note here.
-abstract: |
-  
+
 keywords          : "Employee turnover, machine learning"
 wordcount         : "X"
 bibliography      : ["articles.bib", "references.bib", "r-references.bib"]
@@ -26,13 +22,222 @@ linenumbers       : no
 mask              : no
 draft             : no
 csl               : "apa7.csl"
-documentclass     : "apa6"
-classoption       : "jou"
+documentclass     : "apa7"
+classoption       : "man"
 output            : papaja::apa6_pdf
 editor_options: 
   markdown: 
     wrap: sentence
+params:
+  title: "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression"
+  author: 'Diego Figueiras'
+always_allow_html: true
+header-includes:
+  - \newcommand{\bcenter}{\begin{center}}
+  - \newcommand{\ecenter}{\end{center}}
+#  - \pagenumbering{gobble}                                     ## removes page numbers
+#  - \usepackage{sidecap}                                       ## float figures in .pdf
+  - \usepackage{wrapfig}                                       ## wrap figures in .pdf
+  #- \usepackage[normalem]{ulem}                                           ## strikeout
+  #- \usepackage{graphicx}
+#  - \graphicspath{ {./images/} }
+  - \usepackage{multicol}
+  - \setlength{\columnsep}{5cm}
+  - \usepackage{fancyhdr}
+  - \usepackage{setspace}                                      ## header/footer logo
+  - \pagestyle{fancy}
+  #- \setlength{\headheight}{40pt}                        ## More space between line and text
+  #- \addtolength{\topmargin}{-20pt}                      ## trying to pull text up (vertically)
+  #- \rhead{\includegraphics[width = .1\textwidth]{erg2.png}}                  ## header
+  #- \lfoot{\includegraphics[width = .2\textwidth]{clientlogo2.png}}            ## footer
+  #- \usepackage{enumitem}                                ## customized bullet symbols
+  #- \usepackage{amsfonts}                                ## picking symbols for bullets
+  #- \setlist[itemize,1]{label=$\bullet$}
+  #- \setlist[itemize,2]{label=$\checkmark$}                   ## ams symbols
+  #- \setlist[itemize,3]{label=$\circ$}              ## http://www.personal.psu.edu/dpl14/latex/symbols.pdf
+  #- \setlist[itemize,4]{label=$\maltese$}
+
 ---
+
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagenumbering{gobble}
+\phantom{i'm a ghost}
+\vskip 1.0in
+\bcenter
+
+
+\textbf{`r params$title`} 
+
+\vskip 0.8in
+
+A DISSERTATION
+
+\vskip 0.8in
+
+Submitted to the Faculty of  
+
+Montclair State University in partial fulfillment
+
+of the requirements
+
+for the degree of Doctor of Philosophy
+
+\vskip 0.4in
+
+by
+
+`r params$author`
+
+Montclair State University
+
+Montclair, NJ
+
+May 2024
+
+\ecenter
+
+\vskip 1.0in
+
+
+Dissertation Chair: Dr. Michael Bixter
+
+\newpage
+
+\section{}
+\pagenumbering{roman}
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\cfoot{}
+\rhead{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\onehalfspacing 
+
+\bcenter
+
+MONTCLAIR STATE UNIVERSITY  
+
+THE GRADUATE SCHOOL  
+
+DISSERTATION APPROVAL  
+
+\vskip 0.2in
+
+We hereby approve the Dissertation 
+
+\vskip 0.2in  
+
+\textbf{Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression}  
+
+of  
+
+Diego Figueiras  
+
+Candidate for the Degree:  
+
+Doctor of Philosophy
+
+
+
+\ecenter  
+
+
+\begin{multicols}{2}  
+
+Graduate Programs:
+\newline
+Counseling
+
+\vskip 0.6in
+
+Certified by:
+
+\vskip 0.6in  
+
+\linespread{1.0}\selectfont
+\rule{6cm}{0.2mm}
+\newline
+Dr. Scott Herness
+\newline
+Vice Provost for Research and
+\newline
+Dean of the Graduate School
+
+\vskip 0.3in
+
+\rule{6cm}{0.2mm}
+\newline
+Date
+
+\columnbreak
+
+Dissertation Committee:
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. Michael Bixter
+\newline
+Dissertation Chair
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. Kevin Askew
+
+\vskip 0.6in
+
+\rule{6cm}{0.2mm}
+\newline
+Dr. John T. Kulas
+
+
+\end{multicols}  
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\bcenter
+
+\phantom{i'm a ghost}
+
+\vskip 1.6in
+
+Copyright@2024 by Diego Figueiras. All rights reserved.
+
+\ecenter
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\bcenter
+
+\textbf{Abstract}
+
+\ecenter
+
+This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the "garbage in garbage out" concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, Support Vector Machines, and logistic regression. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
+
+
+\newpage
+\fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
+\pagenumbering{arabic}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\tableofcontents
+
+\section{Chapter 1 (Heading 1)}
+\newpage
 
 ```{r setup, include = FALSE}
 library("papaja")
@@ -498,6 +703,724 @@ In addition, a baseline series of models will be trained using biodata features 
 
 # Results
 
+## Sample Size 100,000 and EPV 10,000
+
+
+```{r logitable100k, message=FALSE, warning=FALSE}
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.71, 0.78, NA, 0.74, 0.75),
+  Recall = c(0.45, 0.91, NA, 0.68, 0.76),
+  `F1-Score` = c(0.55, 0.84, 0.76, 0.69, 0.75),
+  Support = c(11812, 24862, 36674, 36674, 36674)
+)
+
+# Convert numeric values to text to handle NA values
+metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+
+
+
+```{r xgbtable100k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.70, 0.78, NA, 0.74, 0.76),
+  Recall = c(0.48, 0.90, NA, 0.69, 0.77),
+  `F1-Score` = c(0.57, 0.84, 0.77, 0.70, 0.75),
+  Support = c(11812, 24862, 36674, 36674, 36674)
+)
+
+# Convert numeric values to text to handle NA values
+metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "xgboosting Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r nn100k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.69, 0.79, NA, 0.74, 0.76),
+  Recall = c(0.49, 0.90, NA, 0.69, 0.76),
+  `F1-Score` = c(0.57, 0.84, 0.76, 0.71, 0.75),
+  Support = c(11812, 24862, 36674, 36674, 36674)
+)
+
+# Convert numeric values to text to handle NA values
+metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Neural Network Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r svm100k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.71, 0.77, NA, 0.74, 0.75),
+  Recall = c(0.44, 0.92, NA, 0.68, 0.76),
+  `F1-Score` = c(0.54, 0.84, 0.76, 0.69, 0.74),
+  Support = c(11812, 24862, 36674, 36674, 36674)
+)
+
+# Convert numeric values to text to handle NA values
+metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "SVM Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r rf100k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.70, 0.77, NA, 0.73, 0.75),
+  Recall = c(0.43, 0.91, NA, 0.67, 0.76),
+  `F1-Score` = c(0.53, 0.83, 0.76, 0.68, 0.74),
+  Support = c(11812, 24862, 36674, 36674, 36674)
+)
+
+# Convert numeric values to text to handle NA values
+metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Random Forest Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in table \@ref(tab:logitable100k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb100k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn100k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm100k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf100k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+
+## Sample Size 10,000 and EPV 1,000
+
+```{r logitable10k, message=FALSE, warning=FALSE}
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.72, 0.77, NA, 0.75, 0.76),
+  Recall = c(0.45, 0.91, NA, 0.68, 0.76),
+  `F1-Score` = c(0.55, 0.84, 0.76, 0.70, 0.74),
+  Support = c(1079, 2221, 3300, 3300, 3300)
+)
+
+# Convert numeric values to text to handle NA values
+metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r xgbtable10k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.71, 0.78, NA, 0.74, 0.76),
+  Recall = c(0.46, 0.91, NA, 0.68, 0.76),
+  `F1-Score` = c(0.56, 0.84, 0.76, 0.70, 0.75),
+  Support = c(1079, 2221, 3300, 3300, 3300)
+)
+
+# Convert numeric values to text to handle NA values
+metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "xgboosting Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r nn10k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.77, 0.75, NA, 0.76, 0.76),
+  Recall = c(0.35, 0.95, NA, 0.65, 0.75),
+  `F1-Score` = c(0.49, 0.84, 0.75, 0.66, 0.72),
+  Support = c(1079, 2221, 3300, 3300, 3300)
+)
+
+# Convert numeric values to text to handle NA values
+metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Neural Network Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+Note: nn10k was a bit different from nn100k
+
+```{r svm10k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.72, 0.77, NA, 0.75, 0.75),
+  Recall = c(0.44, 0.92, NA, 0.68, 0.76),
+  `F1-Score` = c(0.54, 0.84, 0.76, 0.69, 0.74),
+  Support = c(1079, 2221, 3300, 3300, 3300)
+)
+
+# Convert numeric values to text to handle NA values
+metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "SVM Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+
+```{r rf10k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.70, 0.76, NA, 0.73, 0.74),
+  Recall = c(0.41, 0.91, NA, 0.66, 0.75),
+  `F1-Score` = c(0.52, 0.83, 0.75, 0.68, 0.73),
+  Support = c(1079, 2221, 3300, 3300, 3300)
+)
+
+# Convert numeric values to text to handle NA values
+metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Random Forest Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable10k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb10k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn10k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm10k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf10k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+
+
+## Sample Size 1,000 and EPV 100
+
+```{r logitable1k, message=FALSE, warning=FALSE}
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.70, 0.77, NA, 0.74, 0.75),
+  Recall = c(0.45, 0.90, NA, 0.68, 0.75),
+  `F1-Score` = c(0.55, 0.83, 0.75, 0.69, 0.74),
+  Support = c(110, 220, 330, 330, 330)
+)
+
+# Convert numeric values to text to handle NA values
+metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r xgbtable1k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.72, 0.76, NA, 0.74, 0.75),
+  Recall = c(0.44, 0.91, NA, 0.68, 0.75),
+  `F1-Score` = c(0.54, 0.83, 0.75, 0.69, 0.74),
+  Support = c(110, 220, 330, 330, 330)
+)
+
+# Convert numeric values to text to handle NA values
+metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "xgboosting Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r nn1k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.66, 0.77, NA, 0.71, 0.73),
+  Recall = c(0.46, 0.88, NA, 0.67, 0.74),
+  `F1-Score` = c(0.55, 0.82, 0.74, 0.68, 0.73),
+  Support = c(110, 220, 330, 330, 330)
+)
+
+# Convert numeric values to text to handle NA values
+metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Neural Network Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r svm1k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.71, 0.77, NA, 0.74, 0.75),
+  Recall = c(0.45, 0.91, NA, 0.68, 0.76),
+  `F1-Score` = c(0.56, 0.83, 0.76, 0.69, 0.74),
+  Support = c(110, 220, 330, 330, 330)
+)
+
+# Convert numeric values to text to handle NA values
+metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "SVM Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+
+```{r rf1k, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.69, 0.76, NA, 0.73, 0.74),
+  Recall = c(0.43, 0.90, NA, 0.67, 0.75),
+  `F1-Score` = c(0.53, 0.83, 0.75, 0.68, 0.73),
+  Support = c(110, 220, 330, 330, 330)
+)
+
+# Convert numeric values to text to handle NA values
+metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Random Forest Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable1k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb1k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn1k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm1k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf1k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+
+
+## Sample Size 200 and EPV 20
+
+
+```{r logitable200, message=FALSE, warning=FALSE}
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.59, 0.84, NA, 0.71, 0.77),
+  Recall = c(0.56, 0.85, NA, 0.70, 0.77),
+  `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
+  Support = c(18, 48, 66, 66, 66)
+)
+
+# Convert numeric values to text to handle NA values
+metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r xgbtable200, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.67, 0.79, NA, 0.73, 0.76),
+  Recall = c(0.33, 0.94, NA, 0.64, 0.77),
+  `F1-Score` = c(0.44, 0.86, 0.77, 0.65, 0.74),
+  Support = c(18, 48, 66, 66, 66)
+)
+
+# Convert numeric values to text to handle NA values
+metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "xgboosting Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r nn200, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.47, 0.81, NA, 0.64, 0.72),
+  Recall = c(0.50, 0.79, NA, 0.65, 0.71),
+  `F1-Score` = c(0.49, 0.80, 0.71, 0.64, 0.71),
+  Support = c(18, 48, 66, 66, 66)
+)
+
+# Convert numeric values to text to handle NA values
+metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Neural Network Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r svm200, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.58, 0.85, NA, 0.72, 0.78),
+  Recall = c(0.61, 0.83, NA, 0.72, 0.77),
+  `F1-Score` = c(0.59, 0.84, 0.77, 0.72, 0.77),
+  Support = c(18, 48, 66, 66, 66)
+)
+
+# Convert numeric values to text to handle NA values
+metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "SVM Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+```{r rf200, message=FALSE, warning=FALSE}
+
+# Load necessary packages or install if not already installed
+if (!require(knitr)) {
+    install.packages("knitr")
+    library(knitr)
+}
+library(kableExtra)
+# Create a data frame with the classification report metrics
+metrics <- data.frame(
+  Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
+  Precision = c(0.59, 0.84, NA, 0.71, 0.77),
+  Recall = c(0.56, 0.85, NA, 0.70, 0.77),
+  `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
+  Support = c(18, 48, 66, 66, 66)
+)
+
+# Convert numeric values to text to handle NA values
+metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
+
+# Adjust column names for the table
+colnames(metrics)[1] <- ""
+
+# Use kable to create a nicer table
+kable(metrics, caption = "Random Forest Predictive Metrics", 
+      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+      align = 'c') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = F, font_size = 12)
+
+
+```
+
+
+
+A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable200). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb200). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn200). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm200). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf200). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+
 # Discussion
 
 As Richard Landers said in an interview with SIOP, "Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time." (Landers, 2019).
@@ -516,6 +1439,23 @@ Using variables supported by previous research would be best practice in buildin
 \newpage
 
 # References
+```{r}
+r_refs("r-references.bib", append=FALSE)
+```
 
+```{=tex}
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+```
 ::: {#refs custom-style="Bibliography"}
 :::
+
+```{=tex}
+\endgroup
+```
+
+\newpage
+
+# Appendix

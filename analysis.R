@@ -40,6 +40,10 @@ data$DEI<-data%>%select(Q71:Q84)%>%rowMeans()
 data$employeeXP<-data%>%select(Q85:Q89)%>%rowMeans()
 data$flexibility<-data%>%select(Q90:Q99)%>%rowMeans()
 
+data2<-data%>%select(DLEAVING:flexibility) 
+write.csv(data2, "data_cleaned.csv", row.names=FALSE)
+
+
 #####################################################################################
 
 
