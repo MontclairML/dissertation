@@ -12,7 +12,7 @@ data[data[1:106]=="C"]<-0
 data[data[1:106]=="D"]<-0
 
 data[2:106]<- mutate_all(data[2:106], function(x) as.numeric(as.character(x)))
-
+data<-na.omit(data)
 
 # Identify numeric columns
 numeric_columns <- sapply(data, is.numeric)

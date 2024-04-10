@@ -25,26 +25,33 @@ Weighted Avg & 0.75 & 0.76 & 0.75 & 36674\\
  
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
+[tbp]
 
-\centering
-\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}
-\centering
-\fontsize{12}{14}\selectfont
-\begin{tabular}[t]{c|c|c|c|c}
-\hline
-Class & Precision & Recall & F1-Score & Support\\
-\hline
-0 & 0.70 & 0.48 & 0.57 & 11812\\
-\hline
-1 & 0.78 & 0.90 & 0.84 & 24862\\
-\hline
-Accuracy & NA & NA & 0.77 & 36674\\
-\hline
-Macro Avg & 0.74 & 0.69 & 0.70 & 36674\\
-\hline
-Weighted Avg & 0.76 & 0.77 & 0.75 & 36674\\
-\hline
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:xgbtable100k}}
+
+\begin{tabular}{lllll}
+\toprule
+ & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.Score} & \multicolumn{1}{c}{Support}\\
+\midrule
+0 & 0.70 & 0.48 & 0.57 & 11,812.00\\
+1 & 0.78 & 0.90 & 0.84 & 24,862.00\\
+Accuracy & NA & NA & 0.77 & 36,674.00\\
+Macro Avg & 0.74 & 0.69 & 0.70 & 36,674.00\\
+Weighted Avg & 0.76 & 0.77 & 0.75 & 36,674.00\\
+\bottomrule
+\addlinespace
 \end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} Logistic Regression Evaluation Metrics}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
 \end{table*}
 \efloatseparator
  

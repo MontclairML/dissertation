@@ -1,6 +1,6 @@
 ---
-title             : "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression"
-shorttitle        : "ML vs Regression"
+title             : "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression"
+shorttitle        : "Influence of Parsimony"
 author: 
   - name          : "Diego Figueiras"
     affiliation   : "1"
@@ -29,7 +29,7 @@ editor_options:
   markdown: 
     wrap: sentence
 params:
-  title: "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Linear Regression"
+  title: "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression"
   author: 'Diego Figueiras'
 always_allow_html: true
 header-includes:
@@ -705,7 +705,6 @@ In addition, a baseline series of models will be trained using biodata features 
 
 ## Sample Size 100,000 and EPV 10,000
 
-
 ```{r logitable100k, message=FALSE, warning=FALSE}
 # Load necessary packages or install if not already installed
 if (!require(knitr)) {
@@ -729,17 +728,25 @@ metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), 
 colnames(metrics)[1] <- ""
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+apa_table(
+  metrics
+  , caption = "Logistic Regression Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+
+# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
-
-
 
 
 ```{r xgbtable100k, message=FALSE, warning=FALSE}
@@ -763,14 +770,24 @@ metrics <- data.frame(
 metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsXGB)[1] <- ""
+
+apa_table(
+  metricsXGB
+  , caption = "xgboosting Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "xgboosting Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metricsXGB, caption = "xgboosting Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
@@ -797,14 +814,23 @@ metrics <- data.frame(
 metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsNN)[1] <- ""
 
+apa_table(
+  metricsNN
+  , caption = "Neural Network Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 # Use kable to create a nicer table
-kable(metrics, caption = "Neural Network Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Neural Network Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
@@ -831,18 +857,27 @@ metrics <- data.frame(
 metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsSVM)[1] <- ""
+
+apa_table(
+  metricsSVM
+  , caption = "SVM Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "SVM Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "SVM Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r rf100k, message=FALSE, warning=FALSE}
 
@@ -865,23 +900,32 @@ metrics <- data.frame(
 metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsRF)[1] <- ""
 
+apa_table(
+  metricsRF
+  , caption = "Random Forest Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 # Use kable to create a nicer table
-kable(metrics, caption = "Random Forest Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Random Forest Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
 
 A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in table \@ref(tab:logitable100k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
-The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb100k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn100k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm100k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
-The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf100k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \@ref(tab:xgbtable100k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \@ref(tab:nn100k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm100k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf100k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
 
 ## Sample Size 10,000 and EPV 1,000
 
@@ -905,14 +949,24 @@ metrics <- data.frame(
 metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsLOGI)[1] <- ""
+
+apa_table(
+  metricsLOGI
+  , caption = "Logistic Regression Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
@@ -939,14 +993,23 @@ metrics <- data.frame(
 metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsXGB)[1] <- ""
 
+apa_table(
+  metricsXGB
+  , caption = "xgboosting Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 # Use kable to create a nicer table
-kable(metrics, caption = "xgboosting Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "xgboosting Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
@@ -973,14 +1036,24 @@ metrics <- data.frame(
 metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsNN)[1] <- ""
 
-# Use kable to create a nicer table
-kable(metrics, caption = "Neural Network Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+apa_table(
+  metricsNN
+  , caption = "Neural Network Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+# # Use kable to create a nicer table
+# kable(metrics, caption = "Neural Network Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
@@ -1008,19 +1081,26 @@ metrics <- data.frame(
 metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsSVM)[1] <- ""
 
+apa_table(
+  metricsSVM
+  , caption = "SVM Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 # Use kable to create a nicer table
-kable(metrics, caption = "SVM Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "SVM Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
-
 
 ```{r rf10k, message=FALSE, warning=FALSE}
 
@@ -1043,24 +1123,34 @@ metrics <- data.frame(
 metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsRF)[1] <- ""
+
+apa_table(
+  metricsRF
+  , caption = "Random Forest Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Random Forest Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Random Forest Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
 
 
 A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable10k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
-The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb10k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn10k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm10k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
-The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf10k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \@ref(tab:xgbtable10k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \@ref(tab:nn10k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm10k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf10k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 
 
 ## Sample Size 1,000 and EPV 100
@@ -1085,18 +1175,27 @@ metrics <- data.frame(
 metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsLOGI)[1] <- ""
+
+apa_table(
+  metricsLOGI
+  , caption = "Logistic Regression Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r xgbtable1k, message=FALSE, warning=FALSE}
 
@@ -1119,18 +1218,27 @@ metrics <- data.frame(
 metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsXGB)[1] <- ""
+
+apa_table(
+  metricsXGB
+  , caption = "xgboosting Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "xgboosting Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "xgboosting Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r nn1k, message=FALSE, warning=FALSE}
 
@@ -1153,18 +1261,27 @@ metrics <- data.frame(
 metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsNN)[1] <- ""
+
+apa_table(
+  metricsNN
+  , caption = "Neural Network Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Neural Network Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Neural Network Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r svm1k, message=FALSE, warning=FALSE}
 
@@ -1187,19 +1304,27 @@ metrics <- data.frame(
 metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsSVM)[1] <- ""
+
+apa_table(
+  metricsSVM
+  , caption = "SVM Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "SVM Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "SVM Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
-
 
 ```{r rf1k, message=FALSE, warning=FALSE}
 
@@ -1222,24 +1347,34 @@ metrics <- data.frame(
 metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsRF)[1] <- ""
+
+apa_table(
+  metricsRF
+  , caption = "Random Forest Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Random Forest Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Random Forest Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
 
 
 A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable1k). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
-The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb1k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn1k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm1k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
-The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf1k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \@ref(tab:xgbtable1k). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \@ref(tab:nn1k). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm1k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf1k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 
 
 ## Sample Size 200 and EPV 20
@@ -1265,18 +1400,27 @@ metrics <- data.frame(
 metricsLOGI <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsLOGI)[1] <- ""
+
+apa_table(
+  metricsLOGI
+  , caption = "Logistic Regression Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r xgbtable200, message=FALSE, warning=FALSE}
 
@@ -1299,18 +1443,27 @@ metrics <- data.frame(
 metricsXGB <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsXGB)[1] <- ""
+
+apa_table(
+  metricsXGB
+  , caption = "xgboosting Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "xgboosting Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "xgboosting Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r nn200, message=FALSE, warning=FALSE}
 
@@ -1333,18 +1486,27 @@ metrics <- data.frame(
 metricsNN <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsNN)[1] <- ""
+
+apa_table(
+  metricsNN
+  , caption = "Neural Network Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Neural Network Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Neural Network Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r svm200, message=FALSE, warning=FALSE}
 
@@ -1367,18 +1529,27 @@ metrics <- data.frame(
 metricsSVM <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsSVM)[1] <- ""
+
+apa_table(
+  metricsSVM
+  , caption = "SVM Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "SVM Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "SVM Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
-
 
 ```{r rf200, message=FALSE, warning=FALSE}
 
@@ -1401,25 +1572,34 @@ metrics <- data.frame(
 metricsRF <- data.frame(lapply(metrics, function(x) ifelse(is.na(x), "", x)), stringsAsFactors = FALSE)
 
 # Adjust column names for the table
-colnames(metrics)[1] <- ""
+colnames(metricsRF)[1] <- ""
+
+
+apa_table(
+  metricsRF
+  , caption = "Random Forest Predictive Metrics"
+  , note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
 
 # Use kable to create a nicer table
-kable(metrics, caption = "Random Forest Predictive Metrics", 
-      col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-      align = 'c') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = F, font_size = 12)
+# kable(metrics, caption = "Random Forest Predictive Metrics", 
+#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
+#       align = 'c') %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+#                 full_width = F, font_size = 12)
 
 
 ```
 
-
-
 A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$F1.Score[3]`, as can be seen in Table \@ref(tab:logitable200). The macro average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.Score[4]`, suggesting a moderate level of prediction consistency across categories. 
-The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \ref@(tab:xgb200). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \ref@(tab:nn200). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
-The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \ref@(tab:svm200). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
-The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \ref@(tab:rf200). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a xgboosting model across categories was `r metricsXGB$F1.Score[3]`, as can be seen in table \@ref(tab:xgbtable200). The macro average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \@ref(tab:nn200). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
+The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm200). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf200). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 
 # Discussion
 
