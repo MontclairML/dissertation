@@ -771,11 +771,11 @@ Hypothesis 3a: machine learning models trained with work-related psychological c
 
 Hypothesis 3b: the predictive accuracy of machine learning models will increase when work-related psychological constructs are added to the model.
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
-
 \hypertarget{study-1}{%
-\subsection{Study 1}\label{study-1}}
+\section{Study 1}\label{study-1}}
+
+\hypertarget{methods}{%
+\subsection{Methods}\label{methods}}
 
 \hypertarget{procedure-and-participants}{%
 \subsection{Procedure and Participants}\label{procedure-and-participants}}
@@ -838,41 +838,11 @@ Several machine learning and regression models will be trained, and the predicti
 The algorithms being used will be determined by a prior literature review conducted by the author in which the most frequent and accurate algorithms used in predicting turnover were the following: Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN), and Support Vector Machines (SVM).
 Additionally, a logistic regression will be used as a comparison.
 
-\hypertarget{study-2}{%
-\subsection{Study 2}\label{study-2}}
-
-\hypertarget{procedure-and-participants-1}{%
-\subsection{Procedure and Participants}\label{procedure-and-participants-1}}
-
-A Qualtrics survey including will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95\% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents.
-
-\hypertarget{data-1}{%
-\subsection{Data}\label{data-1}}
-
-\hypertarget{work-related-psychological-constructs}{%
-\subsubsection{Work-related psychological constructs}\label{work-related-psychological-constructs}}
-
-The work-related psychological constructs will include the following FAVS measures: job satisfaction (Ertas, 2015; Kim \& Fernandez, 2017; Pitts et al., 2011), organizational satisfaction (Liss-Levinson et al., 2015), supervisory support (Maertz Jr et al., 2007; Smith, 2005), managerial trustworthiness (Ko \& Hur, 2014), employee empowerment (Kim \& Fernandez, 2017; Pink-Harper \& Rauhaus, 2017; Pitts et al., 2011), organizational support (Liss-Levinson et al., 2015), and organizational procedural justice (Choi, 2011).
-
-Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) (Schaufeli et al., 2017), the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) (Reeve \& Smith, 2001), the 18-items revised Three-Component Model (TCM) Employee Commitment Survey (Meyer \& Allen, 1991), the 1-item Graphic Scale of Organizational Identification (GSOI) (Shamir \& Kark, 2004), the 8-item Survey of Perceived Organizational Support (SPOS) (Shore \& Tetrick, 1991), and the 28-items Concise Conscientiousness Measure (CCM-S) (Franzen et al., 2022).
-
-\hypertarget{biodata}{%
-\subsubsection{Biodata}\label{biodata}}
-
-When measuring biodata, the following FAVS measures will be used: gender (Ertas, 2015 ; Ko \& Hur, 2014; Wynen \& Op de Beeck, 2014), minority status (Pink-Harper \& Rauhaus, 2017; Weaver, 2015), educational achievement (Joo et al., 2012; Liss-Levinson et al., 2015), supervisory position (Ertas, 2015; Pink-Harper \& Rauhaus, 2017), organizational tenure (Lewis, 1992; Pitts et al., 2011; Wynen \& Op de Beeck, 2014),
-compensation {[}Wynen and Op de Beeck (2014); Wynen and Op de Beeck (2014)), family-friendly policies (Durst, 1999; Joo et al., 2012), training and skill development (Curry et al., 2005), diversity management (Choi, 2009), promotion and advancement policy (Cotton \& Tuttle, 1986; Johnson et al., 2000; Porter et al., 1974), and coworker relations (Cotton \& Tuttle, 1986).
-
-\hypertarget{data-analysis-1}{%
-\subsection{Data Analysis}\label{data-analysis-1}}
-
-Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a.
-In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
-
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-\hypertarget{sample-size-100000-and-epv-10000}{%
-\subsection{Sample Size 100,000 and EPV 10,000}\label{sample-size-100000-and-epv-10000}}
+\hypertarget{sample-size-100000}{%
+\subsection{Sample Size 100,000}\label{sample-size-100000}}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1035,8 +1005,8 @@ The performance of a neural network model across categories was 0.76, as can be 
 The performance of a SVM model across categories was 0.76, as can be seen in table \ref{tab:svm100k}. The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.76, as can be seen in table \ref{tab:rf100k}. The macro average precision was 0.73, with a recall of 0.67 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-10000-and-epv-1000}{%
-\subsection{Sample Size 10,000 and EPV 1,000}\label{sample-size-10000-and-epv-1000}}
+\hypertarget{sample-size-10000}{%
+\subsection{Sample Size 10,000}\label{sample-size-10000}}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1201,8 +1171,8 @@ The performance of a neural network model across categories was 0.75, as can be 
 The performance of a SVM model across categories was 0.76, as can be seen in table \ref{tab:svm10k}. The macro average precision was 0.75, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.75, as can be seen in table \ref{tab:rf10k}. The macro average precision was 0.73, with a recall of 0.66 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-1000-and-epv-100}{%
-\subsection{Sample Size 1,000 and EPV 100}\label{sample-size-1000-and-epv-100}}
+\hypertarget{sample-size-1000}{%
+\subsection{Sample Size 1,000}\label{sample-size-1000}}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1365,8 +1335,8 @@ The performance of a neural network model across categories was 0.74, as can be 
 The performance of a SVM model across categories was 0.76, as can be seen in table \ref{tab:svm1k}. The macro average precision was 0.74, with a recall of 0.68 and an F1 score of 0.69, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.75, as can be seen in table \ref{tab:rf1k}. The macro average precision was 0.73, with a recall of 0.67 and an F1 score of 0.68, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-200-and-epv-20}{%
-\subsection{Sample Size 200 and EPV 20}\label{sample-size-200-and-epv-20}}
+\hypertarget{sample-size-200}{%
+\subsection{Sample Size 200}\label{sample-size-200}}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1528,6 +1498,98 @@ The performance of a xgboosting model across categories was 0.77, as can be seen
 The performance of a neural network model across categories was 0.71, as can be seen in table \ref{tab:nn200}. The macro average precision was 0.64, with a recall of 0.65 and an F1 score of 0.64, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.77, as can be seen in table \ref{tab:svm200}. The macro average precision was 0.72, with a recall of 0.72 and an F1 score of 0.72, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.77, as can be seen in table \ref{tab:rf200}. The macro average precision was 0.71, with a recall of 0.7 and an F1 score of 0.71, suggesting moderate levels of predictive accuracy.
+
+\hypertarget{study-2}{%
+\section{Study 2}\label{study-2}}
+
+\hypertarget{methods-1}{%
+\subsection{Methods}\label{methods-1}}
+
+\hypertarget{procedure-and-participants-1}{%
+\subsection{Procedure and Participants}\label{procedure-and-participants-1}}
+
+A Qualtrics survey including will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95\% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents.
+
+\hypertarget{data-1}{%
+\subsection{Data}\label{data-1}}
+
+\hypertarget{work-related-psychological-constructs}{%
+\subsubsection{Work-related psychological constructs}\label{work-related-psychological-constructs}}
+
+The work-related psychological constructs will include the following FAVS measures: job satisfaction (Ertas, 2015; Kim \& Fernandez, 2017; Pitts et al., 2011), organizational satisfaction (Liss-Levinson et al., 2015), supervisory support (Maertz Jr et al., 2007; Smith, 2005), managerial trustworthiness (Ko \& Hur, 2014), employee empowerment (Kim \& Fernandez, 2017; Pink-Harper \& Rauhaus, 2017; Pitts et al., 2011), organizational support (Liss-Levinson et al., 2015), and organizational procedural justice (Choi, 2011).
+
+Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) (Schaufeli et al., 2017), the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) (Reeve \& Smith, 2001), the 18-items revised Three-Component Model (TCM) Employee Commitment Survey (Meyer \& Allen, 1991), the 1-item Graphic Scale of Organizational Identification (GSOI) (Shamir \& Kark, 2004), the 8-item Survey of Perceived Organizational Support (SPOS) (Shore \& Tetrick, 1991), and the 28-items Concise Conscientiousness Measure (CCM-S) (Franzen et al., 2022).
+
+\hypertarget{biodata}{%
+\subsubsection{Biodata}\label{biodata}}
+
+When measuring biodata, the following FAVS measures will be used: gender (Ertas, 2015 ; Ko \& Hur, 2014; Wynen \& Op de Beeck, 2014), minority status (Pink-Harper \& Rauhaus, 2017; Weaver, 2015), educational achievement (Joo et al., 2012; Liss-Levinson et al., 2015), supervisory position (Ertas, 2015; Pink-Harper \& Rauhaus, 2017), organizational tenure (Lewis, 1992; Pitts et al., 2011; Wynen \& Op de Beeck, 2014),
+compensation {[}Wynen and Op de Beeck (2014); Wynen and Op de Beeck (2014)), family-friendly policies (Durst, 1999; Joo et al., 2012), training and skill development (Curry et al., 2005), diversity management (Choi, 2009), promotion and advancement policy (Cotton \& Tuttle, 1986; Johnson et al., 2000; Porter et al., 1974), and coworker relations (Cotton \& Tuttle, 1986).
+
+\hypertarget{data-analysis-1}{%
+\subsection{Data Analysis}\label{data-analysis-1}}
+
+Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a.
+In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
+
+\hypertarget{results-1}{%
+\subsection{Results}\label{results-1}}
+
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:biotable}Biodata only model}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:biotable} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endhead
+Logistic Regression & 0.57\\
+XGBoost & 0.61\\
+Neural Network & 0.57\\
+SVM & 0.50\\
+Random Forest & 0.66\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
+
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:wrctable}Work-related psychological constructs only model}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:wrctable} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endhead
+Logistic Regression & 0.81\\
+XGBoost & 0.78\\
+Neural Network & 0.74\\
+SVM & 0.67\\
+Random Forest & 0.77\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
+
+The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
+
+The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \ref{tab:wrctable}) compared to those based solely on biodata features (table \ref{tab:biotable}).
+
+The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}

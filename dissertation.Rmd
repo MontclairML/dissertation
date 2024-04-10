@@ -610,9 +610,9 @@ Hypothesis 3a: machine learning models trained with work-related psychological c
 
 Hypothesis 3b: the predictive accuracy of machine learning models will increase when work-related psychological constructs are added to the model.
 
-# Methods
+# Study 1
 
-## Study 1
+## Methods
 
 ## Procedure and Participants
 
@@ -676,34 +676,11 @@ Additionally, a logistic regression will be used as a comparison.
 
 ```
 
-## Study 2
-
-## Procedure and Participants
-
-A Qualtrics survey including  will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents. 
-
-## Data
-
-### Work-related psychological constructs
-
-The work-related psychological constructs will include the following FAVS measures: job satisfaction [@ertas2015turnover; @kim2017employee; @pitts2011so], organizational satisfaction [@liss2015loving], supervisory support [@maertz2007effects; @smith2005achieving], managerial trustworthiness [@ko2014impacts], employee empowerment [@kim2017employee; @pink2017examining; @pitts2011so], organizational support [@liss2015loving], and organizational procedural justice [@choi2011organizational].
-
-Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) [@schaufeli2017ultra], the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) [@reeve2001refining], the 18-items revised Three-Component Model (TCM) Employee Commitment Survey [@meyer1991three], the 1-item Graphic Scale of Organizational Identification (GSOI) [@shamir2004single], the 8-item Survey of Perceived Organizational Support (SPOS) [@shore1991construct], and the 28-items Concise Conscientiousness Measure (CCM-S) [@franzen2022developing].       
-
-### Biodata
-
-When measuring biodata, the following FAVS measures will be used: gender [@ertas2015turnover ; @ko2014impacts; @wynen2014impact], minority status [@pink2017examining; @weaver2015intent], educational achievement [@joo2012model; @liss2015loving], supervisory position [@ertas2015turnover; @pink2017examining], organizational tenure [@lewis1992men; @pitts2011so; @wynen2014impact],
-compensation [@wynen2014impact; @wynen2014impact), family-friendly policies [@durst1999assessing; @joo2012model], training and skill development [@curry2005training], diversity management [@choi2009diversity], promotion and advancement policy [@cotton1986employee; @johnson2000factors; @porter1974organizational], and coworker relations [@cotton1986employee]. 
-
-## Data Analysis
-
-Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a. 
-In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.   
 
 
 # Results
 
-## Sample Size 100,000 and EPV 10,000
+## Sample Size 100,000 
 
 ```{r logitable100k, message=FALSE, warning=FALSE}
 # Load necessary packages or install if not already installed
@@ -927,7 +904,7 @@ The performance of a neural network model across categories was `r metricsNN$F1.
 The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm100k). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf100k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
 
-## Sample Size 10,000 and EPV 1,000
+## Sample Size 10,000
 
 ```{r logitable10k, message=FALSE, warning=FALSE}
 # Load necessary packages or install if not already installed
@@ -1153,7 +1130,7 @@ The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`,
 The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf10k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 
 
-## Sample Size 1,000 and EPV 100
+## Sample Size 1,000
 
 ```{r logitable1k, message=FALSE, warning=FALSE}
 # Load necessary packages or install if not already installed
@@ -1377,7 +1354,7 @@ The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`,
 The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf1k). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 
 
-## Sample Size 200 and EPV 20
+## Sample Size 200
 
 
 ```{r logitable200, message=FALSE, warning=FALSE}
@@ -1600,6 +1577,76 @@ The performance of a xgboosting model across categories was `r metricsXGB$F1.Sco
 The performance of a neural network model across categories was `r metricsNN$F1.Score[3]`, as can be seen in table \@ref(tab:nn200). The macro average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.Score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.Score[3]`, as can be seen in table \@ref(tab:svm200). The macro average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was `r metricsRF$F1.Score[3]`, as can be seen in table \@ref(tab:rf200). The macro average precision was `r metricsRF$Precision[4]`, with a recall of `r metricsRF$Recall[4]` and an F1 score of `r metricsRF$F1.Score[4]`, suggesting moderate levels of predictive accuracy.
+
+
+# Study 2
+
+## Methods
+
+## Procedure and Participants
+
+A Qualtrics survey including  will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents. 
+
+## Data
+
+### Work-related psychological constructs
+
+The work-related psychological constructs will include the following FAVS measures: job satisfaction [@ertas2015turnover; @kim2017employee; @pitts2011so], organizational satisfaction [@liss2015loving], supervisory support [@maertz2007effects; @smith2005achieving], managerial trustworthiness [@ko2014impacts], employee empowerment [@kim2017employee; @pink2017examining; @pitts2011so], organizational support [@liss2015loving], and organizational procedural justice [@choi2011organizational].
+
+Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) [@schaufeli2017ultra], the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) [@reeve2001refining], the 18-items revised Three-Component Model (TCM) Employee Commitment Survey [@meyer1991three], the 1-item Graphic Scale of Organizational Identification (GSOI) [@shamir2004single], the 8-item Survey of Perceived Organizational Support (SPOS) [@shore1991construct], and the 28-items Concise Conscientiousness Measure (CCM-S) [@franzen2022developing].       
+
+### Biodata
+
+When measuring biodata, the following FAVS measures will be used: gender [@ertas2015turnover ; @ko2014impacts; @wynen2014impact], minority status [@pink2017examining; @weaver2015intent], educational achievement [@joo2012model; @liss2015loving], supervisory position [@ertas2015turnover; @pink2017examining], organizational tenure [@lewis1992men; @pitts2011so; @wynen2014impact],
+compensation [@wynen2014impact; @wynen2014impact), family-friendly policies [@durst1999assessing; @joo2012model], training and skill development [@curry2005training], diversity management [@choi2009diversity], promotion and advancement policy [@cotton1986employee; @johnson2000factors; @porter1974organizational], and coworker relations [@cotton1986employee]. 
+
+## Data Analysis
+
+Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a. 
+In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.  
+
+## Results
+
+```{r biotable, message=FALSE, warning=FALSE}
+
+data_bio<-read.csv("model_auc_scores.csv")
+
+apa_table(
+  data_bio
+  , caption = "Biodata only model"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+
+```{r wrctable, message=FALSE, warning=FALSE}
+
+data_wrc<-read.csv("addedWRC_model_auc_scores.csv")
+
+apa_table(
+  data_wrc
+  , caption = "Work-related psychological constructs only model"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
+
+The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \@ref(tab:wrctable)) compared to those based solely on biodata features (table \@ref(tab:biotable)). 
+
+The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
 # Discussion
 
