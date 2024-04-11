@@ -21,6 +21,13 @@ data[data[1:106]=="D"]<-0
 
 data[2:106]<- mutate_all(data[2:106], function(x) as.numeric(as.character(x)))
 
+data<-na.omit(data)
+data<-data%>%select(2:106)
+write.csv(data, "data_cleaned.csv", row.names = FALSE)
+
+
+data<-data%>%select(Q1:Q14, Q16:Q99)
+
 
 # Identify numeric columns
 numeric_columns <- sapply(data, is.numeric)

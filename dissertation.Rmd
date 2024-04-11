@@ -1648,6 +1648,8 @@ The analysis revealed a consistent enhancement in model performance upon the add
 
 The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
+note: include deltas
+
 # Discussion
 
 As Richard Landers said in an interview with SIOP, "Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time." (Landers, 2019).
