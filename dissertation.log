@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.27)  10 APR 2024 13:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.11)  11 APR 2024 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,28 +604,30 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@posthook=\toks37
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
 \MT@toks=\toks38
 \MT@tempbox=\box66
 \MT@count=\count328
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
-LaTeX Info: Redefining \leftprotrusion on input line 1060.
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
+LaTeX Info: Redefining \leftprotrusion on input line 1062.
 \MT@prot@toks=\toks39
-LaTeX Info: Redefining \rightprotrusion on input line 1078.
-LaTeX Info: Redefining \textls on input line 1368.
+LaTeX Info: Redefining \rightprotrusion on input line 1081.
+LaTeX Info: Redefining \textls on input line 1392.
 \MT@outer@kern=\dimen297
-LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
 \MT@listname@count=\count329
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
 \MT@outer@space=\skip86
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+File: microtype.cfg 2024/03/29 v3.1b microtype main configuration file (RS)
 )) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
@@ -633,18 +635,18 @@ Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 \csllabelwidth=\skip88
 \cslentryspacingunit=\skip89
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/02/07 v24.2 The Babel package
+Package: babel 2024/03/29 v24.3 The Babel package
 \babel@savecnt=\count330
 \U@D=\dimen298
-\l@unhyphenated=\language5
+\l@unhyphenated=\language6
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count331
 Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4258.
+(babel)             option. I'll load 'nil'. Reported on input line 4267.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2024/02/07 v24.2 Nil language
-\l@nil=\language6
+Language: nil 2024/03/29 v24.3 Nil language
+\l@nil=\language7
 ))
 \everypar=\toks40
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
@@ -724,7 +726,7 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2024-03-14 L3 Experimental document command parser
 )) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@reset=\count340
 \csq@gtype=\count341
 \csq@glevel=\count342
@@ -733,7 +735,7 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@tshold=\count345
 \csq@ltx@everypar=\toks44
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
@@ -1000,46 +1002,37 @@ Overfull \hbox (43.1059pt too wide) in paragraph at lines 336--339
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 ... 2: Incremental Validity}{17}{section*.35}
+l.33 ... 2: Incremental Validity}{18}{section*.35}
                                                   % [1])
 \tf@toc=\write6
 \openout6 = `dissertation.toc'.
 
-[2]
+[2] [3]
 Underfull \vbox (badness 4353) has occurred while \output is active []
 
-[3] [4] [5] [6]
+[4] [5] [6] [7]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 486.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Underfull \vbox (badness 4013) has occurred while \output is active []
 
-[7{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [8] [9] [10]
+[8{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [9] [10] [11]
 Underfull \vbox (badness 4792) has occurred while \output is active []
 
-[11] [12] [13] [14] [15] [16]
+[12] [13] [14] [15] [16] [17]
 Underfull \vbox (badness 1019) has occurred while \output is active []
 
-[17] [18] [19]
+[18] [19] [20]
 \openout4 = `dissertation.ttt'.
 
-(dissertation.ttt) [20]
+(dissertation.ttt) [21]
 Underfull \vbox (badness 2096) has occurred while \output is active []
 
-[21] [22]
-Underfull \vbox (badness 3792) has occurred while \output is active []
+[22] [23]
+Underfull \vbox (badness 2005) has occurred while \output is active []
 
-[23] [24]
-Underfull \vbox (badness 1454) has occurred while \output is active []
-
-[25] [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[28]
+[24] [25] [26] [27] [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [29]
@@ -1048,12 +1041,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[31] [32] AED endfloat: Processing end Figures and Tables [33] (./dissertation.ttt [34
+[31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+[32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [35
+[33] [34] AED endfloat: Processing end Figures and Tables [35] (./dissertation.ttt [36
 
-] [36
 
 ] [37
 
@@ -1091,7 +1086,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [54
 
-]) [55
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67] [68
+
+]) [69
 
 ] (./dissertation.aux)
  ***********
@@ -1100,18 +1121,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28921 strings out of 476064
- 538274 string characters out of 5791135
- 1938496 words of memory out of 5000000
- 50130 multiletter control sequences out of 15000+600000
+ 29012 strings out of 476044
+ 539727 string characters out of 5790176
+ 1943496 words of memory out of 5000000
+ 50194 multiletter control sequences out of 15000+600000
  608300 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,12n,107p,1584b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1584b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on dissertation.pdf (61 pages, 239860 bytes).
+Output written on dissertation.pdf (75 pages, 252479 bytes).
 PDF statistics:
- 869 PDF objects out of 1000 (max. 8388607)
- 765 compressed objects within 8 object streams
- 281 named destinations out of 1000 (max. 500000)
- 27117 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 986 PDF objects out of 1000 (max. 8388607)
+ 857 compressed objects within 9 object streams
+ 312 named destinations out of 1000 (max. 500000)
+ 27141 words of extra memory for PDF output out of 29859 (max. 10000000)
 
