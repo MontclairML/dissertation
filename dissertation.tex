@@ -1886,7 +1886,10 @@ Several machine learning algorithms will be used to train a series of models usi
 In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
 
 \hypertarget{results-1}{%
-\subsection{Results}\label{results-1}}
+\section{Results}\label{results-1}}
+
+\hypertarget{predicting-turnover-intention}{%
+\subsection{Predicting Turnover Intention}\label{predicting-turnover-intention}}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1894,12 +1897,12 @@ In addition, a baseline series of models will be trained using biodata features 
 \begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
 \caption{\label{tab:biotable}Biodata only model}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
 \endfirsthead
 \caption*{\normalfont{Table \ref{tab:biotable} continued}}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
 \endhead
 Logistic Regression & 0.57\\
@@ -1919,12 +1922,12 @@ Random Forest & 0.66\\
 \begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
 \caption{\label{tab:wrctable}Work-related psychological constructs only model}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
 \endfirsthead
 \caption*{\normalfont{Table \ref{tab:wrctable} continued}}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
 \endhead
 Logistic Regression & 0.81\\
@@ -1938,13 +1941,116 @@ Random Forest & 0.77\\
 \end{ThreePartTable}
 \end{center}
 
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:deltas}Work-related psychological constructs added to the models}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:deltas} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endhead
+Logistic Regression & 0.57 & 0.81 & 0.24\\
+XGBoost & 0.61 & 0.78 & 0.17\\
+Neural Network & 0.57 & 0.74 & 0.17\\
+SVM & 0.50 & 0.64 & 0.14\\
+Random Forest & 0.66 & 0.78 & 0.12\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
+
 The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
 
-The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \ref{tab:wrctable}) compared to those based solely on biodata features (table \ref{tab:biotable}).
+The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \ref{tab:wrctable}) compared to those based solely on biodata features (table \ref{tab:biotable}). As can be seen in table \ref{tab:deltas}, the deltas between the AUC scores with Biodata and the AUC scores when adding WRPC to the models are on average 0.17.
 
 The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
 note: include deltas
+
+\hypertarget{predicting-job-satisfaction}{%
+\subsection{Predicting Job Satisfaction}\label{predicting-job-satisfaction}}
+
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:biotable2}Biodata only model}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:biotable2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata}\\
+\midrule
+\endhead
+Linear Regression & 0.58\\
+XGBoost & 0.59\\
+Neural Network & 0.57\\
+SVM & 0.55\\
+Random Forest & 0.58\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
+
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:wrctable2}Work-related psychological constructs only model}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE WRPC}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:wrctable2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE WRPC}\\
+\midrule
+\endhead
+Logistic Regression & 0.00\\
+XGBoost & 0.01\\
+Neural Network & 0.26\\
+SVM & 0.05\\
+Random Forest & 0.01\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
+
+\begin{center}
+\begin{ThreePartTable}
+
+\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:deltas2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endhead
+Linear Regression & 0.58 & NA & NA\\
+XGBoost & 0.59 & 0.42 & -0.17\\
+Neural Network & 0.57 & 0.44 & -0.13\\
+SVM & 0.55 & 0.45 & -0.09\\
+Random Forest & 0.58 & 0.43 & -0.15\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\end{center}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}

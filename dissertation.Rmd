@@ -2512,6 +2512,8 @@ In addition, a baseline series of models will be trained using biodata features 
 
 data_bio<-read.csv("model_auc_scores.csv")
 
+colnames(data_bio)<- c("Model", "AUC Score Biodata")
+
 apa_table(
   data_bio
   , caption = "Biodata only model"
@@ -2529,6 +2531,7 @@ apa_table(
 ```{r wrctable, message=FALSE, warning=FALSE}
 
 data_wrc<-read.csv("addedWRC_model_auc_scores.csv")
+colnames(data_wrc)<- c("Model", "AUC Score WRPC")
 
 apa_table(
   data_wrc
@@ -2543,9 +2546,32 @@ apa_table(
 
 ```
 
+
+```{r deltas}
+data_ALL<-read.csv("ALL_model_auc_scores.csv")
+colnames(data_ALL)<- c("Model", "AUC Score when adding WRPC")
+data_del<-left_join(data_bio, data_ALL, by="Model")
+
+data_del$Delta <- data_del$`AUC Score when adding WRPC` - data_del$`AUC Score Biodata`
+
+apa_table(
+  data_del
+  , caption = "Work-related psychological constructs added to the models"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+
+
 The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
 
-The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \@ref(tab:wrctable)) compared to those based solely on biodata features (table \@ref(tab:biotable)). 
+The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \@ref(tab:wrctable)) compared to those based solely on biodata features (table \@ref(tab:biotable)). As can be seen in table \@ref(tab:deltas), the deltas between the AUC scores with Biodata and the AUC scores when adding WRPC to the models are on average `r mean(data_del$Delta)`.  
 
 The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
@@ -2553,6 +2579,67 @@ note: include deltas
 
 
 ## Predicting Job Satisfaction
+
+
+```{r biotable2, message=FALSE, warning=FALSE}
+
+data_bio2<-read.csv("base_model_rmse_scores.csv")
+
+colnames(data_bio2)<- c("Model", "RMSE Biodata")
+
+apa_table(
+  data_bio2
+  , caption = "Biodata only model"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+
+```{r wrctable2, message=FALSE, warning=FALSE}
+
+data_wrc2<-read.csv("addedWRC_model_rmse_scores.csv")
+colnames(data_wrc2)<- c("Model", "RMSE WRPC")
+
+apa_table(
+  data_wrc2
+  , caption = "Work-related psychological constructs only model"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+
+```{r deltas2}
+data_ALL2<-read.csv("ALL_model_rmse_scores.csv")
+colnames(data_ALL2)<- c("Model", "RMSE when adding WRPC")
+data_del2<-left_join(data_bio2, data_ALL2, by="Model")
+
+data_del2$Delta <- data_del2$`RMSE when adding WRPC` - data_del2$`RMSE Biodata`
+
+apa_table(
+  data_del2
+  , caption = "Work-related psychological constructs added to the models"
+  
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
 
 # Discussion
 

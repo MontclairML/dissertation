@@ -922,12 +922,12 @@ logi1k & Logistic Regression & 1,000.00 & 105.00 & 0.74\\
 \begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
 \caption{\label{tab:biotable}Biodata only model}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
 \endfirsthead
 \caption*{\normalfont{Table \ref{tab:biotable} continued}}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
 \endhead
 Logistic Regression & 0.57\\
@@ -946,12 +946,12 @@ Random Forest & 0.66\\
 \begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
 \caption{\label{tab:wrctable}Work-related psychological constructs only model}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
 \endfirsthead
 \caption*{\normalfont{Table \ref{tab:wrctable} continued}}\\
 \toprule
-Model & \multicolumn{1}{c}{AUC.Score}\\
+Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
 \endhead
 Logistic Regression & 0.81\\
@@ -959,6 +959,102 @@ XGBoost & 0.78\\
 Neural Network & 0.74\\
 SVM & 0.67\\
 Random Forest & 0.77\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\efloatseparator
+ 
+\begin{ThreePartTable}
+
+\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:deltas}Work-related psychological constructs added to the models}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:deltas} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endhead
+Logistic Regression & 0.57 & 0.81 & 0.24\\
+XGBoost & 0.61 & 0.78 & 0.17\\
+Neural Network & 0.57 & 0.74 & 0.17\\
+SVM & 0.50 & 0.64 & 0.14\\
+Random Forest & 0.66 & 0.78 & 0.12\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\efloatseparator
+ 
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:biotable2}Biodata only model}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:biotable2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata}\\
+\midrule
+\endhead
+Linear Regression & 0.58\\
+XGBoost & 0.59\\
+Neural Network & 0.57\\
+SVM & 0.55\\
+Random Forest & 0.58\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\efloatseparator
+ 
+\begin{ThreePartTable}
+
+\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:wrctable2}Work-related psychological constructs only model}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE WRPC}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:wrctable2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE WRPC}\\
+\midrule
+\endhead
+Logistic Regression & 0.00\\
+XGBoost & 0.01\\
+Neural Network & 0.26\\
+SVM & 0.05\\
+Random Forest & 0.01\\
+\bottomrule
+\end{longtable}
+
+\end{ThreePartTable}
+\efloatseparator
+ 
+\begin{ThreePartTable}
+
+\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:deltas2} continued}}\\
+\toprule
+Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
+\midrule
+\endhead
+Linear Regression & 0.58 & NA & NA\\
+XGBoost & 0.59 & 0.42 & -0.17\\
+Neural Network & 0.57 & 0.44 & -0.13\\
+SVM & 0.55 & 0.45 & -0.09\\
+Random Forest & 0.58 & 0.43 & -0.15\\
 \bottomrule
 \end{longtable}
 
