@@ -32,9 +32,9 @@ data$BFI<-data%>%select(BFI_1:BFI_6)%>%rowMeans()
 data$ACS<-data%>%select(ACS_1:ACS_9)%>%rowMeans()
 data$NCS<-data%>%select(NCS_1:NCS_8)%>%rowMeans()
 data$MOAQ<-data%>%select(MOAQ_1:MOAQ_3)%>%rowMeans()
-data$BIO<-data%>%select(BIO1:BIO13)%>%rowMeans()
+#data$BIO<-data%>%select(BIO1:BIO13)%>%rowMeans()
 
-data_train<-data%>%select(TI, EES, JIMS, SPOS, BFI, ACS, NCS, MOAQ, BIO, GSOI)
+data_train<-data%>%select(TI, EES, JIMS, SPOS, BFI, ACS, NCS, MOAQ, GSOI, BIO1:BIO13)
 # Identify numeric columns
 numeric_columns <- sapply(data_train, is.numeric)
 

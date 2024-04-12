@@ -662,9 +662,19 @@ Turnover intention is assessed using a single survey item: "Are you contemplatin
 
 ## Data analysis
 
-Several machine learning and regression models will be trained, and the predictive accuracy measures of Turnover intention will be estimated for each combination of data, sample sizes, number of variables, and model.
-The algorithms being used will be determined by a prior literature review conducted by the author in which the most frequent and accurate algorithms used in predicting turnover were the following: Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN), and Support Vector Machines (SVM).
-Additionally, a logistic regression will be used as a comparison.
+Several machine learning models were trained, and the predictive accuracy measures of Turnover intention were estimated for each combination of data, sample sizes, number of variables, and model.
+The algorithms being used were determined by a prior literature review conducted by the author in which the most frequent and accurate algorithms used in predicting turnover were the following: Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN), and Support Vector Machines (SVM).
+Additionally, a logistic regression was used as a comparison.
+
+For all of the analyses, the scikit-learn library in Python was used to train the models and optimize performance. Whenever hyperparameter tunning was being done, each configuration was assessed using a 10-fold cross-validation scheme. 
+
+For each XGB model, the xgboost package in Python was used and hyperparameter tuning was conducted using the GridSearchCV method from the scikit-learn library. This tuning process explored a combination of three hyperparameters: max_depth, with values ranging from 1 to 4, and learning_rate, tested at three levels (0.005, 0.05, 0.5). 
+
+Each neural network was developed and evaluated using TensorFlow's Keras API in Python. The architecture of the networks consisted of an input layer with 128 neurons, a hidden layer with 64 neurons, and an output layer with a single neuron using a sigmoid activation function. The models were compiled with the Adam optimizer and the training process was conducted over 10 epochs with a batch size of 32, ensuring that the model had multiple iterations to learn from the dataset.
+
+For each SVM, hyperparameter tuning was executed through RandomizedSearchCV. The norm ('l1', 'l2') was used in the error term, the maximum number of iterations were (1000, 2000, 3000), and the factor to multiply the intercept were (1, 10, 100). 
+
+For each random forest, the grid search focused on two key parameters: the number of trees in the forest, with tested values of 10, 50, 100, and 200, and the maximum depth of each tree, with values ranging from 1 to 4.
 
 ```{r}
 # library(tidyverse)
@@ -681,6 +691,7 @@ Additionally, a logistic regression will be used as a comparison.
 # Results
 
 ## Sample Size 100,000 
+
 ```{r logitable100k, message=FALSE, warning=FALSE}
 library(tidyverse)
 # Load necessary packages or install if not already installed
@@ -961,7 +972,7 @@ apa_table(
 
 ```
 
-A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in table \@ref(tab:logitable100k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in table \@ref(tab:logitable100k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable100k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn100k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm100k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1249,7 +1260,7 @@ apa_table(
 
 
 ```
-A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable10k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable10k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable10k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn10k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm10k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1538,7 +1549,7 @@ apa_table(
 ```
 
 
-A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable1k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable1k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable1k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn1k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm1k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1829,7 +1840,7 @@ apa_table(
 ```
 
 
-A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable200). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable200). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable200). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn200). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm200). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -2121,7 +2132,7 @@ apa_table(
 ```
 
 
-A logistic regression analysis was conducted to predict outcomes based on a set of predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable75). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable75). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable75). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn75). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm75). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -2414,7 +2425,7 @@ apa_table(
 
 
 
-A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable40). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable40). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable40). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn40). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm40). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -2502,7 +2513,26 @@ compensation [@wynen2014impact; @wynen2014impact), family-friendly policies [@du
 ## Data Analysis
 
 Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a. 
-In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.  
+In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
+
+## Data Description
+
+```{r study2descr}
+data_descr_study1<-read.csv("descriptives_study2.csv")
+
+apa_table(
+  data_descr_study1
+  , caption = "Descriptive Statistics"
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = FALSE
+  , escape = FALSE
+)
+
+```
+
+The dataset used in this study consists of 241 observations, each represented by 22 variables. These variables encompass a mixture of continuous and categorical data types. Turnover Intention is the target variable, measured as a binary indicator (0 or 1). Job satisfaction, measures by the MOAQ, is also a target variable, and unlike Turnover Intention it is a continuous Likert-scale ranging from "Strongly agree" to "Strongly disagree". The work-related psychological constructs predictor variables were also continuous Likert-scales ranging from "Strongly agree" to "Strongly disagree". Biodata variables were continuous and varied in scale. Summary descriptive statistics for each variable in the dataset can be found in table \@ref(tab:study2descr). 
 
 # Results
 
@@ -2641,7 +2671,22 @@ apa_table(
 ```
 
 
+The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in RMSE scores (table \@ref(tab:wrctable2)) compared to those based solely on biodata features (table \@ref(tab:biotable2)). As can be seen in table \@ref(tab:deltas2), the deltas between the RMSE scores with Biodata and the RMSE scores when adding WRPC to the models are on average `r mean(data_del2$Delta, na.rm=TRUE)`.  
+
+The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+
 # Discussion
+
+The findings of the present study do not support the hypotheses that were based on the prior research by Sanchez (2018) and Kirasich et al. (2018). The hypotheses posited were centered around the performance of machine learning (ML) algorithms compared to regression models, with a specific focus on the effects of sample size and the number of variables on predictive accuracy. Contrary to expectations, the results from this study did not demonstrate a significant relative advantage in predictive accuracy for ML algorithms as sample size increased, nor did they confirm the hypothesized impact of the number of variables in datasets on the choice between ML and regression models.
+
+Hypothesis 1 anticipated that as sample size increases, ML algorithms would exhibit a growing superiority over regression models in terms of predictive accuracy for turnover intentions. This hypothesis was predicated on the assertion from previous studies that ML algorithms tend to outperform regression models in larger datasets due to their ability to handle high-dimensional data and complex model interactions (Sanchez, 2018; Kirasich et al., 2018). However, the current study's findings suggest that the predictive accuracy of ML algorithms does not significantly outpace that of regression models as sample sizes increase. This discrepancy might be attributed to several factors including the nature of the data, the specific algorithms employed, or the methodologies used in the current study compared to those in the cited research.
+
+Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis also did not find support in the current study’s results, suggesting that the number of variables alone may not be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding challenges the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
+
+The absence of expected findings calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
+
+In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size and the number of predictors, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
+
 
 As Richard Landers said in an interview with SIOP, "Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time." (Landers, 2019).
 Many of the new technological developments in the fields of data science and computers science are not backed by the expertise that I/O psychology has been developing over the years, yet they appear more attractive for many HR practices.
