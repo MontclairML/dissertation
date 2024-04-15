@@ -1,871 +1,931 @@
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable100k}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable100k}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.85 & 0.61 & 0.71 & 0.87 & NA & 7,182.00\\
 Class 1 & 0.83 & 0.95 & 0.89 & 0.87 & NA & 15,045.00\\
 macro avg & 0.84 & 0.78 & 0.80 & 0.87 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.83 & 0.87 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.85 & 0.82 & 0.83 & 0.88 & 0.86 & NA\\
 weighted avg & 0.86 & 0.86 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn100k}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn100k}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.85 & 0.81 & 0.82 & 0.88 & 0.86 & NA\\
 weighted avg & 0.85 & 0.86 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm100k}SVM Predictive Metrics}\\
+\caption{\label{tab:svm100k}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.84 & 0.77 & 0.79 & 0.86 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.82 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf100k}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf100k}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.81 & 0.73 & 0.75 & 0.86 & 0.81 & NA\\
 weighted avg & 0.81 & 0.81 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable10k}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable10k}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.84 & 0.63 & 0.72 & 0.87 & NA & 667.00\\
 Class 1 & 0.83 & 0.94 & 0.88 & 0.87 & NA & 1,333.00\\
 macro avg & 0.84 & 0.78 & 0.80 & 0.87 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.83 & 0.87 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable10k}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable10k}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.84 & 0.81 & 0.82 & 0.88 & 0.85 & NA\\
 weighted avg & 0.85 & 0.85 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn10k}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn10k}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.83 & 0.80 & 0.81 & 0.88 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.84 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm10k}SVM Predictive Metrics}\\
+\caption{\label{tab:svm10k}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.83 & 0.77 & 0.79 & 0.88 & 0.83 & NA\\
 weighted avg & 0.83 & 0.83 & 0.82 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf10k}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf10k}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.81 & 0.74 & 0.76 & 0.86 & 0.80 & NA\\
 weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable1k}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable1k}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.70 & 0.53 & 0.60 & 0.74 & NA & 74.00\\
 Class 1 & 0.76 & 0.86 & 0.81 & 0.74 & NA & 126.00\\
 macro avg & 0.73 & 0.70 & 0.70 & 0.74 & 0.74 & NA\\
 weighted avg & 0.74 & 0.74 & 0.73 & 0.74 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable1k}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable1k}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.80 & 0.75 & 0.76 & 0.75 & 0.80 & NA\\
 weighted avg & 0.80 & 0.80 & 0.78 & 0.75 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn1k}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn1k}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.77 & 0.68 & 0.68 & 0.81 & 0.74 & NA\\
 weighted avg & 0.76 & 0.74 & 0.72 & 0.81 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm1k}SVM Predictive Metrics}\\
+\caption{\label{tab:svm1k}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.76 & 0.72 & 0.73 & 0.75 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.75 & 0.75 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf1k}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf1k}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.81 & 0.74 & 0.76 & 0.86 & 0.80 & NA\\
 weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable200}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable200}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.80 & 0.57 & 0.67 & 0.78 & NA & 7.00\\
 Class 1 & 0.80 & 0.92 & 0.86 & 0.78 & NA & 13.00\\
 macro avg & 0.80 & 0.75 & 0.76 & 0.78 & 0.80 & NA\\
 weighted avg & 0.80 & 0.80 & 0.79 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable200}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable200}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.91 & 0.79 & 0.81 & 0.98 & 0.85 & NA\\
 weighted avg & 0.88 & 0.85 & 0.84 & 0.98 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn200}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn200}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.91 & 0.79 & 0.81 & 0.89 & 0.85 & NA\\
 weighted avg & 0.88 & 0.85 & 0.84 & 0.89 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm200}SVM Predictive Metrics}\\
+\caption{\label{tab:svm200}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.93 & 0.86 & 0.88 & 0.98 & 0.90 & NA\\
 weighted avg & 0.91 & 0.90 & 0.90 & 0.98 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf200}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf200}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.93 & 0.86 & 0.88 & 0.84 & 0.90 & NA\\
 weighted avg & 0.91 & 0.90 & 0.90 & 0.84 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable75}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable75}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.92 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable75}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable75}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.70 & 0.71 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn75}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn75}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.76 & 0.68 & 0.69 & 0.79 & 0.77 & NA\\
 weighted avg & 0.77 & 0.77 & 0.74 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm75}SVM Predictive Metrics}\\
+\caption{\label{tab:svm75}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.76 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf75}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf75}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.67 & 0.68 & 0.78 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable40}Logistic Regression Predictive Metrics}\\
+\caption{\label{tab:logitable40}Logistic Regression Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable40}xgboosting Predictive Metrics}\\
+\caption{\label{tab:xgbtable40}xgboosting Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.71 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn40}Neural Network Predictive Metrics}\\
+\caption{\label{tab:nn40}Neural Network Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm40}SVM Predictive Metrics}\\
+\caption{\label{tab:svm40}SVM Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.68 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\begin{center}
+\begin{threeparttable}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf40}Random Forest Predictive Metrics}\\
+\caption{\label{tab:rf40}Random Forest Predictive Metrics}
+
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.68 & 0.69 & 0.78 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
 \begin{ThreePartTable}

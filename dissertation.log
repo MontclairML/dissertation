@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.11)  12 APR 2024 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.11)  12 APR 2024 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,27 +974,27 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
                    \relax 
 l.250 \newpage
                [2]
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 302--309
+Overfull \hbox (43.1059pt too wide) in paragraph at lines 303--310
 [][]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 312--315
+Overfull \hbox (43.1059pt too wide) in paragraph at lines 313--316
 [][]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 322--327
+Overfull \hbox (43.1059pt too wide) in paragraph at lines 323--328
 [][]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 330--333
+Overfull \hbox (43.1059pt too wide) in paragraph at lines 331--334
 [][]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 336--339
+Overfull \hbox (43.1059pt too wide) in paragraph at lines 337--340
 [][]  
  []
 
@@ -1011,7 +1011,7 @@ l.33 ... 2: Incremental Validity}{18}{section*.35}
 Underfull \vbox (badness 4353) has occurred while \output is active []
 
 [4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 486.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 487.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1029,13 +1029,22 @@ Underfull \vbox (badness 1881) has occurred while \output is active []
 [21]
 \openout4 = `dissertation.ttt'.
 
-(dissertation.ttt)
-Underfull \vbox (badness 1342) has occurred while \output is active []
+(dissertation.ttt) [22]
+Underfull \vbox (badness 4792) has occurred while \output is active []
 
-[22] [23] [24] [25]
-Underfull \vbox (badness 3148) has occurred while \output is active []
+[23]
+Underfull \vbox (badness 4792) has occurred while \output is active []
 
-[26] [27] [28] [29] [30] [31] [32]
+[24]
+Underfull \vbox (badness 6625) has occurred while \output is active []
+
+[25] [26] [27] [28] [29] [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[32]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [33]
@@ -1044,14 +1053,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[35]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[35] [36] AED endfloat: Processing end Figures and Tables [37] (./dissertation.ttt [38
 
-[36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[37] [38] AED endfloat: Processing end Figures and Tables [39] (./dissertation.ttt [40
+] [39
 
+] [40
 
 ] [41
 
@@ -1109,11 +1116,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [68
 
-] [69
+] [69] [70
 
-] [70
+] [71
 
-] [71] [72
+] [72
 
 ] [73
 
@@ -1121,11 +1128,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [75
 
-] [76
-
-] [77
-
-]) [78
+]) [76
 
 ] (./dissertation.aux)
  ***********
@@ -1134,18 +1137,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29048 strings out of 476044
- 540145 string characters out of 5790176
+ 29057 strings out of 476044
+ 540933 string characters out of 5790176
  1943496 words of memory out of 5000000
- 50210 multiletter control sequences out of 15000+600000
+ 50191 multiletter control sequences out of 15000+600000
  608300 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,12n,107p,1584b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on dissertation.pdf (84 pages, 264630 bytes).
+Output written on dissertation.pdf (82 pages, 263677 bytes).
 PDF statistics:
- 1062 PDF objects out of 1200 (max. 8388607)
- 918 compressed objects within 10 object streams
- 332 named destinations out of 1000 (max. 500000)
+ 1059 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 360 named destinations out of 1000 (max. 500000)
  27165 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -288,7 +288,8 @@ Doctor of Philosophy
 
 \begin{multicols}{2}  
 
-Graduate Programs:
+
+\noindent{Graduate Programs:}
 \newline
 Counseling
 
@@ -780,9 +781,9 @@ Hypothesis 3b: the predictive accuracy of machine learning models will increase 
 \hypertarget{procedure-and-participants}{%
 \subsection{Procedure and Participants}\label{procedure-and-participants}}
 
-The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management.
-The dataset consists of 107 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 50, 500, 5,000, 50,000, and the full 557,779.\\
-Additionally, to test for hypothesis 2, samples with varying EPV will be randomly selected from the FAVS. These will be with 10, 50, 100, 200, and 500 EPV.
+The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management here: \url{https://www.opm.gov/fevs/public-data-file/}.
+The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.\\
+Additionally, to test for hypothesis 2, samples with varying number of predictors will be randomly selected from the FAVS. These will be with 40, 75, and the full 105.
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
@@ -854,159 +855,145 @@ For each random forest, the grid search focused on two key parameters: the numbe
 \hypertarget{sample-size-100000}{%
 \subsection{Sample Size 100,000}\label{sample-size-100000}}
 
-\begingroup
-\setlength{\belowcaptionskip}{-10pt}
-\endgroup
+\begin{table}[tbp]
 
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable100k}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable100k}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.85 & 0.61 & 0.71 & 0.87 & NA & 7,182.00\\
 Class 1 & 0.83 & 0.95 & 0.89 & 0.87 & NA & 15,045.00\\
 macro avg & 0.84 & 0.78 & 0.80 & 0.87 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.83 & 0.87 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable100k}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.85 & 0.82 & 0.83 & 0.88 & 0.86 & NA\\
 weighted avg & 0.86 & 0.86 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn100k}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn100k}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.85 & 0.81 & 0.82 & 0.88 & 0.86 & NA\\
 weighted avg & 0.85 & 0.86 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm100k}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm100k}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.84 & 0.77 & 0.79 & 0.86 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.82 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf100k}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf100k}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf100k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.70 & 0.76 & 0.88 & NA & 7,182.00\\
 Class 1 & 0.87 & 0.93 & 0.90 & 0.88 & NA & 15,045.00\\
 macro avg & 0.81 & 0.73 & 0.75 & 0.86 & 0.81 & NA\\
 weighted avg & 0.81 & 0.81 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in table \ref{tab:logitable100k}. The weighted average precision was 0.84, with a recall of 0.78 and an F1 score of 0.80, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.86, as can be seen in table \ref{tab:xgbtable100k}. The weighted average precision was 0.86, with a recall of 0.86 and an F1 score of 0.85, suggesting moderate levels of predictive accuracy.
@@ -1017,157 +1004,147 @@ The performance of a random forest model across categories was 0.75, as can be s
 \hypertarget{sample-size-10000}{%
 \subsection{Sample Size 10,000}\label{sample-size-10000}}
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable10k}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable10k}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.84 & 0.63 & 0.72 & 0.87 & NA & 667.00\\
 Class 1 & 0.83 & 0.94 & 0.88 & 0.87 & NA & 1,333.00\\
 macro avg & 0.84 & 0.78 & 0.80 & 0.87 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.83 & 0.87 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable10k}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable10k}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.84 & 0.81 & 0.82 & 0.88 & 0.85 & NA\\
 weighted avg & 0.85 & 0.85 & 0.85 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn10k}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn10k}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.83 & 0.80 & 0.81 & 0.88 & 0.84 & NA\\
 weighted avg & 0.84 & 0.84 & 0.84 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 Note: nn10k was a bit different from nn100k
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm10k}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm10k}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.83 & 0.77 & 0.79 & 0.88 & 0.83 & NA\\
 weighted avg & 0.83 & 0.83 & 0.82 & 0.88 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf10k}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf10k}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf10k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.81 & 0.74 & 0.76 & 0.86 & 0.80 & NA\\
 weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in Table \ref{tab:logitable10k}. The weighted average precision was 0.84, with a recall of 0.78 and an F1 score of 0.80, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.85, as can be seen in table \ref{tab:xgbtable10k}. The weighted average precision was 0.85, with a recall of 0.85 and an F1 score of 0.85, suggesting moderate levels of predictive accuracy.
@@ -1178,155 +1155,145 @@ The performance of a random forest model across categories was 0.76, as can be s
 \hypertarget{sample-size-1000}{%
 \subsection{Sample Size 1,000}\label{sample-size-1000}}
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable1k}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable1k}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.70 & 0.53 & 0.60 & 0.74 & NA & 74.00\\
 Class 1 & 0.76 & 0.86 & 0.81 & 0.74 & NA & 126.00\\
 macro avg & 0.73 & 0.70 & 0.70 & 0.74 & 0.74 & NA\\
 weighted avg & 0.74 & 0.74 & 0.73 & 0.74 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable1k}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable1k}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.80 & 0.75 & 0.76 & 0.75 & 0.80 & NA\\
 weighted avg & 0.80 & 0.80 & 0.78 & 0.75 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn1k}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn1k}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.77 & 0.68 & 0.68 & 0.81 & 0.74 & NA\\
 weighted avg & 0.76 & 0.74 & 0.72 & 0.81 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm1k}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm1k}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.82 & 0.57 & 0.67 & 0.75 & NA & 74.00\\
 Class 1 & 0.78 & 0.93 & 0.85 & 0.75 & NA & 126.00\\
 macro avg & 0.76 & 0.72 & 0.73 & 0.75 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.75 & 0.75 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf1k}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf1k}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf1k} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.83 & 0.69 & 0.76 & 0.88 & NA & 667.00\\
 Class 1 & 0.86 & 0.93 & 0.89 & 0.88 & NA & 1,333.00\\
 macro avg & 0.81 & 0.74 & 0.76 & 0.86 & 0.80 & NA\\
 weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.74, as can be seen in Table \ref{tab:logitable1k}. The weighted average precision was 0.73, with a recall of 0.70 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.80, as can be seen in table \ref{tab:xgbtable1k}. The weighted average precision was 0.80, with a recall of 0.80 and an F1 score of 0.78, suggesting moderate levels of predictive accuracy.
@@ -1337,155 +1304,145 @@ The performance of a random forest model across categories was 0.76, as can be s
 \hypertarget{sample-size-100}{%
 \subsection{Sample Size 100}\label{sample-size-100}}
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable200}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable200}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.80 & 0.57 & 0.67 & 0.78 & NA & 7.00\\
 Class 1 & 0.80 & 0.92 & 0.86 & 0.78 & NA & 13.00\\
 macro avg & 0.80 & 0.75 & 0.76 & 0.78 & 0.80 & NA\\
 weighted avg & 0.80 & 0.80 & 0.79 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable200}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable200}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.91 & 0.79 & 0.81 & 0.98 & 0.85 & NA\\
 weighted avg & 0.88 & 0.85 & 0.84 & 0.98 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn200}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn200}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.91 & 0.79 & 0.81 & 0.89 & 0.85 & NA\\
 weighted avg & 0.88 & 0.85 & 0.84 & 0.89 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm200}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm200}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.93 & 0.86 & 0.88 & 0.98 & 0.90 & NA\\
 weighted avg & 0.91 & 0.90 & 0.90 & 0.98 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf200}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf200}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf200} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 1.00 & 0.57 & 0.73 & 0.98 & NA & 7.00\\
 Class 1 & 0.81 & 1.00 & 0.90 & 0.98 & NA & 13.00\\
 macro avg & 0.93 & 0.86 & 0.88 & 0.84 & 0.90 & NA\\
 weighted avg & 0.91 & 0.90 & 0.90 & 0.84 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.80, as can be seen in Table \ref{tab:logitable200}. The weighted average precision was 0.80, with a recall of 0.75 and an F1 score of 0.76, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.85, as can be seen in table \ref{tab:xgbtable200}. The weighted average precision was 0.88, with a recall of 0.85 and an F1 score of 0.84, suggesting moderate levels of predictive accuracy.
@@ -1496,155 +1453,145 @@ The performance of a random forest model across categories was 0.88, as can be s
 \hypertarget{number-of-variables-75}{%
 \subsection{Number of Variables 75}\label{number-of-variables-75}}
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable75}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable75}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.92 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable75}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable75}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.70 & 0.71 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn75}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn75}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.76 & 0.68 & 0.69 & 0.79 & 0.77 & NA\\
 weighted avg & 0.77 & 0.77 & 0.74 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm75}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm75}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.76 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf75}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf75}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf75} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.71 & 0.50 & 0.59 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.79 & 0.90 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.67 & 0.68 & 0.78 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable75}. The weighted average precision was 0.75, with a recall of 0.69 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref{tab:xgbtable75}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.76, suggesting moderate levels of predictive accuracy.
@@ -1655,155 +1602,145 @@ The performance of a random forest model across categories was 0.68, as can be s
 \hypertarget{number-of-variables-40}{%
 \subsection{Number of Variables 40}\label{number-of-variables-40}}
 
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:logitable40}Logistic Regression Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:logitable40}Logistic Regression Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:logitable40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:xgbtable40}xgboosting Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:xgbtable40}xgboosting Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:xgbtable40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.71 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:nn40}Neural Network Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:nn40}Neural Network Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:nn40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:svm40}SVM Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:svm40}SVM Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:svm40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.68 & 0.70 & 0.79 & 0.77 & NA\\
 weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
 
+\end{table}
+
+\begin{table}[tbp]
+
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{TableNotes}[para]
-\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
-\end{TableNotes}
+\caption{\label{tab:rf40}Random Forest Predictive Metrics}
 
-\begin{longtable}{lllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:rf40}Random Forest Predictive Metrics}\\
+\begin{tabular}{lllllll}
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:rf40} continued}}\\
-\toprule
- & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
-\midrule
-\endhead
 Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
 Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
 macro avg & 0.75 & 0.68 & 0.69 & 0.78 & 0.76 & NA\\
 weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \bottomrule
 \addlinespace
-\insertTableNotes
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} 1= turnover intention, 0= no turnover intention.}
+\end{tablenotes}
+
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable40}. The weighted average precision was 0.75, with a recall of 0.69 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref{tab:xgbtable40}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.76, suggesting moderate levels of predictive accuracy.
@@ -1879,6 +1816,8 @@ A Qualtrics survey including will be sent out via Amazon's MTurk. Participants w
 
 \hypertarget{data-1}{%
 \subsection{Data}\label{data-1}}
+
+All survey items can be found in Appendix 2.
 
 \hypertarget{work-related-psychological-constructs}{%
 \subsubsection{Work-related psychological constructs}\label{work-related-psychological-constructs}}
@@ -2124,11 +2063,11 @@ The findings of the present study do not support the hypotheses that were based 
 
 Hypothesis 1 anticipated that as sample size increases, ML algorithms would exhibit a growing superiority over regression models in terms of predictive accuracy for turnover intentions. This hypothesis was predicated on the assertion from previous studies that ML algorithms tend to outperform regression models in larger datasets due to their ability to handle high-dimensional data and complex model interactions (Sanchez, 2018; Kirasich et al., 2018). However, the current study's findings suggest that the predictive accuracy of ML algorithms does not significantly outpace that of regression models as sample sizes increase. This discrepancy might be attributed to several factors including the nature of the data, the specific algorithms employed, or the methodologies used in the current study compared to those in the cited research.
 
-Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis also did not find support in the current study's results, suggesting that the number of variables alone may not be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding challenges the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
+Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis did find support in the current study's results, suggesting that the number of variables may be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding is consistent with the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
 
-The absence of expected findings calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
+The absence of expected findings in study 1 calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
 
-In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size and the number of predictors, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
+In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
 
 As Richard Landers said in an interview with SIOP, ``Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time.'' (Landers, 2019).
 Many of the new technological developments in the fields of data science and computers science are not backed by the expertise that I/O psychology has been developing over the years, yet they appear more attractive for many HR practices.
@@ -2391,8 +2330,8 @@ Xu, X., Jiang, X., Ma, C., Du, P., Li, X., Lv, S., Yu, L., Ni, Q., Chen, Y., Su,
 
 \newpage
 
-\hypertarget{appendix}{%
-\section{Appendix}\label{appendix}}
+\hypertarget{appendix-1}{%
+\section{Appendix 1}\label{appendix-1}}
 
 
 \end{document}

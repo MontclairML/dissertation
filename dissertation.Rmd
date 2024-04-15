@@ -147,7 +147,8 @@ Doctor of Philosophy
 
 \begin{multicols}{2}  
 
-Graduate Programs:
+
+\noindent{Graduate Programs:}
 \newline
 Counseling
 
@@ -616,9 +617,9 @@ Hypothesis 3b: the predictive accuracy of machine learning models will increase 
 
 ## Procedure and Participants
 
-The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management.
-The dataset consists of 107 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 50, 500, 5,000, 50,000, and the full 557,779.  
-Additionally, to test for hypothesis 2, samples with varying EPV will be randomly selected from the FAVS. These will be with 10, 50, 100, 200, and 500 EPV. 
+The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management here: https://www.opm.gov/fevs/public-data-file/.
+The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.  
+Additionally, to test for hypothesis 2, samples with varying number of predictors will be randomly selected from the FAVS. These will be with 40, 75, and the full 105. 
 
 
 ## Data
@@ -695,11 +696,11 @@ For each random forest, the grid search focused on two key parameters: the numbe
 ```{r logitable100k, message=FALSE, warning=FALSE}
 library(tidyverse)
 # Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
+# if (!require(knitr)) {
+#     install.packages("knitr")
+#     library(knitr)
+# }
+# library(kableExtra)
 # Create a data frame with the classification report metrics
 # metrics <- data.frame(
 #   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
@@ -734,9 +735,9 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 
@@ -749,22 +750,10 @@ apa_table(
 
 ```
 
+
+
 ```{r xgbtable100k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.70, 0.78, NA, 0.74, 0.76),
-#   Recall = c(0.48, 0.90, NA, 0.69, 0.77),
-#   `F1-Score` = c(0.57, 0.84, 0.77, 0.70, 0.75),
-#   Support = c(11812, 24862, 36674, 36674, 36674)
-# )
 
 metrics<- read.csv("xgb100k.csv")
 xgb100k<-data.frame(
@@ -791,37 +780,20 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metricsXGB, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
+
+
 ```{r nn100k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.69, 0.79, NA, 0.74, 0.76),
-#   Recall = c(0.49, 0.90, NA, 0.69, 0.76),
-#   `F1-Score` = c(0.57, 0.84, 0.76, 0.71, 0.75),
-#   Support = c(11812, 24862, 36674, 36674, 36674)
-# )
 
 metrics<- read.csv("nn100k.csv")
 nn100k<-data.frame(
@@ -847,36 +819,19 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
-# Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
+
+
 ```{r svm100k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.71, 0.77, NA, 0.74, 0.75),
-#   Recall = c(0.44, 0.92, NA, 0.68, 0.76),
-#   `F1-Score` = c(0.54, 0.84, 0.76, 0.69, 0.74),
-#   Support = c(11812, 24862, 36674, 36674, 36674)
-# )
 
 metrics<- read.csv("svm100k.csv")
 svm100k<-data.frame(
@@ -902,37 +857,21 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
+
+
 ```{r rf100k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.70, 0.77, NA, 0.73, 0.75),
-#   Recall = c(0.43, 0.91, NA, 0.67, 0.76),
-#   `F1-Score` = c(0.53, 0.83, 0.76, 0.68, 0.74),
-#   Support = c(11812, 24862, 36674, 36674, 36674)
-# )
+
 
 metrics<- read.csv("rf100k.csv")
 rf100k<-data.frame(
@@ -958,16 +897,11 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -981,20 +915,7 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 ## Sample Size 10,000
 
 ```{r logitable10k, message=FALSE, warning=FALSE}
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.72, 0.77, NA, 0.75, 0.76),
-#   Recall = c(0.45, 0.91, NA, 0.68, 0.76),
-#   `F1-Score` = c(0.55, 0.84, 0.76, 0.70, 0.74),
-#   Support = c(1079, 2221, 3300, 3300, 3300)
-# )
+
 
 metrics<- read.csv("logi10k.csv")
 logi10k<-data.frame(
@@ -1020,17 +941,12 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -1038,20 +954,6 @@ apa_table(
 
 ```{r xgbtable10k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.71, 0.78, NA, 0.74, 0.76),
-#   Recall = c(0.46, 0.91, NA, 0.68, 0.76),
-#   `F1-Score` = c(0.56, 0.84, 0.76, 0.70, 0.75),
-#   Support = c(1079, 2221, 3300, 3300, 3300)
-# )
 
 metrics<- read.csv("xgb10k.csv")
 xgb10k<-data.frame(
@@ -1077,16 +979,11 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
-# Use kable to create a nicer table
-# kable(metrics, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -1094,20 +991,7 @@ apa_table(
 
 ```{r nn10k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.77, 0.75, NA, 0.76, 0.76),
-#   Recall = c(0.35, 0.95, NA, 0.65, 0.75),
-#   `F1-Score` = c(0.49, 0.84, 0.75, 0.66, 0.72),
-#   Support = c(1079, 2221, 3300, 3300, 3300)
-# )
+
 
 metrics<- read.csv("nn10k.csv")
 nn10k<-data.frame(
@@ -1133,17 +1017,11 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# # Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
@@ -1152,20 +1030,6 @@ Note: nn10k was a bit different from nn100k
 
 ```{r svm10k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.72, 0.77, NA, 0.75, 0.75),
-#   Recall = c(0.44, 0.92, NA, 0.68, 0.76),
-#   `F1-Score` = c(0.54, 0.84, 0.76, 0.69, 0.74),
-#   Support = c(1079, 2221, 3300, 3300, 3300)
-# )
 
 metrics<- read.csv("svm10k.csv")
 svm10k<-data.frame(
@@ -1191,36 +1055,17 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r rf10k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.70, 0.76, NA, 0.73, 0.74),
-#   Recall = c(0.41, 0.91, NA, 0.66, 0.75),
-#   `F1-Score` = c(0.52, 0.83, 0.75, 0.68, 0.73),
-#   Support = c(1079, 2221, 3300, 3300, 3300)
-# )
+
 
 metrics<- read.csv("rf10k.csv")
 rf10k<-data.frame(
@@ -1246,17 +1091,11 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
@@ -1270,20 +1109,7 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 ## Sample Size 1,000
 
 ```{r logitable1k, message=FALSE, warning=FALSE}
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.70, 0.77, NA, 0.74, 0.75),
-#   Recall = c(0.45, 0.90, NA, 0.68, 0.75),
-#   `F1-Score` = c(0.55, 0.83, 0.75, 0.69, 0.74),
-#   Support = c(110, 220, 330, 330, 330)
-# )
+
 
 metrics<- read.csv("logi1k.csv")
 logi1k<-data.frame(
@@ -1309,37 +1135,18 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r xgbtable1k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.72, 0.76, NA, 0.74, 0.75),
-#   Recall = c(0.44, 0.91, NA, 0.68, 0.75),
-#   `F1-Score` = c(0.54, 0.83, 0.75, 0.69, 0.74),
-#   Support = c(110, 220, 330, 330, 330)
-# )
+
 
 metrics<- read.csv("xgb1k.csv")
 xgb1k<-data.frame(
@@ -1365,37 +1172,19 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r nn1k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.66, 0.77, NA, 0.71, 0.73),
-#   Recall = c(0.46, 0.88, NA, 0.67, 0.74),
-#   `F1-Score` = c(0.55, 0.82, 0.74, 0.68, 0.73),
-#   Support = c(110, 220, 330, 330, 330)
-# )
+
 
 metrics<- read.csv("nn1k.csv")
 nn1k<-data.frame(
@@ -1421,37 +1210,18 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r svm1k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.71, 0.77, NA, 0.74, 0.75),
-#   Recall = c(0.45, 0.91, NA, 0.68, 0.76),
-#   `F1-Score` = c(0.56, 0.83, 0.76, 0.69, 0.74),
-#   Support = c(110, 220, 330, 330, 330)
-# )
 
 metrics<- read.csv("svm1k.csv")
 svm1k<-data.frame(
@@ -1477,37 +1247,18 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r rf1k, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.69, 0.76, NA, 0.73, 0.74),
-#   Recall = c(0.43, 0.90, NA, 0.67, 0.75),
-#   `F1-Score` = c(0.53, 0.83, 0.75, 0.68, 0.73),
-#   Support = c(110, 220, 330, 330, 330)
-# )
 
 metrics<- read.csv("rf1k.csv")
 rf1k<-data.frame(
@@ -1533,17 +1284,11 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
@@ -1560,20 +1305,7 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 
 
 ```{r logitable200, message=FALSE, warning=FALSE}
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("logi100.csv")
 logi100<-data.frame(
@@ -1599,37 +1331,18 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r xgbtable200, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.67, 0.79, NA, 0.73, 0.76),
-#   Recall = c(0.33, 0.94, NA, 0.64, 0.77),
-#   `F1-Score` = c(0.44, 0.86, 0.77, 0.65, 0.74),
-#   Support = c(18, 48, 66, 66, 66)
-# )
 
 metrics<- read.csv("xgb100.csv")
 xgb100<-data.frame(
@@ -1655,37 +1368,17 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r nn200, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.47, 0.81, NA, 0.64, 0.72),
-#   Recall = c(0.50, 0.79, NA, 0.65, 0.71),
-#   `F1-Score` = c(0.49, 0.80, 0.71, 0.64, 0.71),
-#   Support = c(18, 48, 66, 66, 66)
-# )
 
 metrics<- read.csv("nn100.csv")
 nn100<-data.frame(
@@ -1711,37 +1404,19 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r svm200, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.58, 0.85, NA, 0.72, 0.78),
-#   Recall = c(0.61, 0.83, NA, 0.72, 0.77),
-#   `F1-Score` = c(0.59, 0.84, 0.77, 0.72, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("svm100.csv")
 svm100<-data.frame(
@@ -1767,37 +1442,19 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r rf200, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("rf100.csv")
 rf100<-data.frame(
@@ -1824,17 +1481,12 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -1852,20 +1504,7 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 ## Number of Variables 75
 
 ```{r logitable75, message=FALSE, warning=FALSE}
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("logi75.csv")
 logi75<-data.frame(
@@ -1891,37 +1530,19 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r xgbtable75, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.67, 0.79, NA, 0.73, 0.76),
-#   Recall = c(0.33, 0.94, NA, 0.64, 0.77),
-#   `F1-Score` = c(0.44, 0.86, 0.77, 0.65, 0.74),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("xgb75.csv")
 xgb75<-data.frame(
@@ -1947,37 +1568,18 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r nn75, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.47, 0.81, NA, 0.64, 0.72),
-#   Recall = c(0.50, 0.79, NA, 0.65, 0.71),
-#   `F1-Score` = c(0.49, 0.80, 0.71, 0.64, 0.71),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("nn75.csv")
 nn75<-data.frame(
@@ -2003,37 +1605,19 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r svm75, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.58, 0.85, NA, 0.72, 0.78),
-#   Recall = c(0.61, 0.83, NA, 0.72, 0.77),
-#   `F1-Score` = c(0.59, 0.84, 0.77, 0.72, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("svm75.csv")
 svm75<-data.frame(
@@ -2059,37 +1643,19 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r rf75, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("rf75.csv")
 rf75<-data.frame(
@@ -2116,17 +1682,12 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -2144,20 +1705,7 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 ## Number of Variables 40
 
 ```{r logitable40, message=FALSE, warning=FALSE}
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("logi40.csv")
 logi40<-data.frame(
@@ -2183,37 +1731,18 @@ apa_table(
   , caption = "Logistic Regression Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Logistic Regression Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r xgbtable40, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.67, 0.79, NA, 0.73, 0.76),
-#   Recall = c(0.33, 0.94, NA, 0.64, 0.77),
-#   `F1-Score` = c(0.44, 0.86, 0.77, 0.65, 0.74),
-#   Support = c(18, 48, 66, 66, 66)
-# )
 
 metrics<- read.csv("xgb40.csv")
 xgb40<-data.frame(
@@ -2239,37 +1768,19 @@ apa_table(
   , caption = "xgboosting Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "xgboosting Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
 
 ```{r nn40, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.47, 0.81, NA, 0.64, 0.72),
-#   Recall = c(0.50, 0.79, NA, 0.65, 0.71),
-#   `F1-Score` = c(0.49, 0.80, 0.71, 0.64, 0.71),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("nn40.csv")
 nn40<-data.frame(
@@ -2295,37 +1806,18 @@ apa_table(
   , caption = "Neural Network Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Neural Network Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r svm40, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.58, 0.85, NA, 0.72, 0.78),
-#   Recall = c(0.61, 0.83, NA, 0.72, 0.77),
-#   `F1-Score` = c(0.59, 0.84, 0.77, 0.72, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
+
 
 metrics<- read.csv("svm40.csv")
 svm40<-data.frame(
@@ -2351,37 +1843,17 @@ apa_table(
   , caption = "SVM Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "SVM Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
 
 
 ```
 
 ```{r rf40, message=FALSE, warning=FALSE}
 
-# Load necessary packages or install if not already installed
-if (!require(knitr)) {
-    install.packages("knitr")
-    library(knitr)
-}
-library(kableExtra)
-# Create a data frame with the classification report metrics
-# metrics <- data.frame(
-#   Class = c('0', '1', 'Accuracy', 'Macro Avg', 'Weighted Avg'),
-#   Precision = c(0.59, 0.84, NA, 0.71, 0.77),
-#   Recall = c(0.56, 0.85, NA, 0.70, 0.77),
-#   `F1-Score` = c(0.57, 0.85, 0.77, 0.71, 0.77),
-#   Support = c(18, 48, 66, 66, 66)
-# )
 
 metrics<- read.csv("rf40.csv")
 rf40<-data.frame(
@@ -2408,17 +1880,12 @@ apa_table(
   , caption = "Random Forest Predictive Metrics"
   , note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
-# Use kable to create a nicer table
-# kable(metrics, caption = "Random Forest Predictive Metrics", 
-#       col.names = c('Class', 'Precision', 'Recall', 'F1-Score', 'Support'), 
-#       align = 'c') %>%
-#   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-#                 full_width = F, font_size = 12)
+
 
 
 ```
@@ -2498,6 +1965,8 @@ The AUC score for all combination of models, sample sizes and number of variable
 A Qualtrics survey including  will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents. 
 
 ## Data
+
+All survey items can be found in Appendix 2.
 
 ### Work-related psychological constructs
 
@@ -2681,11 +2150,11 @@ The findings of the present study do not support the hypotheses that were based 
 
 Hypothesis 1 anticipated that as sample size increases, ML algorithms would exhibit a growing superiority over regression models in terms of predictive accuracy for turnover intentions. This hypothesis was predicated on the assertion from previous studies that ML algorithms tend to outperform regression models in larger datasets due to their ability to handle high-dimensional data and complex model interactions (Sanchez, 2018; Kirasich et al., 2018). However, the current study's findings suggest that the predictive accuracy of ML algorithms does not significantly outpace that of regression models as sample sizes increase. This discrepancy might be attributed to several factors including the nature of the data, the specific algorithms employed, or the methodologies used in the current study compared to those in the cited research.
 
-Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis also did not find support in the current study’s results, suggesting that the number of variables alone may not be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding challenges the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
+Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis did find support in the current study’s results, suggesting that the number of variables may be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding is consistent with the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
 
-The absence of expected findings calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
+The absence of expected findings in study 1 calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
 
-In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size and the number of predictors, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
+In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
 
 
 As Richard Landers said in an interview with SIOP, "Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time." (Landers, 2019).
@@ -2723,4 +2192,5 @@ r_refs("r-references.bib", append=FALSE)
 
 \newpage
 
-# Appendix
+# Appendix 1
+
