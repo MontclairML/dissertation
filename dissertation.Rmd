@@ -226,7 +226,7 @@ Copyright@2024 by Diego Figueiras. All rights reserved.
 
 \ecenter
 
-This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the "garbage in garbage out" concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, Support Vector Machines, and logistic regression. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
+This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the "garbage in garbage out" concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, and Support Vector Machines being compared to linear and logistic regressions. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
 
 
 \newpage
@@ -269,7 +269,7 @@ Making the wrong decision when giving a promotion or demotion can cause waste of
 This is why personnel placement processes are some of the most pivotal in human resources [@macijauskieneartificial].
 
 When making decisions for placement using traditional regression-based methods, there is a high probability of this being affected by subjective factors that can cause biased choices from time to time [@fallucchi2020predicting].
-With machine learning, on the other hand, these decisions are based on a bit more objective foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods).
+With machine learning, on the other hand, these decisions are based on a bit more objective foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods) [@zou2018ai; @raji2019actionable].
 Not only this, but the decisions made in the personnel placement process can be explained to the candidates with their reasons, providing them with confidence in the results and diminishing the chances of low perceived organizational justice/support and high turnover.
 
 The aim of this dissertation is to investigate and compare the predictive capabilities of regression-based models and machine learning models in the context of turnover prediction, focusing specifically on sample sizes and number of variables.
@@ -304,7 +304,7 @@ While these variables provide basic demographic information, they may lack the d
 Incorporating work-related psychological antecedent variables can offer a more nuanced and accurate prediction by considering individual attitudes, perceptions, and experiences within the organizational context, as has been demonstrated before [@meyer2004employee; @lee2021overlooked].
 
 
-This second study aims to address this research question by employing comprehensive data.
+This second study aims to address this research question by employing survey data.
 By leveraging turnover intention data and a restricted set of independent variables, along with relevant predictor variables such as demographics/biodata, job characteristics, employee engagement, and other work-related psychological antecedent variables of turnover, a comparative analysis will be conducted.
 The performance of regression-based models and machine learning models will be assessed using various metrics, including accuracy, precision, recall, and the area under the receiver operating characteristic curve (AUC-ROC) [@davis2006relationship].
 
@@ -389,8 +389,8 @@ Typically, parsimony is reported as the performance metric of models that are sp
 
 # Algorithms
 
-In this study, various machine learning algorithms are described and assessed in their ability to predict dependent variables of interest in the field of I/O psychology, specifically turnover intention. 
-This section provides a general overview of the theory behind these algorithms.
+In this dissertation, various machine learning algorithms are described and assessed in their ability to predict dependent variables of interest in the field of I/O psychology, specifically turnover intention. 
+This section provides a general overview of the underlying mechanicsms behind these algorithms.
 
 ## Decision Trees
 
@@ -402,7 +402,7 @@ Nodes are split into sub-nodes based on a threshold value of a variable [@mahesh
 Decision trees are capable of handling missing values and mixed features, as well as to select variables automatically.
 On the downside, their predictive power is not as high as other algorithms and they are not stable with high model variance and small variations in the data.
 This could result in a large effect on the tree structure that is not meaningful.
-Understanding how they operate becomes important in order to understand other algorithms, such as random forest and gradient boosting trees [@alpaydin2020introduction; @marsland2011machine].
+However, understanding how they operate becomes important in order to understand other algorithms, such as random forest and gradient boosting trees [@alpaydin2020introduction; @marsland2011machine].
 
 ## Classification and Regression Trees (CART)
 
@@ -459,7 +459,7 @@ Once this is done, the trees are summed and regularized to avoid overfitting [@c
 
 Neural networks were built with the intention of emulating the human nervous system. The input is associated with weights, bias, activation functions, and a computed output from all of this. Much like decision trees, NNs consist of nodes and connections between the nodes, with input nodes, output nodes, and different layers of nodes in between. A neural network may contain more than one layer between input and output to handle complex problems. These layers are referred to as hidden layers [@alpaydin2020introduction]. 
 	The way the algorithm works is that the input node moves to the hidden layer by being multiplied by the weight and having the bias added, each of which is associated with the input. This is done for every single value in the input (also called IV), and the results are put into the activation function formula associated to hidden layers. The activation function is what decides the predicted output, and the formula varies depending on which function is being used. Common activation functions are the sigmoid, soft plus, hyperbolic tangent, and rectified linear units (ReLu). The weights and bias come from fitting the NN to the data beforehand using a method called “backpropagation.” After scaling the portion of the activation function estimated, the resulting functions are aggregated, then multiplied by the weights associated with the output and the bias also associated with the output is later added, resulting in a function that fits the data and that is used to make predictions based on the input.
-To model very complex neural networks with high predictive power, one can extend the model by adding more hidden layers, which is what we know as deep learning. Due to the rapid development of hardware and continuous research on backpropagation techniques, NNs are the most studied area in machine learning [@mahesh2020machine; @marsland2011machine; @alpaydin2020introduction]. 
+To model very complex neural networks with high predictive power, one can extend the model by adding more hidden layers, which is what we know as deep learning. Due to the rapid development of hardware and continuous research on backpropagation techniques, NNs are a well studied area in machine learning [@mahesh2020machine; @marsland2011machine; @alpaydin2020introduction]. 
 
 ## Support Vector Machines (SVM) classifiers
 
@@ -581,6 +581,7 @@ Using machine learning algorithms with such small number of variables could comp
 This study is based on prior research [@sanchez2018comparison; @kirasich2018random], which suggests that ML algorithms outperform regression models consistently when the sample size is large.
 In their study, they compared machine learning methods with regression methods for variable selection for two differently sized datasets, focusing on parsimony in predictor selection, which balances predictive accuracy with the sparsity of predictors.
 Their findings were that for the smaller dataset (N=6,565), regression achieved the best predictive accuracy, while machine learning methods faring better only in the larger dataset (N=269,999).
+However, the study's approach of using only two distinct sample sizes—one relatively small and the other significantly large—presents certain limitations. Specifically, this binary distinction may not sufficiently capture the nuances that could emerge with intermediate sample sizes. A broader range of dataset sizes might provide a more comprehensive understanding of how the performance of these methods scales with sample size. Including multiple datasets that vary incrementally in size could help delineate more precisely the thresholds at which machine learning begins to outperform traditional regression, or vice versa, thus offering deeper insights into the relative advantages of each analytical method across a spectrum of conditions.
 Since there is some recognition that regression models perform well with smaller datasets, where the number of observations is limited, and that ML algorithms tend to outperform when the dataset is very large, the following hypotheses for Study 1 are proposed:
 
 Hypothesis 1: As sample size increases, the relative advantage in predictive accuracy of turnover intention between ML and regression-based algorithms will increase.
@@ -598,7 +599,7 @@ Both simulated and real-world data will be used to test these two hypotheses.
 
 ## Study 2: Incremental Validity
 
-The literature review done on 28 articles that studied the predictive accuracy of machine learning models when predicting relevant variables from a job selection context, such as turnover or job satisfaction, noted that only 9% of the studies looked at independent variables that I/O psychologists typically use in predicting job performance in selection contexts, and that the literature has proved are relevant in predicting job performance/turnover, such as job satisfaction, commitment, conscientiousness, organizational identification, perceived organization support and justice, involvement, or engagement [@ertas2015turnover; @kim2017employee; @pitts2011so; @liss2015loving; @maertz2007effects; @smith2005achieving; @liss2015loving; @choi2011organizational; @schaufeli2017ultra; @reeve2001refining; @meyer1991three; @shamir2004single; @shore1991construct; @franzen2022developing]. None of the articles that were predicting turnover or turnover intention used any measure of any of these psychological constructs. 
+The literature review done on 28 articles that studied the predictive accuracy of machine learning models when predicting relevant variables from a job selection context, such as turnover or job satisfaction, noted that only 9% of the studies looked at independent variables that I/O psychologists typically use in predicting job performance in selection contexts. The literature has proved that there variables are relevant in predicting job performance/turnover, such as job satisfaction, commitment, conscientiousness, organizational identification, perceived organization support and justice, involvement, or engagement [@ertas2015turnover; @kim2017employee; @pitts2011so; @liss2015loving; @maertz2007effects; @smith2005achieving; @liss2015loving; @choi2011organizational; @schaufeli2017ultra; @reeve2001refining; @meyer1991three; @shamir2004single; @shore1991construct; @franzen2022developing]. None of the articles that were predicting turnover or turnover intention used any measure of any of these psychological constructs. 
 The literature in the field of I/O psychology has much to contribute in using the appropriate predictors for building machine learning algorithms that want to predict job performance and turnover.
 This would help the "garbage in garbage out" criterion problem that is so common with ML.
 
@@ -607,9 +608,8 @@ These variables capture psychological and organizational aspects that directly i
 Assessing whether work-related psychological contructs show incremental validity over biodata when establishing criterion-related validity with turnover intention is of interest in the study of machine learning in the I/O psychology field.
 The proposed hypotheses are the following:
 
-Hypothesis 3a: machine learning models trained with work-related psychological constructs will show better predictive accuracy metrics when predicting turnover intention than models trained using biodata.
+Hypothesis 3: machine learning models trained with work-related psychological constructs will show better predictive accuracy metrics when predicting turnover intention than models trained using biodata.
 
-Hypothesis 3b: the predictive accuracy of machine learning models will increase when work-related psychological constructs are added to the model.
 
 # Study 1
 
@@ -618,39 +618,74 @@ Hypothesis 3b: the predictive accuracy of machine learning models will increase 
 ## Procedure and Participants
 
 The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management here: https://www.opm.gov/fevs/public-data-file/.
-The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.  
+
+This survey is administered annually by the Office of Personnel Management (OPM). It is administered to employees of Departments and large agencies and the small/independent agencies that accept an invitation to participate in the survey. The survey is conducted electronically, with eligible employees invited to participate by email notification. To encourage higher response rates, OPM sends follow-up or reminder emails to potential participants. More information on the OPM FEVS can be found in the official technical report they upload to their website here: https://www.opm.gov/fevs/reports/technical-reports/technical-report/technical-report/2022/2022-technical-report.pdf
+
+The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. To ensure data anonymity, no identifying information was collected. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.  
 Additionally, to test for hypothesis 2, samples with varying number of predictors will be randomly selected from the FAVS. These will be with 40, 75, and the full 105. 
 
 
 ## Data
 
-The variables used in the FEVS are the following:
 
-## Independent variables
+```{r fevsitems, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
 
-### Individual characteristics
+data_fevs <- read_excel("2022_OPM_FEVS_PRDF_Codebook_r2.xlsx")
+data_fevs$`RESPONSE VALUE`<-as.numeric(data_fevs$`RESPONSE VALUE`)
+data_fevs<- data_fevs%>%group_by(VARIABLE, `ITEM TEXT`, `SURVEY SECTION`)%>%summarise(n=mean(`RESPONSE VALUE`))
+data_fevs<-data_fevs%>%select(VARIABLE, `SURVEY SECTION`, `ITEM TEXT`)
 
-Several factors consistently linked to turnover intention, such as gender [@ertas2015turnover ; @ko2014impacts; @wynen2014impact], minority status [@pink2017examining; @weaver2015intent], educational achievement [@joo2012model; @liss2015loving], supervisory position [@ertas2015turnover; @pink2017examining], and organizational tenure [@lewis1992men; @pitts2011so; @wynen2014impact].
-Examples of survey items assessing these variables include "How long have you been with the Federal Government (excluding military service)?" and "What is your supervisory status?"
+data_fevs <- data_fevs[order(data_fevs$`SURVEY SECTION`), ]
 
-### Job characteristics
 
-Seven factors pertaining to job characteristics were chosen: job satisfaction [@ertas2015turnover; @kim2017employee; @pitts2011so], personal accomplishment [@ertas2015turnover; @wynen2014impact], workload [@wynen2014impact; @wynen2014impact], meaningfulness [@ertas2015turnover; @kim2017employee; @weaver2015intent], and goal clarity [@ertas2015turnover; @ko2014impacts; @weaver2015intent].
-Sample survey items gauging these variables include "Considering everything, how satisfied are you with your job?"; "My work gives me a feeling of personal accomplishment"; and "My workload is reasonable."
+apa_table(
+  data_fevs
+  , caption = "FEVS Items"
+  #, note = "1= turnover intention, 0= no turnover intention."
+  #, align = c("m{2cm}", "m{12cm}")
+  , longtable = TRUE
+  , landscape = TRUE
+  , font_size = 'tiny'
+  #, escape = FALSE
+)
+```
 
-### Organizational characteristics
 
-Eleven factors linked to organizational policies were included: compensation [@wynen2014impact; @wynen2014impact), family-friendly policies [@durst1999assessing; @joo2012model], training and skill development [@curry2005training], diversity management [@choi2009diversity], and promotion and advancement policy [@cotton1986employee; @johnson2000factors; @porter1974organizational].
-Sample survey items evaluating these variables include "Considering everything, how satisfied are you with your pay?"; "My supervisor supports my need to balance work and other life issues"; and "How satisfied are you with your opportunity to get a better job in your organization?"
+All items used in the FEVS can be found in table \@ref(tab:fevsitems). The variables used in the FEVS are the following:
 
-### Workplace environment
+## Independent variables:
 
-Thirty-six factors pertaining to organizational environments were selected: organizational satisfaction [@liss2015loving], coworker relations [@cotton1986employee], supervisory support [@maertz2007effects; @smith2005achieving], supervisory communication [@joo2012model], managerial trustworthiness [@ko2014impacts], organizational procedural justice [@choi2011organizational], creativity [@ertas2015turnover], employee empowerment [@kim2017employee; @pink2017examining; @pitts2011so], performance-oriented culture [@pitts2011so], loyalty [@weaver2015intent], and organizational support [@liss2015loving].
-Sample survey items assessing these variables include "Considering everything, how satisfied are you with your organization?"; "The people I work with cooperate to get the job done"; "My supervisor provides me with constructive suggestions to improve my job performance"; "My performance appraisal is a fair reflection of my performance"; and "I recommend my organization as a good place to work."
+The 2022 OPM FEVS was conducted via the Web. The 122-item survey included 20 demographic questions and 104 items that were grouped into twelve topic headings intended to organize the instruments and facilitate respondent comprehension. Below is a summary of the questions within topics. See table \@ref(tab:fevsitems) for the actual items.
 
-## Dependent variable
+2022 OPM FEVS topic areas:
+-    My Work Experience: Items 1–13 addressed employees’ personal work experiences and opinions. Response scales ranged from "Strongly Agree" to "Strongly Disagree". 
 
-### Turnover Intention
+-    My Work Unit: Items 14–34 addressed employees’ opinions regarding cooperation, recruitment, quality, and performance management in their work unit. Items 14-18 and 23-34 had response scales ranging from "Strongly Agree" to "Strongly Disagree". Items 19-22 had response scales ranging from "Always" to "Never". 
+
+-    My Organization: Items 35–44 covered agency policies and practices related to job performance, performance appraisals, workplace diversity and fairness, as well as perceptions of employees’ personal empowerment, safety, and preparedness. This section also addressed employees’ views of their agency. Response scales ranged from "Strongly Agree" to "Strongly Disagree". 
+
+-    My Supervisor: Items 45–54 addressed employees’ perceptions of their supervisor. For instance, this section asked whether supervisors support work-life balance, provide opportunities to demonstrate leadership skills, and promote a workplace culture that supports staff development. Items 45-54 and 53-54 had a response scale that ranged from "Strongly Agree" to "Strongly Disagree". Item 52 had a response scale that ranged from "Very Good" to "Very Poor". 
+
+-    Leadership: Items 55–64 asked about the effectiveness of the agency’s senior leaders and managers, overall, and in motivating employees, maintaining high ethical standards, communicating organizational policies, and generating respect. Items 55-58 and 60-64 had a response scale that ranged from "Strongly Agree" to "Strongly Disagree". Item 59 had a response scale from "Very Good" to "Very Poor". 
+
+-    My Satisfaction: Items 65–70 addressed employee satisfaction with various aspects of their jobs, including pay, job training, opportunities for advancement, recognition for work well done, and the policies and practices of senior leaders. Response scales ranged from "Very Satisfied" to "Very Dissatisfied". 
+
+-    Diversity, Equity, Inclusion, and Accessibility: Items 71–84 addressed employees perceptions of policies and practices related to diversity, equity, and inclusion in their agency and also meeting accessibility needs. Response scales ranged from "Strongly Agree" to "Strongly Disagree".
+
+
+-    Employee Experience: Items 85–89 askes about employees’ experience of they experience their work and what motivates them. Response scales ranged from "Strongly Agree" to "Strongly Disagree".
+
+-    Pandemic, Transition to the Worksite, Workplace Flexibilities: Items 90–99 addressed the continuing impact of the COVID-19 pandemic and decisions related to returning to the worksite.
+
+-    Paid Parental Leave: Items 100–104 asked about the experiences of using the new paid parental leave benefit for employees who indicated they had used it.
+
+
+
+## Dependent variable:
+
+## Turnover Intention
 
 Some scholars advise against using turnover intention as a proxy for actual turnover in federal government agencies.
 Analyzing age and experience as the unit of analysis revealed strong correlations between turnover intention and actual turnover.
@@ -1945,9 +1980,9 @@ apa_table(
   , caption = "AUC scores for all models"
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 
@@ -1962,27 +1997,35 @@ The AUC score for all combination of models, sample sizes and number of variable
 
 ## Procedure and Participants
 
-A Qualtrics survey including  will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents. 
+A Qualtrics survey including  were sent out via Amazon's MTurk. Participants ere sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items and tracking response times, were used. The Cloud Research platform was used to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria were used for the online survey: approved 95% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants were compensated for their participation with $1.50 per assessment. The sample size was 241 after exclusions. 
 
 ## Data
 
 All survey items can be found in Appendix 2.
 
+## Independent Variables
+
 ### Work-related psychological constructs
 
-The work-related psychological constructs will include the following FAVS measures: job satisfaction [@ertas2015turnover; @kim2017employee; @pitts2011so], organizational satisfaction [@liss2015loving], supervisory support [@maertz2007effects; @smith2005achieving], managerial trustworthiness [@ko2014impacts], employee empowerment [@kim2017employee; @pink2017examining; @pitts2011so], organizational support [@liss2015loving], and organizational procedural justice [@choi2011organizational].
-
-Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) [@schaufeli2017ultra], the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) [@reeve2001refining], the 18-items revised Three-Component Model (TCM) Employee Commitment Survey [@meyer1991three], the 1-item Graphic Scale of Organizational Identification (GSOI) [@shamir2004single], the 8-item Survey of Perceived Organizational Support (SPOS) [@shore1991construct], and the 28-items Concise Conscientiousness Measure (CCM-S) [@franzen2022developing].       
+The following publicly available instruments were added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) [@schaufeli2017ultra] and the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) [@reeve2001refining].  The affective (ACS) and normative (NCS) components of the revised Three-Component Model (TCM) Employee Commitment Survey  [@meyer1991three], will be used to measure commitment, and the 1-item Graphic Scale of Organizational Identification (GSOI) [@shamir2004single] will be used to measure organizational identification. The 8-item Survey of Perceived Organizational Support (SPOS) [@shore1991construct] will be used to measure organizational support. Conscientiousness will be measured using the 6-items Big Five Inventory – Short Form (BFI-2-S) [@franzen2022developing]. All of these instruments are available in Appendix 2.       
 
 ### Biodata
 
-When measuring biodata, the following FAVS measures will be used: gender [@ertas2015turnover ; @ko2014impacts; @wynen2014impact], minority status [@pink2017examining; @weaver2015intent], educational achievement [@joo2012model; @liss2015loving], supervisory position [@ertas2015turnover; @pink2017examining], organizational tenure [@lewis1992men; @pitts2011so; @wynen2014impact],
-compensation [@wynen2014impact; @wynen2014impact), family-friendly policies [@durst1999assessing; @joo2012model], training and skill development [@curry2005training], diversity management [@choi2009diversity], promotion and advancement policy [@cotton1986employee; @johnson2000factors; @porter1974organizational], and coworker relations [@cotton1986employee]. 
+Biodata, short for biographical data, is a psychological construct used in this study to predict turnover intentions and job satisfaction. The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
+
+## Dependent Variables
+
+### Turnover Intention
+
+To measured turnover intention a one item Turnover Intention (TI) scale was used, which asks the following: “Are you contemplating leaving your organization within the next year?” 
+
+### Job Satisfaction 
+
+To measure job satisfaction the Michigan Organizational Assessment Questionnaire (MOAQ) short form was used. This is a streamlined version of the original instrument, designed to efficiently assess aspects of job satisfaction and organizational climate. This condensed form retains the core elements of the original MOAQ but reduces the number of items to facilitate quicker administration and analysis while maintaining robust psychometric properties [@lawler1979michigan]. The short form typically includes items that measure three key dimensions: job satisfaction, organizational commitment, and perceived organizational support. Each item is rated on a Likert scale, allowing respondents to express varying degrees of agreement or disagreement, providing a quantitative measure of an employee's satisfaction and engagement with their organization [@lawler1979michigan; @seashore1983assessing] .
 
 ## Data Analysis
 
-Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a. 
-In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
+Several machine learning algorithms were used to train a series of models using biodata features only. These models include GBT, RF, NN, and SVM. A multiple  and logistic regressions were compared to these machine learning models. A second series of models that include work-related psychological constructs only in the data were trained. Performance metrics of each model were evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Deltas between the AUC score of each set of models before and after adding work-related psychological constructs were computed to see whether there was a change in performance. This was done to test for hypothesis 3.
 
 ## Data Description
 
@@ -1994,9 +2037,9 @@ apa_table(
   , caption = "Descriptive Statistics"
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
@@ -2019,9 +2062,9 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
@@ -2067,12 +2110,59 @@ apa_table(
 ```
 
 
+```{r coefbg}
+
+library(ggplot2)
+
+
+data <- read.csv("lr_coeff_importance.csv")
+
+
+ggplot(data, aes(x=reorder(Feature, -Coefficient), y=Coefficient)) +
+  geom_bar(stat="identity", fill="gray") +
+  coord_flip() +  # Flips the axes to make labels readable
+  labs(title="Feature Importance in Logistic Regression Model",
+       x="Coefficient",
+       y="Feature") +
+  theme_minimal() +
+  theme(legend.position="none") 
+
+
+```
+
+```{r featuresbg}
+
+library(ggplot2)
+
+
+data <- read.csv("rf_feature_importance.csv")
+
+
+ggplot(data, aes(x=reorder(Feature, -Importance), y=Importance)) +
+  geom_bar(stat="identity", fill="gray") +
+  coord_flip() +  # Flips the axes to make labels readable
+  labs(title="Feature Importance in Random Forest Model",
+       x="Importance",
+       y="Feature") +
+  theme_minimal() +
+  theme(legend.position="none") 
+
+
+```
+
+
 
 The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
 
 The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \@ref(tab:wrctable)) compared to those based solely on biodata features (table \@ref(tab:biotable)). As can be seen in table \@ref(tab:deltas), the deltas between the AUC scores with Biodata and the AUC scores when adding WRPC to the models are on average `r mean(data_del$Delta)`.  
 
-The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+
+Additionally, as can be seen in figure \@ref(fig:coefbg) and figure \@ref(fig:featuresbg), the comparative analysis of the two bar graphs, which depict feature importances derived from logistic regression and Random Forest models respectively, reveals distinct patterns in how each model values the same set of features.
+
+In the logistic regression model, the feature "ACS" displayed the most significant negative coefficient, suggesting a strong inverse relationship with the target variable. In stark contrast, "MOAQ" and "SPOS" showed slightly less negative coefficients, indicating their substantial but lesser influence compared to "ACS". On the other hand, "BIO4" and "JIMS" had positive coefficients, albeit smaller in magnitude, pointing to their positive but modest impact on the model’s predictions.
+
+The Random Forest model presented a different hierarchy of feature importances. "SPOS" emerged as the most critical predictor with the highest importance score, indicating its predominant influence in the model. This was followed by "MOAQ" and "ACS", which also held significant importance but to a lesser extent than "SPOS". The features "BFI" and "EES", while contributing to the model, had relatively lower importance scores, suggesting their roles were not as decisive in the Random Forest model as in the logistic regression model.
 
 note: include deltas
 
@@ -2139,10 +2229,53 @@ apa_table(
 
 ```
 
+```{r coefbg2}
+
+
+library(ggplot2)
+
+
+data <- read.csv("lm_coeff_importance.csv")
+
+
+ggplot(data, aes(x=reorder(Feature, Coefficient), y=Coefficient)) +
+  geom_bar(stat="identity", fill="gray") +  # Gray bars
+  coord_flip() +  # Flips the axes to make labels readable
+  labs(title="Coefficient Importance in Linear Model",
+       x="Coefficient",
+       y="Feature") +
+  theme_minimal() +
+  theme(legend.position="none")  
+```
+
+
+```{r featuresbg2}
+
+
+library(ggplot2)
+
+data <- read.csv("rfjs_coeff_importance.csv")
+
+ggplot(data, aes(x=reorder(Feature, -Importance), y=Importance)) +
+  geom_bar(stat="identity", fill="gray") +  # Gray bars
+  coord_flip() +  # Flips the axes to make labels readable
+  labs(title="Feature Importance from Model",
+       x="Importance",
+       y="Feature") +
+  theme_minimal() +
+  theme(legend.position="none")  
+
+```
 
 The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in RMSE scores (table \@ref(tab:wrctable2)) compared to those based solely on biodata features (table \@ref(tab:biotable2)). As can be seen in table \@ref(tab:deltas2), the deltas between the RMSE scores with Biodata and the RMSE scores when adding WRPC to the models are on average `r mean(data_del2$Delta, na.rm=TRUE)`.  
 
-The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+Additionally, when it comes to feature importante, both linear regression and Random Forest show similar results. As we can see in figure \@ref(fig:coefbg2), which is a bargraph showing the beta coefficients of the linear regression model, there is a balanced distribution of both positive and negative coefficients, indicating varied influences on the dependent variable. The most prominent feature in this model is "SPOS," which has a positive coefficient of approximately 0.356, suggesting a strong positive relationship with the target outcome. As can be expected, "TI" exhibits a significant negative coefficient of -0.327. Other features like "ACS" and "BIO9_1" also show positive influences, albeit to a lesser extent.
+
+Conversely, figure \@ref(fig:featuresbg2), which stems from a Random Forest model, exclusively presents positive importance scores, focusing solely on the magnitude of influence rather than direction. In this model, "SPOS" also emerges as the most significant feature, with an importance score markedly higher at 0.470, emphasizing its critical role in model predictions. Following "SPOS," "ACS" and "EES" hold substantial importance scores of 0.211 and 0.109 respectively, demonstrating their essential contributions to the model’s performance. 
+
+This comparative evaluation reveals that "SPOS" and "ACS" are consistently recognized as the most influential features across both models when predicting job satisfaction. 
+
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
 # Discussion
 

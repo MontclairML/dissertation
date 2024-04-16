@@ -1,3 +1,130 @@
+\begin{lltable}
+
+\tiny{
+
+\begin{longtable}{lll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:fevsitems}FEVS Items}\\
+\toprule
+VARIABLE & \multicolumn{1}{c}{SURVEY SECTION} & \multicolumn{1}{c}{ITEM TEXT}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:fevsitems} continued}}\\
+\toprule
+VARIABLE & \multicolumn{1}{c}{SURVEY SECTION} & \multicolumn{1}{c}{ITEM TEXT}\\
+\midrule
+\endhead
+Q71 & Diversity, Equity, Inclusion, and Accessibility & My organization’s management practices promote diversity (e.g., outreach, recruitment, promotion opportunities).\\
+Q72 & Diversity, Equity, Inclusion, and Accessibility & My supervisor demonstrates a commitment to workforce diversity (e.g., recruitment, promotion opportunities, development).\\
+Q73 & Diversity, Equity, Inclusion, and Accessibility & I have similar access to advancement opportunities (e.g., promotion, career development, training) as others in my work unit.\\
+Q74 & Diversity, Equity, Inclusion, and Accessibility & My supervisor provides opportunities fairly to all employees in my work unit (e.g., promotions, work assignments).\\
+Q75 & Diversity, Equity, Inclusion, and Accessibility & In my work unit, excellent work is similarly recognized for all employees (e.g., awards, acknowledgements).\\
+Q76 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit treat me as a valued member of the team.\\
+Q77 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit make me feel I belong.\\
+Q78 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit care about me as a person.\\
+Q79 & Diversity, Equity, Inclusion, and Accessibility & I am comfortable expressing opinions that are different from other employees in my work unit.\\
+Q80 & Diversity, Equity, Inclusion, and Accessibility & In my work unit, people’s differences are respected.\\
+Q81 & Diversity, Equity, Inclusion, and Accessibility & I can be successful in my organization being myself.\\
+Q82 & Diversity, Equity, Inclusion, and Accessibility & I can easily make a request of my organization to meet my accessibility needs.\\
+Q83 & Diversity, Equity, Inclusion, and Accessibility & My organization responds to my accessibility needs in a timely manner.\\
+Q84 & Diversity, Equity, Inclusion, and Accessibility & My organization meets my accessibility needs.\\
+Q85 & Employee Experience & My job inspires me.\\
+Q86 & Employee Experience & The work I do gives me a sense of accomplishment.\\
+Q87 & Employee Experience & I feel a strong personal attachment to my organization.\\
+Q88 & Employee Experience & I identify with the mission of my organization.\\
+Q89 & Employee Experience & It is important to me that my work contribute to the common good.\\
+Q55 & Leadership & In my organization, senior leaders generate high levels of motivation and commitment in the workforce.\\
+Q56 & Leadership & My organization's senior leaders maintain high standards of honesty and integrity.\\
+Q57 & Leadership & Managers communicate the goals of the organization.\\
+Q58 & Leadership & Managers promote communication among different work units (for example, about projects, goals, needed resources).\\
+Q59 & Leadership & Overall, how good a job do you feel is being done by the manager directly above your immediate supervisor?\\
+Q60 & Leadership & I have a high level of respect for my organization's senior leaders.\\
+Q61 & Leadership & Senior leaders demonstrate support for Work-Life programs.\\
+Q62 & Leadership & Management encourages innovation.\\
+Q63 & Leadership & Management makes effective changes to address challenges facing our organization.\\
+Q64 & Leadership & Management involves employees in decisions that affect their work.\\
+Q35 & My Organization & Employees are recognized for providing high quality products and services.\\
+Q36 & My Organization & Employees are protected from health and safety hazards on the job.\\
+Q37 & My Organization & My organization is successful at accomplishing its mission.\\
+Q38 & My Organization & I have a good understanding of my organization’s priorities.\\
+Q39 & My Organization & My organization effectively adapts to changing government priorities.\\
+Q40 & My Organization & My organization has prepared me for potential physical security threats.\\
+Q41 & My Organization & My organization has prepared me for potential cybersecurity threats.\\
+Q42 & My Organization & In my organization, arbitrary action, personal favoritism and/or political coercion are not tolerated.\\
+Q43 & My Organization & I recommend my organization as a good place to work.\\
+Q44 & My Organization & I believe the results of this survey will be used to make my agency a better place to work.\\
+Q65 & My Satisfaction & How satisfied are you with your involvement in decisions that affect your work?\\
+Q66 & My Satisfaction & How satisfied are you with the information you receive from management on what's going on in your organization?\\
+Q67 & My Satisfaction & How satisfied are you with the recognition you receive for doing a good job?\\
+Q68 & My Satisfaction & Considering everything, how satisfied are you with your job?\\
+Q69 & My Satisfaction & Considering everything, how satisfied are you with your pay?\\
+Q70 & My Satisfaction & Considering everything, how satisfied are you with your organization?\\
+Q45 & My Supervisor & My supervisor is committed to a workforce representative of all segments of society.\\
+Q46 & My Supervisor & Supervisors in my work unit support employee development.\\
+Q47 & My Supervisor & My supervisor supports my need to balance work and other life issues.\\
+Q48 & My Supervisor & My supervisor listens to what I have to say.\\
+Q49 & My Supervisor & My supervisor treats me with respect.\\
+Q50 & My Supervisor & I have trust and confidence in my supervisor.\\
+Q51 & My Supervisor & My supervisor holds me accountable for achieving results.\\
+Q52 & My Supervisor & Overall, how good a job do you feel is being done by your immediate supervisor?\\
+Q53 & My Supervisor & My supervisor provides me with constructive suggestions to improve my job performance.\\
+Q54 & My Supervisor & My supervisor provides me with performance feedback throughout the year.\\
+Q1 & My Work Experience & I am given a real opportunity to improve my skills in my organization.\\
+Q10 & My Work Experience & I receive the training I need to do my job well.\\
+Q11 & My Work Experience & I am held accountable for the quality of work I produce.\\
+Q12 & My Work Experience & Continually changing work priorities make it hard for me to produce high quality work.\\
+Q13 & My Work Experience & I have a clear idea of how well I am doing my job.\\
+Q2 & My Work Experience & I feel encouraged to come up with new and better ways of doing things.\\
+Q3 & My Work Experience & My work gives me a feeling of personal accomplishment.\\
+Q4 & My Work Experience & I know what is expected of me on the job.\\
+Q5 & My Work Experience & My workload is reasonable.\\
+Q6 & My Work Experience & My talents are used well in the workplace.\\
+Q7 & My Work Experience & I know how my work relates to the agency's goals.\\
+Q8 & My Work Experience & I can disclose a suspected violation of any law, rule or regulation without fear of reprisal.\\
+Q9 & My Work Experience & I have enough information to do my job well.\\
+Q14 & My Work Unit & The people I work with cooperate to get the job done.\\
+Q15\_1 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_2 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_3 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_4 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_5 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_6 & My Work Unit & In my work unit poor performers usually:\\
+Q16 & My Work Unit & In my work unit, differences in performance are recognized in a meaningful way.\\
+Q17 & My Work Unit & Employees in my work unit share job knowledge.\\
+Q18 & My Work Unit & My work unit has the job-relevant knowledge and skills necessary to accomplish organizational goals.\\
+Q19 & My Work Unit & Employees in my work unit meet the needs of our customers.\\
+Q20 & My Work Unit & Employees in my work unit contribute positively to my agency's performance.\\
+Q21 & My Work Unit & Employees in my work unit produce high-quality work.\\
+Q22 & My Work Unit & Employees in my work unit adapt to changing priorities.\\
+Q23 & My Work Unit & New hires in my work unit (i.e. hired in the past year) have the right skills to do their jobs.\\
+Q24 & My Work Unit & I can influence decisions in my work unit.\\
+Q25 & My Work Unit & I know what my work unit’s goals are.\\
+Q26 & My Work Unit & My work unit commits resources to develop new ideas (e.g., budget, staff, time, expert support).\\
+Q27 & My Work Unit & My work unit successfully manages disruptions to our work.\\
+Q28 & My Work Unit & Employees in my work unit consistently look for new ways to improve how they do their work.\\
+Q29 & My Work Unit & Employees in my work unit incorporate new ideas into their work.\\
+Q30 & My Work Unit & Employees in my work unit approach change as an opportunity.\\
+Q31 & My Work Unit & Employees in my work unit consider customer needs a top priority.\\
+Q32 & My Work Unit & Employees in my work unit consistently look for ways to improve customer service.\\
+Q33 & My Work Unit & Employees in my work unit support my need to balance my work and personal responsibilities.\\
+Q34 & My Work Unit & Employees in my work unit are typically under too much pressure to meet work goals.\\
+Q90 & Pandemic, Transition to the Worksite, Workplace Flexibilities & What percentage of your work time are you currently required to be physically present at your agency worksite (including headquarters, bureau, field offices, etc.)?\\
+Q91 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Please select the response that BEST describes your current remote work or teleworking schedule.\\
+Q92 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Did you have an approved remote work agreement before the 2020 COVID-19 pandemic?\\
+Q93 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Based on your work unit’s current telework or remote work options, are you considering leaving your organization, and if so, why?\\
+Q94 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My agency’s re-entry arrangements are fair in accounting for employees’ diverse needs and situations.\\
+Q95 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Please select the response that BEST describes how employees in your work unit currently report to work:\\
+Q96 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My organization’s senior leaders support policies and procedures to protect employee health and safety.\\
+Q97 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My organization’s senior leaders provide effective communications about what to expect with the return to the physical worksite.\\
+Q98 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My supervisor supports my efforts to stay healthy and safe while working.\\
+Q99 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My supervisor creates an environment where I can voice my concerns about staying healthy and safe.\\
+\bottomrule
+\end{longtable}
+
+}
+
+\end{lltable}
+\efloatseparator
+ 
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
 [tbp]
@@ -928,19 +1055,19 @@ weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:summarytable}AUC scores for all models}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:summarytable}AUC scores for all models}
+
+\begin{tabular}{lllll}
 \toprule
 Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:summarytable} continued}}\\
-\toprule
-Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
-\midrule
-\endhead
 xgb100 & xgboosting & 100.00 & 105.00 & 0.98\\
 nn100 & Neural Network & 100.00 & 105.00 & 0.98\\
 svm100 & Support Vector Machines & 100.00 & 105.00 & 0.98\\
@@ -972,24 +1099,27 @@ svm1k & Support Vector Machines & 1,000.00 & 105.00 & 0.75\\
 rf1k & Random Forest & 1,000.00 & 105.00 & 0.75\\
 logi1k & Logistic Regression & 1,000.00 & 105.00 & 0.74\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:study2descr}Descriptive Statistics}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:study2descr}Descriptive Statistics}
+
+\begin{tabular}{lllll}
 \toprule
 X & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{std} & \multicolumn{1}{c}{min} & \multicolumn{1}{c}{max}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:study2descr} continued}}\\
-\toprule
-X & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{std} & \multicolumn{1}{c}{min} & \multicolumn{1}{c}{max}\\
-\midrule
-\endhead
 TI & 0.27 & 0.44 & 0.00 & 1.00\\
 EES & 3.61 & 0.96 & 1.00 & 5.00\\
 JIMS & 2.89 & 0.70 & 1.40 & 4.70\\
@@ -1013,33 +1143,39 @@ BIO11 & 3.30 & 1.12 & 1.00 & 5.00\\
 BIO12 & 3.34 & 1.14 & 1.00 & 5.00\\
 BIO13 & 3.92 & 1.04 & 1.00 & 5.00\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:biotable}Biodata only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:biotable}Biodata only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:biotable} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score Biodata}\\
-\midrule
-\endhead
 Logistic Regression & 0.57\\
 XGBoost & 0.61\\
 Neural Network & 0.57\\
 SVM & 0.50\\
 Random Forest & 0.66\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
 \begin{ThreePartTable}

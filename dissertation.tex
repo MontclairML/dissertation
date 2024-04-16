@@ -367,7 +367,7 @@ Dr. John T. Kulas
 
 \end{center}
 
-This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the ``garbage in garbage out'' concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, Support Vector Machines, and logistic regression. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
+This dissertation explores the ongoing debate between traditional statistical regression models and machine learning (ML) algorithms in predictive modeling, focusing on the impact of sample size and the number of variables. Study 1 investigates the relationship between sample size and predictive accuracy, proposing hypotheses regarding the advantages of ML over regression as sample size increases. Additionally, the study examines the influence of the number of variables on predictive accuracy, emphasizing the trade-off between ML and regression models. Using data from the Federal Employee Viewpoint Survey, the research aims to contribute insights into the conditions favoring each modeling approach. Study 2 shifts the focus to incremental validity, exploring whether work-related psychological constructs enhance ML models' predictive accuracy in turnover intention compared to biodata alone. The proposed hypotheses suggest that incorporating psychological constructs will improve predictive accuracy, addressing the ``garbage in garbage out'' concern prevalent in ML applications. The methods involve diverse datasets, including responses from federal employees and an online survey through Amazon's MTurk, with machine learning algorithms such as Gradient Boosting Trees, Random Forest, Neural Networks, and Support Vector Machines being compared to linear and logistic regressions. The dissertation seeks to advance understanding in the field, offering practical insights for researchers and practitioners navigating the dynamic landscape of predictive modeling.
 
 \newpage
 \fancyhead[LO, LE]{INFLUENCE OF PARSIMONY}
@@ -399,7 +399,7 @@ Making the wrong decision when giving a promotion or demotion can cause waste of
 This is why personnel placement processes are some of the most pivotal in human resources (Macijauskien \& Stankevi, 2021).
 
 When making decisions for placement using traditional regression-based methods, there is a high probability of this being affected by subjective factors that can cause biased choices from time to time (Fallucchi et al., 2020).
-With machine learning, on the other hand, these decisions are based on a bit more objective foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods).
+With machine learning, on the other hand, these decisions are based on a bit more objective foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods) (Raji \& Buolamwini, 2019; Zou \& Schiebinger, 2018).
 Not only this, but the decisions made in the personnel placement process can be explained to the candidates with their reasons, providing them with confidence in the results and diminishing the chances of low perceived organizational justice/support and high turnover.
 
 The aim of this dissertation is to investigate and compare the predictive capabilities of regression-based models and machine learning models in the context of turnover prediction, focusing specifically on sample sizes and number of variables.
@@ -433,7 +433,7 @@ Contrarily, models relying solely on demographics and biodata may overlook criti
 While these variables provide basic demographic information, they may lack the depth and specificity necessary to capture the nuances and complexities of turnover behavior (Hom et al., 2012).
 Incorporating work-related psychological antecedent variables can offer a more nuanced and accurate prediction by considering individual attitudes, perceptions, and experiences within the organizational context, as has been demonstrated before (Lee et al., 2021; Meyer et al., 2004).
 
-This second study aims to address this research question by employing comprehensive data.
+This second study aims to address this research question by employing survey data.
 By leveraging turnover intention data and a restricted set of independent variables, along with relevant predictor variables such as demographics/biodata, job characteristics, employee engagement, and other work-related psychological antecedent variables of turnover, a comparative analysis will be conducted.
 The performance of regression-based models and machine learning models will be assessed using various metrics, including accuracy, precision, recall, and the area under the receiver operating characteristic curve (AUC-ROC) (Davis \& Goadrich, 2006).
 
@@ -528,8 +528,8 @@ Typically, parsimony is reported as the performance metric of models that are sp
 \hypertarget{algorithms}{%
 \section{Algorithms}\label{algorithms}}
 
-In this study, various machine learning algorithms are described and assessed in their ability to predict dependent variables of interest in the field of I/O psychology, specifically turnover intention.
-This section provides a general overview of the theory behind these algorithms.
+In this dissertation, various machine learning algorithms are described and assessed in their ability to predict dependent variables of interest in the field of I/O psychology, specifically turnover intention.
+This section provides a general overview of the underlying mechanicsms behind these algorithms.
 
 \hypertarget{decision-trees}{%
 \subsection{Decision Trees}\label{decision-trees}}
@@ -542,7 +542,7 @@ Nodes are split into sub-nodes based on a threshold value of a variable (Mahesh,
 Decision trees are capable of handling missing values and mixed features, as well as to select variables automatically.
 On the downside, their predictive power is not as high as other algorithms and they are not stable with high model variance and small variations in the data.
 This could result in a large effect on the tree structure that is not meaningful.
-Understanding how they operate becomes important in order to understand other algorithms, such as random forest and gradient boosting trees (Alpaydin, 2020; Marsland, 2011).
+However, understanding how they operate becomes important in order to understand other algorithms, such as random forest and gradient boosting trees (Alpaydin, 2020; Marsland, 2011).
 
 \hypertarget{classification-and-regression-trees-cart}{%
 \subsection{Classification and Regression Trees (CART)}\label{classification-and-regression-trees-cart}}
@@ -604,7 +604,7 @@ Once this is done, the trees are summed and regularized to avoid overfitting (Ch
 
 Neural networks were built with the intention of emulating the human nervous system. The input is associated with weights, bias, activation functions, and a computed output from all of this. Much like decision trees, NNs consist of nodes and connections between the nodes, with input nodes, output nodes, and different layers of nodes in between. A neural network may contain more than one layer between input and output to handle complex problems. These layers are referred to as hidden layers (Alpaydin, 2020).
 The way the algorithm works is that the input node moves to the hidden layer by being multiplied by the weight and having the bias added, each of which is associated with the input. This is done for every single value in the input (also called IV), and the results are put into the activation function formula associated to hidden layers. The activation function is what decides the predicted output, and the formula varies depending on which function is being used. Common activation functions are the sigmoid, soft plus, hyperbolic tangent, and rectified linear units (ReLu). The weights and bias come from fitting the NN to the data beforehand using a method called ``backpropagation.'' After scaling the portion of the activation function estimated, the resulting functions are aggregated, then multiplied by the weights associated with the output and the bias also associated with the output is later added, resulting in a function that fits the data and that is used to make predictions based on the input.
-To model very complex neural networks with high predictive power, one can extend the model by adding more hidden layers, which is what we know as deep learning. Due to the rapid development of hardware and continuous research on backpropagation techniques, NNs are the most studied area in machine learning (Alpaydin, 2020; Mahesh, 2020; Marsland, 2011).
+To model very complex neural networks with high predictive power, one can extend the model by adding more hidden layers, which is what we know as deep learning. Due to the rapid development of hardware and continuous research on backpropagation techniques, NNs are a well studied area in machine learning (Alpaydin, 2020; Mahesh, 2020; Marsland, 2011).
 
 \hypertarget{support-vector-machines-svm-classifiers}{%
 \subsection{Support Vector Machines (SVM) classifiers}\label{support-vector-machines-svm-classifiers}}
@@ -741,6 +741,7 @@ Using machine learning algorithms with such small number of variables could comp
 This study is based on prior research (Kirasich et al., 2018; Sanchez-Pinto, Venable, et al., 2018), which suggests that ML algorithms outperform regression models consistently when the sample size is large.
 In their study, they compared machine learning methods with regression methods for variable selection for two differently sized datasets, focusing on parsimony in predictor selection, which balances predictive accuracy with the sparsity of predictors.
 Their findings were that for the smaller dataset (N=6,565), regression achieved the best predictive accuracy, while machine learning methods faring better only in the larger dataset (N=269,999).
+However, the study's approach of using only two distinct sample sizes---one relatively small and the other significantly large---presents certain limitations. Specifically, this binary distinction may not sufficiently capture the nuances that could emerge with intermediate sample sizes. A broader range of dataset sizes might provide a more comprehensive understanding of how the performance of these methods scales with sample size. Including multiple datasets that vary incrementally in size could help delineate more precisely the thresholds at which machine learning begins to outperform traditional regression, or vice versa, thus offering deeper insights into the relative advantages of each analytical method across a spectrum of conditions.
 Since there is some recognition that regression models perform well with smaller datasets, where the number of observations is limited, and that ML algorithms tend to outperform when the dataset is very large, the following hypotheses for Study 1 are proposed:
 
 Hypothesis 1: As sample size increases, the relative advantage in predictive accuracy of turnover intention between ML and regression-based algorithms will increase.
@@ -759,7 +760,7 @@ Both simulated and real-world data will be used to test these two hypotheses.
 \hypertarget{study-2-incremental-validity}{%
 \subsection{Study 2: Incremental Validity}\label{study-2-incremental-validity}}
 
-The literature review done on 28 articles that studied the predictive accuracy of machine learning models when predicting relevant variables from a job selection context, such as turnover or job satisfaction, noted that only 9\% of the studies looked at independent variables that I/O psychologists typically use in predicting job performance in selection contexts, and that the literature has proved are relevant in predicting job performance/turnover, such as job satisfaction, commitment, conscientiousness, organizational identification, perceived organization support and justice, involvement, or engagement (Choi, 2011; Ertas, 2015; Franzen et al., 2022; Kim \& Fernandez, 2017; Liss-Levinson et al., 2015, 2015; Maertz Jr et al., 2007; Meyer \& Allen, 1991; Pitts et al., 2011; Reeve \& Smith, 2001; Schaufeli et al., 2017; Shamir \& Kark, 2004; Shore \& Tetrick, 1991; Smith, 2005). None of the articles that were predicting turnover or turnover intention used any measure of any of these psychological constructs.
+The literature review done on 28 articles that studied the predictive accuracy of machine learning models when predicting relevant variables from a job selection context, such as turnover or job satisfaction, noted that only 9\% of the studies looked at independent variables that I/O psychologists typically use in predicting job performance in selection contexts. The literature has proved that there variables are relevant in predicting job performance/turnover, such as job satisfaction, commitment, conscientiousness, organizational identification, perceived organization support and justice, involvement, or engagement (Choi, 2011; Ertas, 2015; Franzen et al., 2022; Kim \& Fernandez, 2017; Liss-Levinson et al., 2015, 2015; Maertz Jr et al., 2007; Meyer \& Allen, 1991; Pitts et al., 2011; Reeve \& Smith, 2001; Schaufeli et al., 2017; Shamir \& Kark, 2004; Shore \& Tetrick, 1991; Smith, 2005). None of the articles that were predicting turnover or turnover intention used any measure of any of these psychological constructs.
 The literature in the field of I/O psychology has much to contribute in using the appropriate predictors for building machine learning algorithms that want to predict job performance and turnover.
 This would help the ``garbage in garbage out'' criterion problem that is so common with ML.
 
@@ -768,9 +769,7 @@ These variables capture psychological and organizational aspects that directly i
 Assessing whether work-related psychological contructs show incremental validity over biodata when establishing criterion-related validity with turnover intention is of interest in the study of machine learning in the I/O psychology field.
 The proposed hypotheses are the following:
 
-Hypothesis 3a: machine learning models trained with work-related psychological constructs will show better predictive accuracy metrics when predicting turnover intention than models trained using biodata.
-
-Hypothesis 3b: the predictive accuracy of machine learning models will increase when work-related psychological constructs are added to the model.
+Hypothesis 3: machine learning models trained with work-related psychological constructs will show better predictive accuracy metrics when predicting turnover intention than models trained using biodata.
 
 \hypertarget{study-1}{%
 \section{Study 1}\label{study-1}}
@@ -782,46 +781,177 @@ Hypothesis 3b: the predictive accuracy of machine learning models will increase 
 \subsection{Procedure and Participants}\label{procedure-and-participants}}
 
 The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management here: \url{https://www.opm.gov/fevs/public-data-file/}.
-The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.\\
+
+This survey is administered annually by the Office of Personnel Management (OPM). It is administered to employees of Departments and large agencies and the small/independent agencies that accept an invitation to participate in the survey. The survey is conducted electronically, with eligible employees invited to participate by email notification. To encourage higher response rates, OPM sends follow-up or reminder emails to potential participants. More information on the OPM FEVS can be found in the official technical report they upload to their website here: \url{https://www.opm.gov/fevs/reports/technical-reports/technical-report/technical-report/2022/2022-technical-report.pdf}
+
+The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. To ensure data anonymity, no identifying information was collected. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.\\
 Additionally, to test for hypothesis 2, samples with varying number of predictors will be randomly selected from the FAVS. These will be with 40, 75, and the full 105.
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-The variables used in the FEVS are the following:
+\begin{lltable}
+
+\tiny{
+
+\begin{longtable}{lll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:fevsitems}FEVS Items}\\
+\toprule
+VARIABLE & \multicolumn{1}{c}{SURVEY SECTION} & \multicolumn{1}{c}{ITEM TEXT}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:fevsitems} continued}}\\
+\toprule
+VARIABLE & \multicolumn{1}{c}{SURVEY SECTION} & \multicolumn{1}{c}{ITEM TEXT}\\
+\midrule
+\endhead
+Q71 & Diversity, Equity, Inclusion, and Accessibility & My organization’s management practices promote diversity (e.g., outreach, recruitment, promotion opportunities).\\
+Q72 & Diversity, Equity, Inclusion, and Accessibility & My supervisor demonstrates a commitment to workforce diversity (e.g., recruitment, promotion opportunities, development).\\
+Q73 & Diversity, Equity, Inclusion, and Accessibility & I have similar access to advancement opportunities (e.g., promotion, career development, training) as others in my work unit.\\
+Q74 & Diversity, Equity, Inclusion, and Accessibility & My supervisor provides opportunities fairly to all employees in my work unit (e.g., promotions, work assignments).\\
+Q75 & Diversity, Equity, Inclusion, and Accessibility & In my work unit, excellent work is similarly recognized for all employees (e.g., awards, acknowledgements).\\
+Q76 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit treat me as a valued member of the team.\\
+Q77 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit make me feel I belong.\\
+Q78 & Diversity, Equity, Inclusion, and Accessibility & Employees in my work unit care about me as a person.\\
+Q79 & Diversity, Equity, Inclusion, and Accessibility & I am comfortable expressing opinions that are different from other employees in my work unit.\\
+Q80 & Diversity, Equity, Inclusion, and Accessibility & In my work unit, people’s differences are respected.\\
+Q81 & Diversity, Equity, Inclusion, and Accessibility & I can be successful in my organization being myself.\\
+Q82 & Diversity, Equity, Inclusion, and Accessibility & I can easily make a request of my organization to meet my accessibility needs.\\
+Q83 & Diversity, Equity, Inclusion, and Accessibility & My organization responds to my accessibility needs in a timely manner.\\
+Q84 & Diversity, Equity, Inclusion, and Accessibility & My organization meets my accessibility needs.\\
+Q85 & Employee Experience & My job inspires me.\\
+Q86 & Employee Experience & The work I do gives me a sense of accomplishment.\\
+Q87 & Employee Experience & I feel a strong personal attachment to my organization.\\
+Q88 & Employee Experience & I identify with the mission of my organization.\\
+Q89 & Employee Experience & It is important to me that my work contribute to the common good.\\
+Q55 & Leadership & In my organization, senior leaders generate high levels of motivation and commitment in the workforce.\\
+Q56 & Leadership & My organization's senior leaders maintain high standards of honesty and integrity.\\
+Q57 & Leadership & Managers communicate the goals of the organization.\\
+Q58 & Leadership & Managers promote communication among different work units (for example, about projects, goals, needed resources).\\
+Q59 & Leadership & Overall, how good a job do you feel is being done by the manager directly above your immediate supervisor?\\
+Q60 & Leadership & I have a high level of respect for my organization's senior leaders.\\
+Q61 & Leadership & Senior leaders demonstrate support for Work-Life programs.\\
+Q62 & Leadership & Management encourages innovation.\\
+Q63 & Leadership & Management makes effective changes to address challenges facing our organization.\\
+Q64 & Leadership & Management involves employees in decisions that affect their work.\\
+Q35 & My Organization & Employees are recognized for providing high quality products and services.\\
+Q36 & My Organization & Employees are protected from health and safety hazards on the job.\\
+Q37 & My Organization & My organization is successful at accomplishing its mission.\\
+Q38 & My Organization & I have a good understanding of my organization’s priorities.\\
+Q39 & My Organization & My organization effectively adapts to changing government priorities.\\
+Q40 & My Organization & My organization has prepared me for potential physical security threats.\\
+Q41 & My Organization & My organization has prepared me for potential cybersecurity threats.\\
+Q42 & My Organization & In my organization, arbitrary action, personal favoritism and/or political coercion are not tolerated.\\
+Q43 & My Organization & I recommend my organization as a good place to work.\\
+Q44 & My Organization & I believe the results of this survey will be used to make my agency a better place to work.\\
+Q65 & My Satisfaction & How satisfied are you with your involvement in decisions that affect your work?\\
+Q66 & My Satisfaction & How satisfied are you with the information you receive from management on what's going on in your organization?\\
+Q67 & My Satisfaction & How satisfied are you with the recognition you receive for doing a good job?\\
+Q68 & My Satisfaction & Considering everything, how satisfied are you with your job?\\
+Q69 & My Satisfaction & Considering everything, how satisfied are you with your pay?\\
+Q70 & My Satisfaction & Considering everything, how satisfied are you with your organization?\\
+Q45 & My Supervisor & My supervisor is committed to a workforce representative of all segments of society.\\
+Q46 & My Supervisor & Supervisors in my work unit support employee development.\\
+Q47 & My Supervisor & My supervisor supports my need to balance work and other life issues.\\
+Q48 & My Supervisor & My supervisor listens to what I have to say.\\
+Q49 & My Supervisor & My supervisor treats me with respect.\\
+Q50 & My Supervisor & I have trust and confidence in my supervisor.\\
+Q51 & My Supervisor & My supervisor holds me accountable for achieving results.\\
+Q52 & My Supervisor & Overall, how good a job do you feel is being done by your immediate supervisor?\\
+Q53 & My Supervisor & My supervisor provides me with constructive suggestions to improve my job performance.\\
+Q54 & My Supervisor & My supervisor provides me with performance feedback throughout the year.\\
+Q1 & My Work Experience & I am given a real opportunity to improve my skills in my organization.\\
+Q10 & My Work Experience & I receive the training I need to do my job well.\\
+Q11 & My Work Experience & I am held accountable for the quality of work I produce.\\
+Q12 & My Work Experience & Continually changing work priorities make it hard for me to produce high quality work.\\
+Q13 & My Work Experience & I have a clear idea of how well I am doing my job.\\
+Q2 & My Work Experience & I feel encouraged to come up with new and better ways of doing things.\\
+Q3 & My Work Experience & My work gives me a feeling of personal accomplishment.\\
+Q4 & My Work Experience & I know what is expected of me on the job.\\
+Q5 & My Work Experience & My workload is reasonable.\\
+Q6 & My Work Experience & My talents are used well in the workplace.\\
+Q7 & My Work Experience & I know how my work relates to the agency's goals.\\
+Q8 & My Work Experience & I can disclose a suspected violation of any law, rule or regulation without fear of reprisal.\\
+Q9 & My Work Experience & I have enough information to do my job well.\\
+Q14 & My Work Unit & The people I work with cooperate to get the job done.\\
+Q15\_1 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_2 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_3 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_4 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_5 & My Work Unit & In my work unit poor performers usually:\\
+Q15\_6 & My Work Unit & In my work unit poor performers usually:\\
+Q16 & My Work Unit & In my work unit, differences in performance are recognized in a meaningful way.\\
+Q17 & My Work Unit & Employees in my work unit share job knowledge.\\
+Q18 & My Work Unit & My work unit has the job-relevant knowledge and skills necessary to accomplish organizational goals.\\
+Q19 & My Work Unit & Employees in my work unit meet the needs of our customers.\\
+Q20 & My Work Unit & Employees in my work unit contribute positively to my agency's performance.\\
+Q21 & My Work Unit & Employees in my work unit produce high-quality work.\\
+Q22 & My Work Unit & Employees in my work unit adapt to changing priorities.\\
+Q23 & My Work Unit & New hires in my work unit (i.e. hired in the past year) have the right skills to do their jobs.\\
+Q24 & My Work Unit & I can influence decisions in my work unit.\\
+Q25 & My Work Unit & I know what my work unit’s goals are.\\
+Q26 & My Work Unit & My work unit commits resources to develop new ideas (e.g., budget, staff, time, expert support).\\
+Q27 & My Work Unit & My work unit successfully manages disruptions to our work.\\
+Q28 & My Work Unit & Employees in my work unit consistently look for new ways to improve how they do their work.\\
+Q29 & My Work Unit & Employees in my work unit incorporate new ideas into their work.\\
+Q30 & My Work Unit & Employees in my work unit approach change as an opportunity.\\
+Q31 & My Work Unit & Employees in my work unit consider customer needs a top priority.\\
+Q32 & My Work Unit & Employees in my work unit consistently look for ways to improve customer service.\\
+Q33 & My Work Unit & Employees in my work unit support my need to balance my work and personal responsibilities.\\
+Q34 & My Work Unit & Employees in my work unit are typically under too much pressure to meet work goals.\\
+Q90 & Pandemic, Transition to the Worksite, Workplace Flexibilities & What percentage of your work time are you currently required to be physically present at your agency worksite (including headquarters, bureau, field offices, etc.)?\\
+Q91 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Please select the response that BEST describes your current remote work or teleworking schedule.\\
+Q92 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Did you have an approved remote work agreement before the 2020 COVID-19 pandemic?\\
+Q93 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Based on your work unit’s current telework or remote work options, are you considering leaving your organization, and if so, why?\\
+Q94 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My agency’s re-entry arrangements are fair in accounting for employees’ diverse needs and situations.\\
+Q95 & Pandemic, Transition to the Worksite, Workplace Flexibilities & Please select the response that BEST describes how employees in your work unit currently report to work:\\
+Q96 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My organization’s senior leaders support policies and procedures to protect employee health and safety.\\
+Q97 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My organization’s senior leaders provide effective communications about what to expect with the return to the physical worksite.\\
+Q98 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My supervisor supports my efforts to stay healthy and safe while working.\\
+Q99 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My supervisor creates an environment where I can voice my concerns about staying healthy and safe.\\
+\bottomrule
+\end{longtable}
+
+}
+
+\end{lltable}
+
+All items used in the FEVS can be found in table \ref{tab:fevsitems}. The variables used in the FEVS are the following:
 
 \hypertarget{independent-variables}{%
-\subsection{Independent variables}\label{independent-variables}}
+\subsection{Independent variables:}\label{independent-variables}}
 
-\hypertarget{individual-characteristics}{%
-\subsubsection{Individual characteristics}\label{individual-characteristics}}
+The 2022 OPM FEVS was conducted via the Web. The 122-item survey included 20 demographic questions and 104 items that were grouped into twelve topic headings intended to organize the instruments and facilitate respondent comprehension. Below is a summary of the questions within topics. See table \ref{tab:fevsitems} for the actual items.
 
-Several factors consistently linked to turnover intention, such as gender (Ertas, 2015 ; Ko \& Hur, 2014; Wynen \& Op de Beeck, 2014), minority status (Pink-Harper \& Rauhaus, 2017; Weaver, 2015), educational achievement (Joo et al., 2012; Liss-Levinson et al., 2015), supervisory position (Ertas, 2015; Pink-Harper \& Rauhaus, 2017), and organizational tenure (Lewis, 1992; Pitts et al., 2011; Wynen \& Op de Beeck, 2014).
-Examples of survey items assessing these variables include ``How long have you been with the Federal Government (excluding military service)?'' and ``What is your supervisory status?''
+2022 OPM FEVS topic areas:
+- My Work Experience: Items 1--13 addressed employees' personal work experiences and opinions. Response scales ranged from ``Strongly Agree'' to ``Strongly Disagree''.
 
-\hypertarget{job-characteristics}{%
-\subsubsection{Job characteristics}\label{job-characteristics}}
-
-Seven factors pertaining to job characteristics were chosen: job satisfaction (Ertas, 2015; Kim \& Fernandez, 2017; Pitts et al., 2011), personal accomplishment (Ertas, 2015; Wynen \& Op de Beeck, 2014), workload (Wynen \& Op de Beeck, 2014, 2014), meaningfulness (Ertas, 2015; Kim \& Fernandez, 2017; Weaver, 2015), and goal clarity (Ertas, 2015; Ko \& Hur, 2014; Weaver, 2015).
-Sample survey items gauging these variables include ``Considering everything, how satisfied are you with your job?''; ``My work gives me a feeling of personal accomplishment''; and ``My workload is reasonable.''
-
-\hypertarget{organizational-characteristics}{%
-\subsubsection{Organizational characteristics}\label{organizational-characteristics}}
-
-Eleven factors linked to organizational policies were included: compensation {[}Wynen and Op de Beeck (2014); Wynen and Op de Beeck (2014)), family-friendly policies (Durst, 1999; Joo et al., 2012), training and skill development (Curry et al., 2005), diversity management (Choi, 2009), and promotion and advancement policy (Cotton \& Tuttle, 1986; Johnson et al., 2000; Porter et al., 1974).
-Sample survey items evaluating these variables include ``Considering everything, how satisfied are you with your pay?''; ``My supervisor supports my need to balance work and other life issues''; and ``How satisfied are you with your opportunity to get a better job in your organization?''
-
-\hypertarget{workplace-environment}{%
-\subsubsection{Workplace environment}\label{workplace-environment}}
-
-Thirty-six factors pertaining to organizational environments were selected: organizational satisfaction (Liss-Levinson et al., 2015), coworker relations (Cotton \& Tuttle, 1986), supervisory support (Maertz Jr et al., 2007; Smith, 2005), supervisory communication (Joo et al., 2012), managerial trustworthiness (Ko \& Hur, 2014), organizational procedural justice (Choi, 2011), creativity (Ertas, 2015), employee empowerment (Kim \& Fernandez, 2017; Pink-Harper \& Rauhaus, 2017; Pitts et al., 2011), performance-oriented culture (Pitts et al., 2011), loyalty (Weaver, 2015), and organizational support (Liss-Levinson et al., 2015).
-Sample survey items assessing these variables include ``Considering everything, how satisfied are you with your organization?''; ``The people I work with cooperate to get the job done''; ``My supervisor provides me with constructive suggestions to improve my job performance''; ``My performance appraisal is a fair reflection of my performance''; and ``I recommend my organization as a good place to work.''
+\begin{itemize}
+\item
+  My Work Unit: Items 14--34 addressed employees' opinions regarding cooperation, recruitment, quality, and performance management in their work unit. Items 14-18 and 23-34 had response scales ranging from ``Strongly Agree'' to ``Strongly Disagree''. Items 19-22 had response scales ranging from ``Always'' to ``Never''.
+\item
+  My Organization: Items 35--44 covered agency policies and practices related to job performance, performance appraisals, workplace diversity and fairness, as well as perceptions of employees' personal empowerment, safety, and preparedness. This section also addressed employees' views of their agency. Response scales ranged from ``Strongly Agree'' to ``Strongly Disagree''.
+\item
+  My Supervisor: Items 45--54 addressed employees' perceptions of their supervisor. For instance, this section asked whether supervisors support work-life balance, provide opportunities to demonstrate leadership skills, and promote a workplace culture that supports staff development. Items 45-54 and 53-54 had a response scale that ranged from ``Strongly Agree'' to ``Strongly Disagree''. Item 52 had a response scale that ranged from ``Very Good'' to ``Very Poor''.
+\item
+  Leadership: Items 55--64 asked about the effectiveness of the agency's senior leaders and managers, overall, and in motivating employees, maintaining high ethical standards, communicating organizational policies, and generating respect. Items 55-58 and 60-64 had a response scale that ranged from ``Strongly Agree'' to ``Strongly Disagree''. Item 59 had a response scale from ``Very Good'' to ``Very Poor''.
+\item
+  My Satisfaction: Items 65--70 addressed employee satisfaction with various aspects of their jobs, including pay, job training, opportunities for advancement, recognition for work well done, and the policies and practices of senior leaders. Response scales ranged from ``Very Satisfied'' to ``Very Dissatisfied''.
+\item
+  Diversity, Equity, Inclusion, and Accessibility: Items 71--84 addressed employees perceptions of policies and practices related to diversity, equity, and inclusion in their agency and also meeting accessibility needs. Response scales ranged from ``Strongly Agree'' to ``Strongly Disagree''.
+\item
+  Employee Experience: Items 85--89 askes about employees' experience of they experience their work and what motivates them. Response scales ranged from ``Strongly Agree'' to ``Strongly Disagree''.
+\item
+  Pandemic, Transition to the Worksite, Workplace Flexibilities: Items 90--99 addressed the continuing impact of the COVID-19 pandemic and decisions related to returning to the worksite.
+\item
+  Paid Parental Leave: Items 100--104 asked about the experiences of using the new paid parental leave benefit for employees who indicated they had used it.
+\end{itemize}
 
 \hypertarget{dependent-variable}{%
-\subsection{Dependent variable}\label{dependent-variable}}
+\subsection{Dependent variable:}\label{dependent-variable}}
 
 \hypertarget{turnover-intention}{%
-\subsubsection{Turnover Intention}\label{turnover-intention}}
+\subsection{Turnover Intention}\label{turnover-intention}}
 
 Some scholars advise against using turnover intention as a proxy for actual turnover in federal government agencies.
 Analyzing age and experience as the unit of analysis revealed strong correlations between turnover intention and actual turnover.
@@ -1751,20 +1881,17 @@ The performance of a random forest model across categories was 0.69, as can be s
 \hypertarget{summary-results}{%
 \subsection{Summary Results}\label{summary-results}}
 
-\begin{center}
-\begin{ThreePartTable}
+\begin{table}[tbp]
 
-\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:summarytable}AUC scores for all models}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:summarytable}AUC scores for all models}
+
+\begin{tabular}{lllll}
 \toprule
 Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:summarytable} continued}}\\
-\toprule
-Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
-\midrule
-\endhead
 xgb100 & xgboosting & 100.00 & 105.00 & 0.98\\
 nn100 & Neural Network & 100.00 & 105.00 & 0.98\\
 svm100 & Support Vector Machines & 100.00 & 105.00 & 0.98\\
@@ -1796,10 +1923,12 @@ svm1k & Support Vector Machines & 1,000.00 & 105.00 & 0.75\\
 rf1k & Random Forest & 1,000.00 & 105.00 & 0.75\\
 logi1k & Logistic Regression & 1,000.00 & 105.00 & 0.74\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 The AUC score for all combination of models, sample sizes and number of variables has been summarized in table \ref{tab:summarytable}.
 
@@ -1812,49 +1941,58 @@ The AUC score for all combination of models, sample sizes and number of variable
 \hypertarget{procedure-and-participants-1}{%
 \subsection{Procedure and Participants}\label{procedure-and-participants-1}}
 
-A Qualtrics survey including will be sent out via Amazon's MTurk. Participants will be sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items, tracking response times, and synonymous/antonymous items will be used. The R careless package will be used to control for careless responding, with participants that are responding inconsistently in a significant way with the synonymous/antonymous items being excluded from the study. The Cloud Research platform will be used to to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria will be used for the online survey: approved 95\% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants will be compensated for their participation. The target sample size is 500 respondents.
+A Qualtrics survey including were sent out via Amazon's MTurk. Participants ere sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items and tracking response times, were used. The Cloud Research platform was used to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria were used for the online survey: approved 95\% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants were compensated for their participation with \$1.50 per assessment. The sample size was 241 after exclusions.
 
 \hypertarget{data-1}{%
 \subsection{Data}\label{data-1}}
 
 All survey items can be found in Appendix 2.
 
+\hypertarget{independent-variables-1}{%
+\subsection{Independent Variables}\label{independent-variables-1}}
+
 \hypertarget{work-related-psychological-constructs}{%
 \subsubsection{Work-related psychological constructs}\label{work-related-psychological-constructs}}
 
-The work-related psychological constructs will include the following FAVS measures: job satisfaction (Ertas, 2015; Kim \& Fernandez, 2017; Pitts et al., 2011), organizational satisfaction (Liss-Levinson et al., 2015), supervisory support (Maertz Jr et al., 2007; Smith, 2005), managerial trustworthiness (Ko \& Hur, 2014), employee empowerment (Kim \& Fernandez, 2017; Pink-Harper \& Rauhaus, 2017; Pitts et al., 2011), organizational support (Liss-Levinson et al., 2015), and organizational procedural justice (Choi, 2011).
-
-Additionally, the following publicly available instruments will be added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) (Schaufeli et al., 2017), the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) (Reeve \& Smith, 2001), the 18-items revised Three-Component Model (TCM) Employee Commitment Survey (Meyer \& Allen, 1991), the 1-item Graphic Scale of Organizational Identification (GSOI) (Shamir \& Kark, 2004), the 8-item Survey of Perceived Organizational Support (SPOS) (Shore \& Tetrick, 1991), and the 28-items Concise Conscientiousness Measure (CCM-S) (Franzen et al., 2022).
+The following publicly available instruments were added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) (Schaufeli et al., 2017) and the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) (Reeve \& Smith, 2001). The affective (ACS) and normative (NCS) components of the revised Three-Component Model (TCM) Employee Commitment Survey (Meyer \& Allen, 1991), will be used to measure commitment, and the 1-item Graphic Scale of Organizational Identification (GSOI) (Shamir \& Kark, 2004) will be used to measure organizational identification. The 8-item Survey of Perceived Organizational Support (SPOS) (Shore \& Tetrick, 1991) will be used to measure organizational support. Conscientiousness will be measured using the 6-items Big Five Inventory -- Short Form (BFI-2-S) (Franzen et al., 2022). All of these instruments are available in Appendix 2.
 
 \hypertarget{biodata}{%
 \subsubsection{Biodata}\label{biodata}}
 
-When measuring biodata, the following FAVS measures will be used: gender (Ertas, 2015 ; Ko \& Hur, 2014; Wynen \& Op de Beeck, 2014), minority status (Pink-Harper \& Rauhaus, 2017; Weaver, 2015), educational achievement (Joo et al., 2012; Liss-Levinson et al., 2015), supervisory position (Ertas, 2015; Pink-Harper \& Rauhaus, 2017), organizational tenure (Lewis, 1992; Pitts et al., 2011; Wynen \& Op de Beeck, 2014),
-compensation {[}Wynen and Op de Beeck (2014); Wynen and Op de Beeck (2014)), family-friendly policies (Durst, 1999; Joo et al., 2012), training and skill development (Curry et al., 2005), diversity management (Choi, 2009), promotion and advancement policy (Cotton \& Tuttle, 1986; Johnson et al., 2000; Porter et al., 1974), and coworker relations (Cotton \& Tuttle, 1986).
+Biodata, short for biographical data, is a psychological construct used in this study to predict turnover intentions and job satisfaction. The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
+
+\hypertarget{dependent-variables}{%
+\subsection{Dependent Variables}\label{dependent-variables}}
+
+\hypertarget{turnover-intention-1}{%
+\subsubsection{Turnover Intention}\label{turnover-intention-1}}
+
+To measured turnover intention a one item Turnover Intention (TI) scale was used, which asks the following: ``Are you contemplating leaving your organization within the next year?''
+
+\hypertarget{job-satisfaction}{%
+\subsubsection{Job Satisfaction}\label{job-satisfaction}}
+
+To measure job satisfaction the Michigan Organizational Assessment Questionnaire (MOAQ) short form was used. This is a streamlined version of the original instrument, designed to efficiently assess aspects of job satisfaction and organizational climate. This condensed form retains the core elements of the original MOAQ but reduces the number of items to facilitate quicker administration and analysis while maintaining robust psychometric properties (Lawler et al., 1979). The short form typically includes items that measure three key dimensions: job satisfaction, organizational commitment, and perceived organizational support. Each item is rated on a Likert scale, allowing respondents to express varying degrees of agreement or disagreement, providing a quantitative measure of an employee's satisfaction and engagement with their organization (Lawler et al., 1979; Seashore et al., 1983) .
 
 \hypertarget{data-analysis-1}{%
 \subsection{Data Analysis}\label{data-analysis-1}}
 
-Several machine learning algorithms will be used to train a series of models using biodata features only. These models includes GBT, RF, NN, SVM, and multiple regression. A second series of models that include work-related psychological constructs only in the data will be trained. Predictive accuracy metrics will be compared for each dataset to test hypothesis 3a.
-In addition, a baseline series of models will be trained using biodata features only. A second series of models that include work-related psychological constructs only in the data will be added to the models. Performance metrics of each model will be evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Bootstrap resampling will be used as a statistical test to assess whether the improvement in performance when adding psychological constructs is statistically significant. An F-test will be used to determine if the change in R-squared is statistically significant for multiple regression. This is done to test for hypothesis 3b.
+Several machine learning algorithms were used to train a series of models using biodata features only. These models include GBT, RF, NN, and SVM. A multiple and logistic regressions were compared to these machine learning models. A second series of models that include work-related psychological constructs only in the data were trained. Performance metrics of each model were evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Deltas between the AUC score of each set of models before and after adding work-related psychological constructs were computed to see whether there was a change in performance. This was done to test for hypothesis 3.
 
 \hypertarget{data-description}{%
 \subsection{Data Description}\label{data-description}}
 
-\begin{center}
-\begin{ThreePartTable}
+\begin{table}[tbp]
 
-\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:study2descr}Descriptive Statistics}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:study2descr}Descriptive Statistics}
+
+\begin{tabular}{lllll}
 \toprule
 X & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{std} & \multicolumn{1}{c}{min} & \multicolumn{1}{c}{max}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:study2descr} continued}}\\
-\toprule
-X & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{std} & \multicolumn{1}{c}{min} & \multicolumn{1}{c}{max}\\
-\midrule
-\endhead
 TI & 0.27 & 0.44 & 0.00 & 1.00\\
 EES & 3.61 & 0.96 & 1.00 & 5.00\\
 JIMS & 2.89 & 0.70 & 1.40 & 4.70\\
@@ -1878,10 +2016,12 @@ BIO11 & 3.30 & 1.12 & 1.00 & 5.00\\
 BIO12 & 3.34 & 1.14 & 1.00 & 5.00\\
 BIO13 & 3.92 & 1.04 & 1.00 & 5.00\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 The dataset used in this study consists of 241 observations, each represented by 22 variables. These variables encompass a mixture of continuous and categorical data types. Turnover Intention is the target variable, measured as a binary indicator (0 or 1). Job satisfaction, measures by the MOAQ, is also a target variable, and unlike Turnover Intention it is a continuous Likert-scale ranging from ``Strongly agree'' to ``Strongly disagree''. The work-related psychological constructs predictor variables were also continuous Likert-scales ranging from ``Strongly agree'' to ``Strongly disagree''. Biodata variables were continuous and varied in scale. Summary descriptive statistics for each variable in the dataset can be found in table \ref{tab:study2descr}.
 
@@ -1891,30 +2031,29 @@ The dataset used in this study consists of 241 observations, each represented by
 \hypertarget{predicting-turnover-intention}{%
 \subsection{Predicting Turnover Intention}\label{predicting-turnover-intention}}
 
-\begin{center}
-\begin{ThreePartTable}
+\begin{table}[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:biotable}Biodata only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:biotable}Biodata only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score Biodata}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:biotable} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score Biodata}\\
-\midrule
-\endhead
 Logistic Regression & 0.57\\
 XGBoost & 0.61\\
 Neural Network & 0.57\\
 SVM & 0.50\\
 Random Forest & 0.66\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
+
+\end{table}
 
 \begin{center}
 \begin{ThreePartTable}
@@ -1966,11 +2105,21 @@ Random Forest & 0.66 & 0.78 & 0.12\\
 \end{ThreePartTable}
 \end{center}
 
+\includegraphics{dissertation_files/figure-latex/coefbg-1.pdf}
+
+\includegraphics{dissertation_files/figure-latex/featuresbg-1.pdf}
+
 The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
 
 The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in AUC-ROC scores (table \ref{tab:wrctable}) compared to those based solely on biodata features (table \ref{tab:biotable}). As can be seen in table \ref{tab:deltas}, the deltas between the AUC scores with Biodata and the AUC scores when adding WRPC to the models are on average 0.17.
 
-The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+
+Additionally, as can be seen in figure \ref{fig:coefbg} and figure \ref{fig:featuresbg}, the comparative analysis of the two bar graphs, which depict feature importances derived from logistic regression and Random Forest models respectively, reveals distinct patterns in how each model values the same set of features.
+
+In the logistic regression model, the feature ``ACS'' displayed the most significant negative coefficient, suggesting a strong inverse relationship with the target variable. In stark contrast, ``MOAQ'' and ``SPOS'' showed slightly less negative coefficients, indicating their substantial but lesser influence compared to ``ACS''. On the other hand, ``BIO4'' and ``JIMS'' had positive coefficients, albeit smaller in magnitude, pointing to their positive but modest impact on the model's predictions.
+
+The Random Forest model presented a different hierarchy of feature importances. ``SPOS'' emerged as the most critical predictor with the highest importance score, indicating its predominant influence in the model. This was followed by ``MOAQ'' and ``ACS'', which also held significant importance but to a lesser extent than ``SPOS''. The features ``BFI'' and ``EES'', while contributing to the model, had relatively lower importance scores, suggesting their roles were not as decisive in the Random Forest model as in the logistic regression model.
 
 note: include deltas
 
@@ -2052,9 +2201,19 @@ Random Forest & 0.58 & 0.43 & -0.15\\
 \end{ThreePartTable}
 \end{center}
 
+\includegraphics{dissertation_files/figure-latex/coefbg2-1.pdf}
+
+\includegraphics{dissertation_files/figure-latex/featuresbg2-1.pdf}
+
 The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in RMSE scores (table \ref{tab:wrctable2}) compared to those based solely on biodata features (table \ref{tab:biotable2}). As can be seen in table \ref{tab:deltas2}, the deltas between the RMSE scores with Biodata and the RMSE scores when adding WRPC to the models are on average -0.14.
 
-The results substantiate hypothesis 3a, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+Additionally, when it comes to feature importante, both linear regression and Random Forest show similar results. As we can see in figure \ref{fig:coefbg2}, which is a bargraph showing the beta coefficients of the linear regression model, there is a balanced distribution of both positive and negative coefficients, indicating varied influences on the dependent variable. The most prominent feature in this model is ``SPOS,'' which has a positive coefficient of approximately 0.356, suggesting a strong positive relationship with the target outcome. As can be expected, ``TI'' exhibits a significant negative coefficient of -0.327. Other features like ``ACS'' and ``BIO9\_1'' also show positive influences, albeit to a lesser extent.
+
+Conversely, figure \ref{fig:featuresbg2}, which stems from a Random Forest model, exclusively presents positive importance scores, focusing solely on the magnitude of influence rather than direction. In this model, ``SPOS'' also emerges as the most significant feature, with an importance score markedly higher at 0.470, emphasizing its critical role in model predictions. Following ``SPOS,'' ``ACS'' and ``EES'' hold substantial importance scores of 0.211 and 0.109 respectively, demonstrating their essential contributions to the model's performance.
+
+This comparative evaluation reveals that ``SPOS'' and ``ACS'' are consistently recognized as the most influential features across both models when predicting job satisfaction.
+
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -2123,9 +2282,6 @@ Chipman, H. A., George, E. I., \& McCulloch, R. E. (2010). \emph{BART: Bayesian 
 \leavevmode\vadjust pre{\hypertarget{ref-cho2012turnover}{}}%
 Cho, Y. J., \& Lewis, G. B. (2012). Turnover intention and turnover behavior: Implications for retaining federal employees. \emph{Review of Public Personnel Administration}, \emph{32}(1), 4--23.
 
-\leavevmode\vadjust pre{\hypertarget{ref-choi2009diversity}{}}%
-Choi, S. (2009). Diversity in the US federal government: Diversity management and employee turnover in federal agencies. \emph{Journal of Public Administration Research and Theory}, \emph{19}(3), 603--630.
-
 \leavevmode\vadjust pre{\hypertarget{ref-choi2011organizational}{}}%
 Choi, S. (2011). Organizational justice and employee work attitudes: The federal case. \emph{The American Review of Public Administration}, \emph{41}(2), 185--204.
 
@@ -2135,9 +2291,6 @@ Cohen, G., Blake, R. S., \& Goodman, D. (2016). Does turnover intention matter? 
 \leavevmode\vadjust pre{\hypertarget{ref-collins2014external}{}}%
 Collins, G. S., Groot, J. A. de, Dutton, S., Omar, O., Shanyinde, M., Tajar, A., Voysey, M., Wharton, R., Yu, L.-M., Moons, K. G., et al. (2014). External validation of multivariable prediction models: A systematic review of methodological conduct and reporting. \emph{BMC Medical Research Methodology}, \emph{14}(1), 1--11.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cotton1986employee}{}}%
-Cotton, J. L., \& Tuttle, J. M. (1986). Employee turnover: A meta-analysis and review with implications for research. \emph{Academy of Management Review}, \emph{11}(1), 55--70.
-
 \leavevmode\vadjust pre{\hypertarget{ref-cox1972regression}{}}%
 Cox, D. R. (1972). Regression models and life-tables. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}, \emph{34}(2), 187--202.
 
@@ -2146,9 +2299,6 @@ Craninx, M., Fievez, V., Vlaeminck, B., \& De Baets, B. (2008). Artificial neura
 
 \leavevmode\vadjust pre{\hypertarget{ref-cristianini2002support}{}}%
 Cristianini, N., \& Scholkopf, B. (2002). Support vector machines and kernel methods: The new generation of learning machines. \emph{Ai Magazine}, \emph{23}(3), 31--31.
-
-\leavevmode\vadjust pre{\hypertarget{ref-curry2005training}{}}%
-Curry, D., McCarragher, T., \& Dellmann-Jenkins, M. (2005). Training, transfer, and turnover: Exploring the relationship among transfer of learning factors and staff retention in child welfare. \emph{Children and Youth Services Review}, \emph{27}(8), 931--948.
 
 \leavevmode\vadjust pre{\hypertarget{ref-davis2006relationship}{}}%
 Davis, J., \& Goadrich, M. (2006). The relationship between precision-recall and ROC curves. \emph{Proceedings of the 23rd International Conference on Machine Learning}, 233--240.
@@ -2161,9 +2311,6 @@ Dietterich, T. G. (2000). Ensemble methods in machine learning. \emph{Internatio
 
 \leavevmode\vadjust pre{\hypertarget{ref-douglass2020book}{}}%
 Douglass, M. J. (2020). \emph{Book review: Hands-on machine learning with scikit-learn, keras, and tensorflow, by aur{é}lien g{é}ron: O'reilly media, 2019, 600 pp., ISBN: 978-1-492-03264-9}. Springer.
-
-\leavevmode\vadjust pre{\hypertarget{ref-durst1999assessing}{}}%
-Durst, S. L. (1999). Assessing the effect of family friendly programs on public organizations. \emph{Review of Public Personnel Administration}, \emph{19}(3), 19--33.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ertas2015turnover}{}}%
 Ertas, N. (2015). Turnover intentions and work motivations of millennial employees in federal service. \emph{Public Personnel Management}, \emph{44}(3), 401--423.
@@ -2198,12 +2345,6 @@ Hom, P. W., Tsui, A. S., Wu, J. B., Lee, T. W., Zhang, A. Y., Fu, P. P., \& Li, 
 \leavevmode\vadjust pre{\hypertarget{ref-hosmer2013applied}{}}%
 Hosmer Jr, D. W., Lemeshow, S., \& Sturdivant, R. X. (2013). \emph{Applied logistic regression} (Vol. 398). John Wiley \& Sons.
 
-\leavevmode\vadjust pre{\hypertarget{ref-johnson2000factors}{}}%
-Johnson, J. T., Griffeth, R. W., \& Griffin, M. (2000). Factors discriminating functional and dysfunctional salesforce turnover. \emph{Journal of Business \& Industrial Marketing}, \emph{15}(6), 399--415.
-
-\leavevmode\vadjust pre{\hypertarget{ref-joo2012model}{}}%
-Joo, Y. J., Lim, K. Y., \& Kim, S. M. (2012). A model for predicting learning flow and achievement in corporate e-learning. \emph{Educational Technology \& Society}, \emph{15}(1), 313.
-
 \leavevmode\vadjust pre{\hypertarget{ref-kermany2018identifying}{}}%
 Kermany, D. S., Goldbaum, M., Cai, W., Valentim, C. C., Liang, H., Baxter, S. L., McKeown, A., Yang, G., Wu, X., Yan, F., et al. (2018). Identifying medical diagnoses and treatable diseases by image-based deep learning. \emph{Cell}, \emph{172}(5), 1122--1131.
 
@@ -2213,17 +2354,14 @@ Kim, S. Y., \& Fernandez, S. (2017). Employee empowerment and turnover intention
 \leavevmode\vadjust pre{\hypertarget{ref-kirasich2018random}{}}%
 Kirasich, K., Smith, T., \& Sadler, B. (2018). Random forest vs logistic regression: Binary classification for heterogeneous datasets. \emph{SMU Data Science Review}, \emph{1}(3), 9.
 
-\leavevmode\vadjust pre{\hypertarget{ref-ko2014impacts}{}}%
-Ko, J., \& Hur, S. (2014). The impacts of employee benefits, procedural justice, and managerial trustworthiness on work attitudes: Integrated understanding based on social exchange theory. \emph{Public Administration Review}, \emph{74}(2), 176--187.
-
 \leavevmode\vadjust pre{\hypertarget{ref-kubat1997addressing}{}}%
 Kubat, M., Matwin, S., et al. (1997). Addressing the curse of imbalanced training sets: One-sided selection. \emph{Icml}, \emph{97}, 179.
 
+\leavevmode\vadjust pre{\hypertarget{ref-lawler1979michigan}{}}%
+Lawler, E., Cammann, C., Nadler, D., \& Jenkins, D. (1979). Michigan organizational assessment questionnaire. \emph{Journal of Vocational Behavior}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-lee2021overlooked}{}}%
 Lee, G. R., Fernandez, S., \& Lee, S. (2021). An overlooked cost of contracting out: Evidence from employee turnover intention in US federal agencies. \emph{Public Personnel Management}, \emph{50}(3), 381--407.
-
-\leavevmode\vadjust pre{\hypertarget{ref-lewis1992men}{}}%
-Lewis, G. B. (1992). Men and women toward the top: Backgrounds, careers, and potential of federal middle managers. \emph{Public Personnel Management}, \emph{21}(4), 473--492.
 
 \leavevmode\vadjust pre{\hypertarget{ref-liss2015loving}{}}%
 Liss-Levinson, R., Bharthapudi, K., Leider, J. P., \& Sellers, K. (2015). Loving and leaving public health: Predictors of intentions to quit among state health agency workers. \emph{Journal of Public Health Management and Practice}, \emph{21}(Suppl 6), S91.
@@ -2267,20 +2405,17 @@ Myers, J. L., Well, A. D., \& Lorch Jr, R. F. (2013). \emph{Research design and 
 \leavevmode\vadjust pre{\hypertarget{ref-niculescu2005predicting}{}}%
 Niculescu-Mizil, A., \& Caruana, R. (2005). \emph{Predicting good probabilities with supervised learning}. 625--632.
 
-\leavevmode\vadjust pre{\hypertarget{ref-pink2017examining}{}}%
-Pink-Harper, S. A., \& Rauhaus, B. (2017). Examining the impact of federal employee wellness programs and employee resilience in the federal workplace. \emph{Journal of Health and Human Services Administration}, \emph{40}(3), 353--387.
-
 \leavevmode\vadjust pre{\hypertarget{ref-pitts2011so}{}}%
 Pitts, D., Marvel, J., \& Fernandez, S. (2011). So hard to say goodbye? Turnover intention among US federal employees. \emph{Public Administration Review}, \emph{71}(5), 751--760.
 
 \leavevmode\vadjust pre{\hypertarget{ref-van2014modern}{}}%
 Ploeg, T. van der, Austin, P. C., \& Steyerberg, E. W. (2014). Modern modelling techniques are data hungry: A simulation study for predicting dichotomous endpoints. \emph{BMC Medical Research Methodology}, \emph{14}(1), 1--13.
 
-\leavevmode\vadjust pre{\hypertarget{ref-porter1974organizational}{}}%
-Porter, L. W., Steers, R. M., Mowday, R. T., \& Boulian, P. V. (1974). Organizational commitment, job satisfaction, and turnover among psychiatric technicians. \emph{Journal of Applied Psychology}, \emph{59}(5), 603.
-
 \leavevmode\vadjust pre{\hypertarget{ref-rkab2019recruitment}{}}%
 Rąb-Kettler, K., \& Lehnervp, B. (2019). Recruitment in the times of machine learning. \emph{Management Systems in Production Engineering}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-raji2019actionable}{}}%
+Raji, I. D., \& Buolamwini, J. (2019). Actionable auditing: Investigating the impact of publicly naming biased performance results of commercial ai products. \emph{Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society}, 429--435.
 
 \leavevmode\vadjust pre{\hypertarget{ref-reeve2001refining}{}}%
 Reeve, C. L., \& Smith, C. S. (2001). Refining lodahl and kejner's job involvement scale with a convergent evidence approach: Applying multiple methods to multiple samples. \emph{Organizational Research Methods}, \emph{4}(2), 91--111.
@@ -2296,6 +2431,9 @@ Schaufeli, W. B., Shimazu, A., Hakanen, J., Salanova, M., \& De Witte, H. (2017)
 
 \leavevmode\vadjust pre{\hypertarget{ref-schoenfeldt1999dust}{}}%
 Schoenfeldt, L. F. (1999). From dust bowl empiricism to rational constructs in biographical data. \emph{Human Resource Management Review}, \emph{9}(2), 147--167.
+
+\leavevmode\vadjust pre{\hypertarget{ref-seashore1983assessing}{}}%
+Seashore, S. E., Lawler III, E. E., Mirvis, P. H., \& Cammann, C. E. (1983). \emph{Assessing organizational change: A guide to methods, measures, and practices.} John Wiley \& Sons Inc.
 
 \leavevmode\vadjust pre{\hypertarget{ref-shamir2004single}{}}%
 Shamir, B., \& Kark, R. (2004). A single-item graphic scale for the measurement of organizational identification. \emph{Journal of Occupational and Organizational Psychology}, \emph{77}(1), 115--123.
@@ -2315,14 +2453,11 @@ Varoquaux, G. (2018). Cross-validation failure: Small sample sizes lead to large
 \leavevmode\vadjust pre{\hypertarget{ref-vijayakumar2019replicability}{}}%
 Vijayakumar, R., \& Cheung, M. W.-L. (2019). Replicability of machine learning models in the social sciences. \emph{Zeitschrift F{ü}r Psychologie}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-weaver2015intent}{}}%
-Weaver, T. L. (2015). Intent to exit: Why do US federal employees leave? \emph{International Journal of Public Administration}, \emph{38}(6), 442--452.
-
-\leavevmode\vadjust pre{\hypertarget{ref-wynen2014impact}{}}%
-Wynen, J., \& Op de Beeck, S. (2014). The impact of the financial and economic crisis on turnover intention in the US federal government. \emph{Public Personnel Management}, \emph{43}(4), 565--585.
-
 \leavevmode\vadjust pre{\hypertarget{ref-xu2020deep}{}}%
 Xu, X., Jiang, X., Ma, C., Du, P., Li, X., Lv, S., Yu, L., Ni, Q., Chen, Y., Su, J., et al. (2020). A deep learning system to screen novel coronavirus disease 2019 pneumonia. \emph{Engineering}, \emph{6}(10), 1122--1129.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zou2018ai}{}}%
+Zou, J., \& Schiebinger, L. (2018). \emph{AI can be sexist and racist---it's time to make it fair}. Nature Publishing Group UK London.
 
 \end{CSLReferences}
 
