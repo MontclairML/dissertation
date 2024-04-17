@@ -913,10 +913,10 @@ weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.40 & 0.51 & 0.76 & NA & 7,182.00\\
+Class 1 & 0.76 & 0.92 & 0.83 & 0.76 & NA & 15,045.00\\
+macro avg & 0.73 & 0.66 & 0.67 & 0.76 & 0.75 & NA\\
+weighted avg & 0.74 & 0.75 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -944,10 +944,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.71 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.67 & 0.68 & 0.77 & 0.76 & NA\\
+weighted avg & 0.75 & 0.76 & 0.74 & 0.77 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -975,10 +975,10 @@ weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.68 & 0.76 & 0.76 & NA\\
+weighted avg & 0.75 & 0.76 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1006,10 +1006,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.68 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.67 & 0.77 & 0.75 & NA\\
+weighted avg & 0.75 & 0.75 & 0.73 & 0.77 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1037,10 +1037,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.68 & 0.69 & 0.78 & 0.76 & NA\\
-weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.67 & 0.76 & 0.75 & NA\\
+weighted avg & 0.75 & 0.75 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1055,19 +1055,19 @@ weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 \end{table*}
 \efloatseparator
  
-\begin{table*}[hbt]
-\ifnextchar[{\eatarg}{}
-[tbp]
+\begin{ThreePartTable}
 
-\begin{center}
-\begin{threeparttable}
-
-\caption{\label{tab:summarytable}AUC scores for all models}
-
-\begin{tabular}{lllll}
+\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:summarytable}AUC scores for all models}\\
 \toprule
 Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
 \midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:summarytable} continued}}\\
+\toprule
+Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endhead
 xgb100 & xgboosting & 100.00 & 105.00 & 0.98\\
 nn100 & Neural Network & 100.00 & 105.00 & 0.98\\
 svm100 & Support Vector Machines & 100.00 & 105.00 & 0.98\\
@@ -1086,25 +1086,52 @@ xgb75 & xgboosting & 100,000.00 & 75.00 & 0.79\\
 nn75 & Neural Network & 100,000.00 & 75.00 & 0.79\\
 svm75 & Support Vector Machines & 100,000.00 & 75.00 & 0.79\\
 rf75 & Random Forest & 100,000.00 & 75.00 & 0.79\\
-xgb40 & xgboosting & 100,000.00 & 40.00 & 0.79\\
-nn40 & Neural Network & 100,000.00 & 40.00 & 0.79\\
-svm40 & Support Vector Machines & 100,000.00 & 40.00 & 0.79\\
-rf40 & Random Forest & 100,000.00 & 40.00 & 0.79\\
+logi75\_10k & Logistic Regression & 10,000.00 & 75.00 & 0.79\\
+xgb75\_10k & xgboosting & 10,000.00 & 75.00 & 0.79\\
+nn75\_10k & Neural Network & 10,000.00 & 75.00 & 0.79\\
+svm75\_10k & Support Vector Machines & 10,000.00 & 75.00 & 0.79\\
 logi75 & Logistic Regression & 100,000.00 & 75.00 & 0.79\\
-logi40 & Logistic Regression & 100,000.00 & 40.00 & 0.79\\
 logi100 & Logistic Regression & 100.00 & 105.00 & 0.78\\
+xgb15\_100 & xgboosting & 100.00 & 15.00 & 0.77\\
+nn15\_100 & Neural Network & 100.00 & 15.00 & 0.77\\
+svm15\_100 & Support Vector Machines & 100.00 & 15.00 & 0.77\\
+rf15\_100 & Random Forest & 100.00 & 15.00 & 0.77\\
+xgb15 & xgboosting & 100,000.00 & 15.00 & 0.77\\
+nn15 & Neural Network & 100,000.00 & 15.00 & 0.77\\
+svm15 & Support Vector Machines & 100,000.00 & 15.00 & 0.77\\
+rf15 & Random Forest & 100,000.00 & 15.00 & 0.77\\
+xgb15\_10k & xgboosting & 10,000.00 & 15.00 & 0.76\\
+nn15\_10k & Neural Network & 10,000.00 & 15.00 & 0.76\\
+svm15\_10k & Support Vector Machines & 10,000.00 & 15.00 & 0.76\\
+rf15\_10k & Random Forest & 10,000.00 & 15.00 & 0.76\\
+logi15\_10k & Logistic Regression & 10,000.00 & 15.00 & 0.76\\
+logi15 & Logistic Regression & 100,000.00 & 15.00 & 0.76\\
+logi15\_1k & Logistic Regression & 1,000.00 & 15.00 & 0.76\\
+logi75\_100 & Logistic Regression & 100.00 & 75.00 & 0.76\\
+logi15\_100 & Logistic Regression & 100.00 & 15.00 & 0.76\\
+xgb15\_1k & xgboosting & 1,000.00 & 15.00 & 0.75\\
+nn15\_1k & Neural Network & 1,000.00 & 15.00 & 0.75\\
+svm15\_1k & Support Vector Machines & 1,000.00 & 15.00 & 0.75\\
+rf15\_1k & Random Forest & 1,000.00 & 15.00 & 0.75\\
 xgb1k & xgboosting & 1,000.00 & 105.00 & 0.75\\
 nn1k & Neural Network & 1,000.00 & 105.00 & 0.75\\
 svm1k & Support Vector Machines & 1,000.00 & 105.00 & 0.75\\
 rf1k & Random Forest & 1,000.00 & 105.00 & 0.75\\
+rf75\_1k & Random Forest & 1,000.00 & 75.00 & 0.75\\
 logi1k & Logistic Regression & 1,000.00 & 105.00 & 0.74\\
+xgb75\_1k & xgboosting & 1,000.00 & 75.00 & 0.71\\
+nn75\_1k & Neural Network & 1,000.00 & 75.00 & 0.71\\
+svm75\_1k & Support Vector Machines & 1,000.00 & 75.00 & 0.71\\
+rf75\_10k & Random Forest & 10,000.00 & 75.00 & 0.71\\
+logi75\_1k & Logistic Regression & 1,000.00 & 75.00 & 0.70\\
+xgb75\_100 & xgboosting & 100.00 & 75.00 & 0.69\\
+nn75\_100 & Neural Network & 100.00 & 75.00 & 0.69\\
+svm75\_100 & Support Vector Machines & 100.00 & 75.00 & 0.69\\
+rf75\_100 & Random Forest & 100.00 & 75.00 & 0.69\\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\end{threeparttable}
-\end{center}
-
-\end{table*}
+\end{ThreePartTable}
 \efloatseparator
  
 \begin{table*}[hbt]
@@ -1178,121 +1205,136 @@ Random Forest & 0.66\\
 \end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:wrctable}Work-related psychological constructs only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:wrctable}Work-related psychological constructs only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:wrctable} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score WRPC}\\
-\midrule
-\endhead
 Logistic Regression & 0.81\\
 XGBoost & 0.78\\
 Neural Network & 0.74\\
 SVM & 0.67\\
 Random Forest & 0.77\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:deltas}Work-related psychological constructs added to the models}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:deltas}Work-related psychological constructs added to the models}
+
+\begin{tabular}{llll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:deltas} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
-\midrule
-\endhead
 Logistic Regression & 0.57 & 0.81 & 0.24\\
 XGBoost & 0.61 & 0.78 & 0.17\\
 Neural Network & 0.57 & 0.74 & 0.17\\
 SVM & 0.50 & 0.64 & 0.14\\
 Random Forest & 0.66 & 0.78 & 0.12\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:biotable2}Biodata only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:biotable2}Biodata only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE Biodata}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:biotable2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE Biodata}\\
-\midrule
-\endhead
 Linear Regression & 0.58\\
 XGBoost & 0.59\\
 Neural Network & 0.57\\
 SVM & 0.55\\
 Random Forest & 0.58\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:wrctable2}Work-related psychological constructs only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:wrctable2}Work-related psychological constructs only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE WRPC}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:wrctable2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE WRPC}\\
-\midrule
-\endhead
 Logistic Regression & 0.00\\
 XGBoost & 0.01\\
 Neural Network & 0.26\\
 SVM & 0.05\\
 Random Forest & 0.01\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}
 \efloatseparator
  
-\begin{ThreePartTable}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
 
-\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}
+
+\begin{tabular}{llll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:deltas2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
-\midrule
-\endhead
-Linear Regression & 0.58 & NA & NA\\
+Linear Regression & 0.58 & 0.45 & -0.13\\
 XGBoost & 0.59 & 0.42 & -0.17\\
 Neural Network & 0.57 & 0.44 & -0.13\\
 SVM & 0.55 & 0.45 & -0.09\\
 Random Forest & 0.58 & 0.43 & -0.15\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
+\end{center}
+
+\end{table*}

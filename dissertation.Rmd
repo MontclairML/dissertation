@@ -1,5 +1,5 @@
 ---
-title             : "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression"
+title             : 
 shorttitle        : "Influence of Parsimony"
 author: 
   - name          : "Diego Figueiras"
@@ -15,8 +15,8 @@ keywords          : "Employee turnover, machine learning"
 wordcount         : "X"
 bibliography      : ["articles.bib", "references.bib", "r-references.bib"]
 floatsintext      : no
-figurelist        : no
-tablelist         : no
+figurelist        : yes
+tablelist         : yes
 footnotelist      : no
 linenumbers       : no
 mask              : no
@@ -33,8 +33,10 @@ params:
   author: 'Diego Figueiras'
 always_allow_html: true
 header-includes:
+  - \setlength{\parskip}{0pt}
   - \newcommand{\bcenter}{\begin{center}}
   - \newcommand{\ecenter}{\end{center}}
+  - \raggedbottom
 #  - \pagenumbering{gobble}                                     ## removes page numbers
 #  - \usepackage{sidecap}                                       ## float figures in .pdf
   - \usepackage{wrapfig}                                       ## wrap figures in .pdf
@@ -59,6 +61,8 @@ header-includes:
 
 ---
 
+\thispagestyle{empty}
+\newpage
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -154,32 +158,32 @@ Counseling
 
 \vskip 0.6in
 
-Certified by:
+\noindent{Certified by:}
 
 \vskip 0.6in  
 
 \linespread{1.0}\selectfont
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
-Dr. Scott Herness
+Dr. Kenneth Sumner 
 \newline
-Vice Provost for Research and
+Associate Provost for Academic Affairs and
 \newline
-Dean of the Graduate School
+Acting Dean of the Graduate School
 
 \vskip 0.3in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Date
 
 \columnbreak
 
-Dissertation Committee:
+\noindent{Dissertation Committee:}
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. Michael Bixter
 \newline
@@ -187,13 +191,13 @@ Dissertation Chair
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. Kevin Askew
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. John T. Kulas
 
@@ -584,14 +588,14 @@ Their findings were that for the smaller dataset (N=6,565), regression achieved 
 However, the study's approach of using only two distinct sample sizes—one relatively small and the other significantly large—presents certain limitations. Specifically, this binary distinction may not sufficiently capture the nuances that could emerge with intermediate sample sizes. A broader range of dataset sizes might provide a more comprehensive understanding of how the performance of these methods scales with sample size. Including multiple datasets that vary incrementally in size could help delineate more precisely the thresholds at which machine learning begins to outperform traditional regression, or vice versa, thus offering deeper insights into the relative advantages of each analytical method across a spectrum of conditions.
 Since there is some recognition that regression models perform well with smaller datasets, where the number of observations is limited, and that ML algorithms tend to outperform when the dataset is very large, the following hypotheses for Study 1 are proposed:
 
-Hypothesis 1: As sample size increases, the relative advantage in predictive accuracy of turnover intention between ML and regression-based algorithms will increase.
+Hypothesis 1: As sample size increases, the relative advantage of ML algorithms over regression-based alogirithms in predictive accuracy of turnover intention will increase.
 
 In addition to sample size, the number of variables in a dataset is another critical factor affecting the choice between regression models and ML algorithms.
 Going back to the study done by @sanchez2018comparison, predictive accuracy decreased for machine learning when the dataset had fewer variables compared to regression models, whose predictive accuracy remained the same or improved.
 Specifically, this happened when the EPV were below 200.
 This leads to the proposal of Hypothesis 2.
 
-Hypothesis 2: As the EPV decreases, the relative advantage in predictive accuracy of turnover intention betweel ML and regression-based algorithms will decrease.
+Hypothesis 2: As the number of variables increases, the relative advantage of ML algorithms over regression-based alogirithms in predictive accuracy of turnover intention will increase.
 
 In conclusion, Study 1 aims to investigate the interplay between sample size and the number of variables in predictive modeling by testing the hypotheses outlined above.
 Through a systematic exploration of these factors, we hope to contribute to the understanding of when regression models or ML algorithms are more suitable for predictive tasks in real-world scenarios.
@@ -941,7 +945,7 @@ apa_table(
 
 ```
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in table \@ref(tab:logitable100k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in table \@ref(tab:logitable100k). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable100k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn100k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm100k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1134,7 +1138,7 @@ apa_table(
 
 
 ```
-For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable10k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable10k). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable10k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn10k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm10k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1329,7 +1333,7 @@ apa_table(
 ```
 
 
-For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable1k). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable1k). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable1k). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn1k). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm1k). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1527,7 +1531,7 @@ apa_table(
 ```
 
 
-For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable200). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable200). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable200). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn200). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm200). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1728,7 +1732,7 @@ apa_table(
 ```
 
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable75). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable75). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable75). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn75). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm75). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1737,17 +1741,17 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 
 
 
-## Number of Variables 40
+## Number of Variables 15
 
 ```{r logitable40, message=FALSE, warning=FALSE}
 
 
 metrics<- read.csv("logi40.csv")
 logi40<-data.frame(
-  Algorithm = "logi40",
+  Algorithm = "logi15",
   Model = "Logistic Regression",
   `Sample Size`= 100000,
-  `Number of Variables` = 40,
+  `Number of Variables` = 15,
   `AUC Score` = round(metrics$AUC[1], 3)
 )
 
@@ -1781,10 +1785,10 @@ apa_table(
 
 metrics<- read.csv("xgb40.csv")
 xgb40<-data.frame(
-  Algorithm = "xgb40",
+  Algorithm = "xgb15",
   Model = "xgboosting",
   `Sample Size`= 100000,
-  `Number of Variables` = 40,
+  `Number of Variables` = 15,
   `AUC Score` = round(metrics$AUC[1], 3)
 )
 
@@ -1819,10 +1823,10 @@ apa_table(
 
 metrics<- read.csv("nn40.csv")
 nn40<-data.frame(
-  Algorithm = "nn40",
+  Algorithm = "nn15",
   Model = "Neural Network",
   `Sample Size`= 100000,
-  `Number of Variables` = 40,
+  `Number of Variables` = 15,
   `AUC Score` = round(metrics$AUC[1], 3)
 )
 
@@ -1856,10 +1860,10 @@ apa_table(
 
 metrics<- read.csv("svm40.csv")
 svm40<-data.frame(
-  Algorithm = "svm40",
+  Algorithm = "svm15",
   Model = "Support Vector Machines",
   `Sample Size`= 100000,
-  `Number of Variables` = 40,
+  `Number of Variables` = 15,
   `AUC Score` = round(metrics$AUC[1], 3)
 )
 
@@ -1892,10 +1896,10 @@ apa_table(
 
 metrics<- read.csv("rf40.csv")
 rf40<-data.frame(
-  Algorithm = "rf40",
+  Algorithm = "rf15",
   Model = "Random Forest",
   `Sample Size`= 100000,
-  `Number of Variables` = 40,
+  `Number of Variables` = 15,
   `AUC Score` = round(metrics$AUC[1], 3)
 )
 
@@ -1927,7 +1931,7 @@ apa_table(
 
 
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable40). The weighted average precision was `r metricsLOGI$Precision[3]`, with a recall of `r metricsLOGI$Recall[3]` and an F1 score of `r metricsLOGI$F1.score[3]`, suggesting a moderate level of prediction consistency across categories. 
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was `r metricsLOGI$Accuracy[3]`, as can be seen in Table \@ref(tab:logitable40). The weighted average precision was `r metricsLOGI$Precision[4]`, with a recall of `r metricsLOGI$Recall[4]` and an F1 score of `r metricsLOGI$F1.score[4]`, suggesting a moderate level of prediction consistency across categories. 
 The performance of a xgboosting model across categories was `r metricsXGB$Accuracy[3]`, as can be seen in table \@ref(tab:xgbtable40). The weighted average precision was `r metricsXGB$Precision[4]`, with a recall of `r metricsXGB$Recall[4]` and an F1 score of `r metricsXGB$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a neural network model across categories was `r metricsNN$F1.score[3]`, as can be seen in table \@ref(tab:nn40). The weighted average precision was `r metricsNN$Precision[4]`, with a recall of `r metricsNN$Recall[4]` and an F1 score of `r metricsNN$F1.score[4]`, suggesting moderate levels of predictive accuracy. 
 The performance of a SVM model across categories was `r metricsSVM$F1.score[3]`, as can be seen in table \@ref(tab:svm40). The weighted average precision was `r metricsSVM$Precision[4]`, with a recall of `r metricsSVM$Recall[4]` and an F1 score of `r metricsSVM$F1.score[4]`, suggesting moderate levels of predictive accuracy.
@@ -1938,49 +1942,386 @@ The performance of a random forest model across categories was `r metricsRF$F1.s
 
 ```{r summarytable}
 options(scipen = 999)
+
+
+############### 75_10k ######################################
+metrics<- read.csv("logi75_10k.csv")
+logi75_10k<-data.frame(
+  Algorithm = "logi75_10k",
+  Model = "Logistic Regression",
+  `Sample Size`= 10000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb75_10k.csv")
+xgb75_10k<-data.frame(
+  Algorithm = "xgb75_10k",
+  Model = "xgboosting",
+  `Sample Size`= 10000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn75_10k.csv")
+nn75_10k<-data.frame(
+  Algorithm = "nn75_10k",
+  Model = "Neural Network",
+  `Sample Size`= 10000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm75_10k.csv")
+svm75_10k<-data.frame(
+  Algorithm = "svm75_10k",
+  Model = "Support Vector Machines",
+  `Sample Size`= 10000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf75_10k.csv")
+rf75_10k<-data.frame(
+  Algorithm = "rf75_10k",
+  Model = "Random Forest",
+  `Sample Size`= 10000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+############### 75_1k ######################################
+metrics<- read.csv("logi75_1k.csv")
+logi75_1k<-data.frame(
+  Algorithm = "logi75_1k",
+  Model = "Logistic Regression",
+  `Sample Size`= 1000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb75_1k.csv")
+xgb75_1k<-data.frame(
+  Algorithm = "xgb75_1k",
+  Model = "xgboosting",
+  `Sample Size`= 1000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn75_1k.csv")
+nn75_1k<-data.frame(
+  Algorithm = "nn75_1k",
+  Model = "Neural Network",
+  `Sample Size`= 1000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm75_1k.csv")
+svm75_1k<-data.frame(
+  Algorithm = "svm75_1k",
+  Model = "Support Vector Machines",
+  `Sample Size`= 1000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf75_1k.csv")
+rf75_1k<-data.frame(
+  Algorithm = "rf75_1k",
+  Model = "Random Forest",
+  `Sample Size`= 1000,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+############### 75_100 ######################################
+metrics<- read.csv("logi75_100.csv")
+logi75_100<-data.frame(
+  Algorithm = "logi75_100",
+  Model = "Logistic Regression",
+  `Sample Size`= 100,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb75_100.csv")
+xgb75_100<-data.frame(
+  Algorithm = "xgb75_100",
+  Model = "xgboosting",
+  `Sample Size`= 100,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn75_100.csv")
+nn75_100<-data.frame(
+  Algorithm = "nn75_100",
+  Model = "Neural Network",
+  `Sample Size`= 100,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm75_100.csv")
+svm75_100<-data.frame(
+  Algorithm = "svm75_100",
+  Model = "Support Vector Machines",
+  `Sample Size`= 100,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf75_100.csv")
+rf75_100<-data.frame(
+  Algorithm = "rf75_100",
+  Model = "Random Forest",
+  `Sample Size`= 100,
+  `Number of Variables` = 75,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+############### 15_10k ######################################
+metrics<- read.csv("logi15_10k.csv")
+logi15_10k<-data.frame(
+  Algorithm = "logi15_10k",
+  Model = "Logistic Regression",
+  `Sample Size`= 10000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb15_10k.csv")
+xgb15_10k<-data.frame(
+  Algorithm = "xgb15_10k",
+  Model = "xgboosting",
+  `Sample Size`= 10000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn15_10k.csv")
+nn15_10k<-data.frame(
+  Algorithm = "nn15_10k",
+  Model = "Neural Network",
+  `Sample Size`= 10000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm15_10k.csv")
+svm15_10k<-data.frame(
+  Algorithm = "svm15_10k",
+  Model = "Support Vector Machines",
+  `Sample Size`= 10000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf15_10k.csv")
+rf15_10k<-data.frame(
+  Algorithm = "rf15_10k",
+  Model = "Random Forest",
+  `Sample Size`= 10000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+############### 15_1k ######################################
+metrics<- read.csv("logi15_1k.csv")
+logi15_1k<-data.frame(
+  Algorithm = "logi15_1k",
+  Model = "Logistic Regression",
+  `Sample Size`= 1000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb15_1k.csv")
+xgb15_1k<-data.frame(
+  Algorithm = "xgb15_1k",
+  Model = "xgboosting",
+  `Sample Size`= 1000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn15_1k.csv")
+nn15_1k<-data.frame(
+  Algorithm = "nn15_1k",
+  Model = "Neural Network",
+  `Sample Size`= 1000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm15_1k.csv")
+svm15_1k<-data.frame(
+  Algorithm = "svm15_1k",
+  Model = "Support Vector Machines",
+  `Sample Size`= 1000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf15_1k.csv")
+rf15_1k<-data.frame(
+  Algorithm = "rf15_1k",
+  Model = "Random Forest",
+  `Sample Size`= 1000,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+############### 15_100 ######################################
+metrics<- read.csv("logi15_100.csv")
+logi15_100<-data.frame(
+  Algorithm = "logi15_100",
+  Model = "Logistic Regression",
+  `Sample Size`= 100,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("xgb15_100.csv")
+xgb15_100<-data.frame(
+  Algorithm = "xgb15_100",
+  Model = "xgboosting",
+  `Sample Size`= 100,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("nn15_100.csv")
+nn15_100<-data.frame(
+  Algorithm = "nn15_100",
+  Model = "Neural Network",
+  `Sample Size`= 100,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("svm15_100.csv")
+svm15_100<-data.frame(
+  Algorithm = "svm15_100",
+  Model = "Support Vector Machines",
+  `Sample Size`= 100,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
+
+metrics<- read.csv("rf15_100.csv")
+rf15_100<-data.frame(
+  Algorithm = "rf15_100",
+  Model = "Random Forest",
+  `Sample Size`= 100,
+  `Number of Variables` = 15,
+  `AUC Score` = round(metrics$AUC[1], 3)
+)
+
 data_sum<- rbind(
   logi100k,
   logi10k,
   logi1k,
   logi100,
   logi75,
+  logi75_10k,
+  logi75_1k,
+  logi75_100,
   logi40,
+  logi15_10k,
+  logi15_1k,
+  logi15_100,
   xgb100k,
   xgb10k,
   xgb1k,
   xgb100,
   xgb75,
+  xgb75_10k,
+  xgb75_1k,
+  xgb75_100,
   xgb40,
+  xgb15_10k,
+  xgb15_1k,
+  xgb15_100,
   nn100k, 
   nn10k,
   nn1k,
   nn100,
   nn75,
+  nn75_10k,
+  nn75_1k,
+  nn75_100,
   nn40,
+  nn15_10k,
+  nn15_1k,
+  nn15_100,
   svm100k,
   svm10k,
   svm1k,
   svm100,
   svm75,
+  svm75_10k,
+  svm75_1k,
+  svm75_100,
   svm40,
+  svm15_10k,
+  svm15_1k,
+  svm15_100,
   rf100k, 
   rf10k,
   rf1k,
   rf100, 
   rf75,
-  rf40
+  rf75_10k,
+  rf75_1k,
+  rf75_100,
+  rf40,
+  rf15_10k,
+  rf15_1k,
+  rf15_100
   
 )
 
 data_sum <- data_sum[order(data_sum$AUC.Score, decreasing = TRUE), ]
 row.names(data_sum) <- NULL
 
+#write.csv(data_sum, "summary_table.csv")
+
 apa_table(
   data_sum
   , caption = "AUC scores for all models"
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  #, longtable = TRUE
+  , longtable = TRUE
   , landscape = FALSE
   #, escape = FALSE
 )
@@ -1988,7 +2329,13 @@ apa_table(
 
 ```
 
-The AUC score for all combination of models, sample sizes and number of variables has been summarized in table \@ref(tab:summarytable). 
+The AUC score for all combination of models, sample sizes and number of variables has been summarized in table \@ref(tab:summarytable). For the models with datasets of 75 and 15 variables, analysis under samples sizes of 100,000, 10,000, 1,000 and 100 were done very much the same as with the datasets that had 105 variables. The same pattern of predictive performance was observed.  
+
+When sorting by sample size, ML models with 100,000 respondents did show slightly different AUC scores than logistic regression, with ML models having an AUC score 0.01 higher when the number of variables was 105 and 0.01 when the number of variables was 75. When the number of variables was 15 and the sample size 100,000, there was a small difference in performance, with ML algorithms giving an AUC score of 0.79 while logistic regression was 0.76. 
+
+Performance does improve for ML algorithms compared to logistic regression as number of variables decreases, although these differences are small, with an average delta of 0.02. 
+
+Overall, the best performing algorithm is an xgboosting decision tree with a sample size of 100 and 105 number of variables, with an AUC score of 0.98. The next 12 best performing models were also ML-based. The 13th best performing model was a logistic regression, with an AUC of 0.88 and a delta of 0.1 when compared to ML models. 
 
 
 # Study 2
@@ -2005,31 +2352,31 @@ All survey items can be found in Appendix 2.
 
 ## Independent Variables
 
-### Work-related psychological constructs
+## Work-related psychological constructs
 
 The following publicly available instruments were added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) [@schaufeli2017ultra] and the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) [@reeve2001refining].  The affective (ACS) and normative (NCS) components of the revised Three-Component Model (TCM) Employee Commitment Survey  [@meyer1991three], will be used to measure commitment, and the 1-item Graphic Scale of Organizational Identification (GSOI) [@shamir2004single] will be used to measure organizational identification. The 8-item Survey of Perceived Organizational Support (SPOS) [@shore1991construct] will be used to measure organizational support. Conscientiousness will be measured using the 6-items Big Five Inventory – Short Form (BFI-2-S) [@franzen2022developing]. All of these instruments are available in Appendix 2.       
 
-### Biodata
+## Biodata
 
 Biodata, short for biographical data, is a psychological construct used in this study to predict turnover intentions and job satisfaction. The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
 
 ## Dependent Variables
 
-### Turnover Intention
+## Turnover Intention
 
 To measured turnover intention a one item Turnover Intention (TI) scale was used, which asks the following: “Are you contemplating leaving your organization within the next year?” 
 
-### Job Satisfaction 
+## Job Satisfaction 
 
 To measure job satisfaction the Michigan Organizational Assessment Questionnaire (MOAQ) short form was used. This is a streamlined version of the original instrument, designed to efficiently assess aspects of job satisfaction and organizational climate. This condensed form retains the core elements of the original MOAQ but reduces the number of items to facilitate quicker administration and analysis while maintaining robust psychometric properties [@lawler1979michigan]. The short form typically includes items that measure three key dimensions: job satisfaction, organizational commitment, and perceived organizational support. Each item is rated on a Likert scale, allowing respondents to express varying degrees of agreement or disagreement, providing a quantitative measure of an employee's satisfaction and engagement with their organization [@lawler1979michigan; @seashore1983assessing] .
 
-## Data Analysis
+## Data Analysis  
+Several machine learning algorithms were used to train a series of models using biodata features only. These models include GBT, RF, NN, and SVM. A multiple  and logistic regressions were compared to these machine learning models. A second series of models that include work-related psychological constructs only in the data were trained. Performance metrics of each model were evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Deltas between the AUC score of each set of models before and after adding work-related psychological constructs were computed to see whether there was a change in performance. This was done to test for hypothesis 3.  
 
-Several machine learning algorithms were used to train a series of models using biodata features only. These models include GBT, RF, NN, and SVM. A multiple  and logistic regressions were compared to these machine learning models. A second series of models that include work-related psychological constructs only in the data were trained. Performance metrics of each model were evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Deltas between the AUC score of each set of models before and after adding work-related psychological constructs were computed to see whether there was a change in performance. This was done to test for hypothesis 3.
 
 ## Data Description
 
-```{r study2descr}
+```{r study2descr, message=FALSE, warning=FALSE}
 data_descr_study1<-read.csv("descriptives_study2.csv")
 
 apa_table(
@@ -2081,9 +2428,9 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
@@ -2102,15 +2449,15 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
 
 
-```{r coefbg}
+```{r coefbg, fig.cap="Logits of the Logistic Regression", message=FALSE, warning=FALSE}
 
 library(ggplot2)
 
@@ -2121,16 +2468,16 @@ data <- read.csv("lr_coeff_importance.csv")
 ggplot(data, aes(x=reorder(Feature, -Coefficient), y=Coefficient)) +
   geom_bar(stat="identity", fill="gray") +
   coord_flip() +  # Flips the axes to make labels readable
-  labs(title="Feature Importance in Logistic Regression Model",
-       x="Coefficient",
-       y="Feature") +
+  labs(title="Figure 1. Feature Importance in Logistic Regression Model",
+       x="Features",
+       y="Logit") +
   theme_minimal() +
   theme(legend.position="none") 
 
 
 ```
 
-```{r featuresbg}
+```{r featuresbg,fig.cap="Features Importance of a Random Forest Model", message=FALSE, warning=FALSE}
 
 library(ggplot2)
 
@@ -2141,9 +2488,9 @@ data <- read.csv("rf_feature_importance.csv")
 ggplot(data, aes(x=reorder(Feature, -Importance), y=Importance)) +
   geom_bar(stat="identity", fill="gray") +
   coord_flip() +  # Flips the axes to make labels readable
-  labs(title="Feature Importance in Random Forest Model",
-       x="Importance",
-       y="Feature") +
+  labs(title="Figure 2. Feature Importance in Random Forest Model",
+       x="Feature",
+       y="Importance") +
   theme_minimal() +
   theme(legend.position="none") 
 
@@ -2164,8 +2511,6 @@ In the logistic regression model, the feature "ACS" displayed the most significa
 
 The Random Forest model presented a different hierarchy of feature importances. "SPOS" emerged as the most critical predictor with the highest importance score, indicating its predominant influence in the model. This was followed by "MOAQ" and "ACS", which also held significant importance but to a lesser extent than "SPOS". The features "BFI" and "EES", while contributing to the model, had relatively lower importance scores, suggesting their roles were not as decisive in the Random Forest model as in the logistic regression model.
 
-note: include deltas
-
 
 ## Predicting Job Satisfaction
 
@@ -2182,9 +2527,9 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
@@ -2201,9 +2546,9 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
@@ -2211,6 +2556,7 @@ apa_table(
 
 ```{r deltas2}
 data_ALL2<-read.csv("ALL_model_rmse_scores.csv")
+data_ALL2$Model[1]<-'Linear Regression'
 colnames(data_ALL2)<- c("Model", "RMSE when adding WRPC")
 data_del2<-left_join(data_bio2, data_ALL2, by="Model")
 
@@ -2222,14 +2568,15 @@ apa_table(
   
   #, note = "1= turnover intention, 0= no turnover intention."
   #, align = c("m{2cm}", "m{12cm}")
-  , longtable = TRUE
+  #, longtable = TRUE
   , landscape = FALSE
-  , escape = FALSE
+  #, escape = FALSE
 )
 
 ```
 
-```{r coefbg2}
+
+```{r coefbg2, fig.cap="Betas waves of the Multiple Regression", message=FALSE, warning=FALSE}
 
 
 library(ggplot2)
@@ -2237,19 +2584,22 @@ library(ggplot2)
 
 data <- read.csv("lm_coeff_importance.csv")
 
+data <- data[order(data$Coefficient, decreasing=FALSE), ]
 
-ggplot(data, aes(x=reorder(Feature, Coefficient), y=Coefficient)) +
+
+ggplot(data, aes(x=reorder(Feature, -Coefficient), y=Coefficient)) +
   geom_bar(stat="identity", fill="gray") +  # Gray bars
   coord_flip() +  # Flips the axes to make labels readable
-  labs(title="Coefficient Importance in Linear Model",
-       x="Coefficient",
-       y="Feature") +
+  labs(title="Figure 3. Feature Importance in Multiple Linear Regression Model",
+       x="Feature",
+       y="Beta waves") +
   theme_minimal() +
   theme(legend.position="none")  
+
 ```
 
 
-```{r featuresbg2}
+```{r featuresbg2, fig.cap="Feature Importance of a Random Forest Model", message=FALSE, warning=FALSE}
 
 
 library(ggplot2)
@@ -2259,9 +2609,9 @@ data <- read.csv("rfjs_coeff_importance.csv")
 ggplot(data, aes(x=reorder(Feature, -Importance), y=Importance)) +
   geom_bar(stat="identity", fill="gray") +  # Gray bars
   coord_flip() +  # Flips the axes to make labels readable
-  labs(title="Feature Importance from Model",
-       x="Importance",
-       y="Feature") +
+  labs(title="Figure 4. Feature Importance in Random Forest Model",
+       x="Feature",
+       y="Importance") +
   theme_minimal() +
   theme(legend.position="none")  
 
@@ -2275,20 +2625,45 @@ Conversely, figure \@ref(fig:featuresbg2), which stems from a Random Forest mode
 
 This comparative evaluation reveals that "SPOS" and "ACS" are consistently recognized as the most influential features across both models when predicting job satisfaction. 
 
-The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. .
 
 # Discussion
 
-The findings of the present study do not support the hypotheses that were based on the prior research by Sanchez (2018) and Kirasich et al. (2018). The hypotheses posited were centered around the performance of machine learning (ML) algorithms compared to regression models, with a specific focus on the effects of sample size and the number of variables on predictive accuracy. Contrary to expectations, the results from this study did not demonstrate a significant relative advantage in predictive accuracy for ML algorithms as sample size increased, nor did they confirm the hypothesized impact of the number of variables in datasets on the choice between ML and regression models.
+Hypothesis 1 anticipated that as sample size increases, ML algorithms would exhibit a growing superiority over regression models in terms of predictive accuracy for turnover intentions. This hypothesis was predicated on the assertion from previous studies that ML algorithms tend to outperform regression models in larger datasets due to their ability to handle high-dimensional data and complex model interactions (Sanchez, 2018; Kirasich et al., 2018). 
 
-Hypothesis 1 anticipated that as sample size increases, ML algorithms would exhibit a growing superiority over regression models in terms of predictive accuracy for turnover intentions. This hypothesis was predicated on the assertion from previous studies that ML algorithms tend to outperform regression models in larger datasets due to their ability to handle high-dimensional data and complex model interactions (Sanchez, 2018; Kirasich et al., 2018). However, the current study's findings suggest that the predictive accuracy of ML algorithms does not significantly outpace that of regression models as sample sizes increase. This discrepancy might be attributed to several factors including the nature of the data, the specific algorithms employed, or the methodologies used in the current study compared to those in the cited research.
+Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis did find support in the current study’s results, suggesting that the number of variables may be a determinant factor in the efficacy of ML algorithms compared to regression models. 
 
-Hypothesis 2 was based on the observation that ML algorithms perform less effectively in terms of predictive accuracy when the number of predictors in a dataset is limited, particularly when the events per variable (EPV) are below 200. This hypothesis did find support in the current study’s results, suggesting that the number of variables may be a determinant factor in the efficacy of ML algorithms compared to regression models. This finding is consistent with the conclusions drawn by Sanchez (2018), where it was noted that regression models held a consistent or improved predictive accuracy under similar conditions. It is possible that advancements in ML techniques or variations in data preprocessing and feature engineering might have influenced the outcomes observed in the current study.
+The findings from the present study build on the earlier research by Kirasich et al. (2018) and Sanchez-Pinto, Venable, et al. (2018), and provide a more nuanced understanding of the comparative performance of machine learning (ML) algorithms and logistic regression models across varying sample sizes and numbers of variables. This study aimed to evaluate how these factors influence the predictive accuracy of turnover intentions, offering insight into the optimal conditions for each modeling approach.
 
-The absence of expected findings in study 1 calls for a careful consideration of the conditions under which previous research asserted the superiority of ML over traditional statistical methods. It may be necessary to conduct further investigations into how specific characteristics of data, such as the structure and quality of the dataset, influence the performance of different analytical approaches. Additionally, the replication of this study across various contexts and with different types of data might help in understanding the nuanced dynamics between ML algorithms and regression models.
+## Sample Size Effects
+Consistent with Hypothesis 1, the results suggest that ML algorithms tend to have a slight advantage over logistic regression as sample size increases. This aligns with prior findings indicating that ML algorithms generally outperform regression models in larger datasets. However, the marginal difference in AUC scores between ML algorithms and logistic regression (an average delta of 0.02 to 0.03) suggests that while ML models might start to outperform logistic regression as data quantity increases, the extent of this advantage is not as pronounced as might be expected from previous literature. This could indicate that ML algorithms are sensitive to the specific characteristics of data (like noise and data distribution) even in larger datasets, which could diminish their relative performance advantage.
 
-In conclusion, while the current study does not support the hypothesized advantages of ML algorithms over regression models with respect to sample size, these results contribute to the ongoing dialogue and exploration into the most effective analytical techniques in predictive modeling. Future research should continue to explore these dynamics, perhaps focusing on different types of outcomes, varying conditions of data complexity, and the integration of novel machine learning methodologies.
+## Variable Number Effects
+In support of Hypothesis 2, the data indicate that the performance of ML algorithms improves relative to logistic regression as the number of variables increases. This finding is particularly significant when considering the performance consistency of logistic regression across different numbers of predictors. The study corroborates the assertion from Sanchez-Pinto, Venable, et al. (2018) that ML algorithms require a sufficient number of variables to optimize their predictive capabilities. However, the small delta in AUC scores suggests that while the number of variables is an important factor, the quality or relevance of these variables to the outcome variable (turnover intention) might be equally critical.
 
+## Enhancement of Predictive Accuracy
+Study 2 findings substantiate the significant role of incorporating work-related psychological constructs (WRPC) into predictive models for turnover intention and job satisfaction, offering compelling evidence in support of Hypothesis 3. The enhanced predictive accuracy of models integrating WRPC alongside biodata features, as demonstrated by higher AUC-ROC and lower RMSE scores, underscores the value of these constructs in modeling work-related outcomes.
+
+
+The results clearly indicate that models trained with both biodata and psychological constructs outperform those trained solely with biodata. The addition of WRPC yielded an average increase in AUC scores of 0.17 for predicting turnover intention, and a decrease in RMSE scores by 0.14 for predicting job satisfaction. These improvements are not merely statistical but are likely to be practically significant, enhancing the models' utility in organizational settings. This finding aligns with previous research emphasizing the importance of psychological factors in understanding employee behavior (Lee et al., 2021; Meyer et al., 2004).
+
+## Feature Importance and Model Interpretation
+The comparative analysis of feature importances in logistic regression and Random Forest models reveals intriguing differences in how each model values the same set of features. For instance, in the logistic regression model, the feature “ACS” exhibited a strong inverse relationship with turnover intention, while in the Random Forest model, “SPOS” was identified as the most critical predictor. These differences highlight the nuanced ways in which different algorithms process and prioritize information, suggesting that model choice should be considered carefully based on the specific features of interest and the nature of the predictive task.
+
+## Implications and Future Directions
+These findings have several important implications for predictive modeling in organizational settings. First, the choice between using ML algorithms and logistic regression should consider the size and complexity of the dataset. For applications where data are abundant and variables are numerous and well-selected, ML algorithms may offer a slight predictive edge. However, in scenarios where data are limited or the number of predictors is constrained, logistic regression remains a robust choice.
+
+The modest differences observed also suggest that the absolute superiority of one model type over another cannot be assumed. Instead, model selection should be guided by specific project needs, including considerations like interpretability, computational resources, and the stakes of predictive errors.
+
+Future research should explore these dynamics across a broader array of conditions, including incremental changes in sample size and variable count, to better delineate the thresholds at which ML algorithms significantly outperform logistic regression. Moreover, studies should incorporate cross-validation and external validation datasets to verify the generalizability of the observed trends.
+
+Future studies should also explore the incremental validity of adding various types of psychological constructs and examine whether certain constructs are more influential than others. Additionally, exploring other outcomes relevant to organizational settings, such as employee engagement or performance, could further validate the utility of WRPC in predictive modeling. It would also be beneficial to investigate the impact of combining traditional statistical approaches with machine learning to leverage the strengths of both methodologies.
+
+## Limitations
+The study's approach, while more granular than previous efforts, still faces limitations. The binary categorization of model types (ML vs. logistic regression) might oversimplify the diverse capabilities and configurations of specific algorithms within these categories. Additionally, the performance metrics (AUC scores) do not capture other critical aspects of model performance such as precision, recall, or the trade-offs between them.
+
+## Conclusion
+While the findings suggest specific trends in the relative performance of ML algorithms and logistic regression, they also highlight the complexity of predictive modeling and the need for careful, context-specific selection of analytical strategies. This study contributes to a more detailed understanding of these models' operationalization in real-world scenarios, paving the way for more informed and effective applications in predictive analytics.
 
 As Richard Landers said in an interview with SIOP, "Let's blend I-O psychology's tried-and-true practices where we know what we're measuring and we're very confident in the kinds of recommendations we're giving, and let's figure out where the intersections are with some of the new stuff coming out, to figure out what is truly new and useful and what is just a faddish waste of time." (Landers, 2019).
 Many of the new technological developments in the fields of data science and computers science are not backed by the expertise that I/O psychology has been developing over the years, yet they appear more attractive for many HR practices.
@@ -2310,20 +2685,26 @@ Using variables supported by previous research would be best practice in buildin
 r_refs("r-references.bib", append=FALSE)
 ```
 
-```{=tex}
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
+<!-- ```{=tex} -->
+<!-- \begingroup -->
+<!-- \setlength{\parindent}{-0.5in} -->
+<!-- \setlength{\leftskip}{0.5in} -->
 
-```
+<!-- ``` -->
 ::: {#refs custom-style="Bibliography"}
 :::
 
-```{=tex}
-\endgroup
-```
+<!-- ```{=tex} -->
+<!-- \endgroup -->
+<!-- ``` -->
 
 \newpage
 
-# Appendix 1
+
+\appendix
+
+
+# 2 {#aptables}
+
+
 

@@ -1,0 +1,34 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{dissertation_files/figure-latex/coefbg-1.pdf}
+\caption{\label{fig:coefbg}Logits of the Logistic Regression}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{dissertation_files/figure-latex/featuresbg-1.pdf}
+\caption{\label{fig:featuresbg}Features Importance of a Random Forest Model}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{dissertation_files/figure-latex/coefbg2-1.pdf}
+\caption{\label{fig:coefbg2}Betas waves of the Multiple Regression}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{dissertation_files/figure-latex/featuresbg2-1.pdf}
+\caption{\label{fig:featuresbg2}Feature Importance of a Random Forest Model}
+\end{figure*}

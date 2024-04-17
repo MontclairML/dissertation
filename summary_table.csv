@@ -1,0 +1,61 @@
+Model,Sample.Size,Number.of.Variables,AUC.Score
+xgboosting,100,105,0.978
+Neural Network,100,105,0.978
+Support Vector Machines,100,105,0.978
+Random Forest,100,105,0.978
+xgboosting,100000,105,0.883
+Neural Network,100000,105,0.883
+Support Vector Machines,100000,105,0.883
+Random Forest,100000,105,0.883
+xgboosting,10000,105,0.88
+Neural Network,10000,105,0.88
+Support Vector Machines,10000,105,0.88
+Random Forest,10000,105,0.88
+Logistic Regression,100000,105,0.874
+Logistic Regression,10000,105,0.873
+xgboosting,100000,75,0.794
+Neural Network,100000,75,0.794
+Support Vector Machines,100000,75,0.794
+Random Forest,100000,75,0.794
+Logistic Regression,10000,75,0.791
+xgboosting,10000,75,0.791
+Neural Network,10000,75,0.791
+Support Vector Machines,10000,75,0.791
+xgboosting,100000,40,0.789
+Neural Network,100000,40,0.789
+Support Vector Machines,100000,40,0.789
+Random Forest,100000,40,0.789
+Logistic Regression,100000,75,0.788
+Logistic Regression,100000,40,0.786
+Logistic Regression,100,105,0.78
+xgboosting,100,15,0.769
+Neural Network,100,15,0.769
+Support Vector Machines,100,15,0.769
+Random Forest,100,15,0.769
+xgboosting,10000,15,0.763
+Neural Network,10000,15,0.763
+Support Vector Machines,10000,15,0.763
+Random Forest,10000,15,0.763
+Logistic Regression,10000,15,0.761
+Logistic Regression,1000,15,0.759
+Logistic Regression,100,75,0.758
+Logistic Regression,100,15,0.758
+xgboosting,1000,15,0.75
+Neural Network,1000,15,0.75
+Support Vector Machines,1000,15,0.75
+Random Forest,1000,15,0.75
+xgboosting,1000,105,0.748
+Neural Network,1000,105,0.748
+Support Vector Machines,1000,105,0.748
+Random Forest,1000,105,0.748
+Random Forest,1000,75,0.748
+Logistic Regression,1000,105,0.744
+xgboosting,1000,75,0.707
+Neural Network,1000,75,0.707
+Support Vector Machines,1000,75,0.707
+Random Forest,10000,75,0.707
+Logistic Regression,1000,75,0.696
+xgboosting,100,75,0.692
+Neural Network,100,75,0.692
+Support Vector Machines,100,75,0.692
+Random Forest,100,75,0.692

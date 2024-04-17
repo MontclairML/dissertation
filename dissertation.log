@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.27)  16 APR 2024 00:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.11)  16 APR 2024 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,52 +604,53 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@posthook=\toks37
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
 \MT@toks=\toks38
 \MT@tempbox=\box66
 \MT@count=\count328
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
-LaTeX Info: Redefining \leftprotrusion on input line 1060.
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
+LaTeX Info: Redefining \leftprotrusion on input line 1062.
 \MT@prot@toks=\toks39
-LaTeX Info: Redefining \rightprotrusion on input line 1078.
-LaTeX Info: Redefining \textls on input line 1368.
+LaTeX Info: Redefining \rightprotrusion on input line 1081.
+LaTeX Info: Redefining \textls on input line 1392.
 \MT@outer@kern=\dimen297
-LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
 \MT@listname@count=\count329
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
 \MT@outer@space=\skip86
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+File: microtype.cfg 2024/03/29 v3.1b microtype main configuration file (RS)
 )) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
 \cslhangindent=\skip87
 \csllabelwidth=\skip88
-\cslentryspacingunit=\skip89
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/02/07 v24.2 The Babel package
+Package: babel 2024/03/29 v24.3 The Babel package
 \babel@savecnt=\count330
 \U@D=\dimen298
-\l@unhyphenated=\language5
+\l@unhyphenated=\language6
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count331
 Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4258.
+(babel)             option. I'll load 'nil'. Reported on input line 4267.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2024/02/07 v24.2 Nil language
-\l@nil=\language6
+Language: nil 2024/03/29 v24.3 Nil language
+\l@nil=\language7
 ))
 \everypar=\toks40
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing data for english
-(babel)             from babel-en.ini. Reported on input line 93.
+(babel)             from babel-en.ini. Reported on input line 117.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/was/upgreek.sty
 Package: upgreek 2003/02/12 v2.0 (WaS)
 Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
@@ -658,10 +659,10 @@ LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
-\LTleft=\skip90
-\LTright=\skip91
-\LTpre=\skip92
-\LTpost=\skip93
+\LTleft=\skip89
+\LTright=\skip90
+\LTpre=\skip91
+\LTpost=\skip92
 \LTchunksize=\count332
 \LTcapwidth=\dimen299
 \LT@head=\box67
@@ -678,9 +679,9 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip94
+\multirow@colwidth=\skip93
 \multirow@cntb=\count337
-\multirow@dima=\skip95
+\multirow@dima=\skip94
 \bigstrutjot=\dimen300
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
@@ -690,8 +691,8 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \ar@mcellbox=\box72
 \extrarowheight=\dimen302
 \NC@list=\toks42
-\extratabsurround=\skip96
-\backup@length=\skip97
+\extratabsurround=\skip95
+\backup@length=\skip96
 \ar@cellbox=\box73
 )
 \TX@col@width=\dimen303
@@ -708,9 +709,9 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip98
+\TPTL@width=\skip97
 )
-\longtablewidth=\skip99
+\longtablewidth=\skip98
 Failed to patch abstract.
 Failed to patch title.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -724,7 +725,7 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2024-03-14 L3 Experimental document command parser
 )) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@reset=\count340
 \csq@gtype=\count341
 \csq@glevel=\count342
@@ -733,35 +734,74 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@tshold=\count345
 \csq@ltx@everypar=\toks44
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+)) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip99
+\cftbeforetoctitleskip=\skip100
+\cftaftertoctitleskip=\skip101
+\cftbeforepartskip=\skip102
+\cftpartnumwidth=\skip103
+\cftpartindent=\skip104
+\cftbeforesecskip=\skip105
+\cftsecindent=\skip106
+\cftsecnumwidth=\skip107
+\cftbeforesubsecskip=\skip108
+\cftsubsecindent=\skip109
+\cftsubsecnumwidth=\skip110
+\cftbeforesubsubsecskip=\skip111
+\cftsubsubsecindent=\skip112
+\cftsubsubsecnumwidth=\skip113
+\cftbeforeparaskip=\skip114
+\cftparaindent=\skip115
+\cftparanumwidth=\skip116
+\cftbeforesubparaskip=\skip117
+\cftsubparaindent=\skip118
+\cftsubparanumwidth=\skip119
+\cftbeforeloftitleskip=\skip120
+\cftafterloftitleskip=\skip121
+\cftbeforefigskip=\skip122
+\cftfigindent=\skip123
+\cftfignumwidth=\skip124
+\c@lofdepth=\count346
+\c@lotdepth=\count347
+\cftbeforelottitleskip=\skip125
+\cftafterlottitleskip=\skip126
+\cftbeforetabskip=\skip127
+\cfttabindent=\skip128
+\cfttabnumwidth=\skip129
+
+Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing out. on input line 1156.
+
+) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen308
 \WF@size=\dimen309
-\c@WF@wrappedlines=\count346
+\c@WF@wrappedlines=\count348
 \WF@box=\box75
 \WF@everypar=\toks45
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count347
+\c@tracingmulticols=\count349
 \mult@box=\box76
 \multicol@leftmargin=\dimen310
-\c@unbalance=\count348
-\c@collectmore=\count349
-\doublecol@number=\count350
-\multicoltolerance=\count351
-\multicolpretolerance=\count352
+\c@unbalance=\count350
+\c@collectmore=\count351
+\doublecol@number=\count352
+\multicoltolerance=\count353
+\multicolpretolerance=\count354
 \full@width=\dimen311
 \page@free=\dimen312
 \premulticols=\dimen313
 \postmulticols=\dimen314
-\multicolsep=\skip100
-\multicolbaselineskip=\skip101
+\multicolsep=\skip130
+\multicolbaselineskip=\skip131
 \partial@page=\box77
 \last@line=\box78
 \mc@boxedresult=\box79
@@ -806,29 +846,29 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box117
 \@tempa=\box118
 \@tempa=\box119
-\c@minrows=\count353
-\c@columnbadness=\count354
-\c@finalcolumnbadness=\count355
+\c@minrows=\count355
+\c@columnbadness=\count356
+\c@finalcolumnbadness=\count357
 \last@try=\dimen316
 \multicolovershoot=\dimen317
 \multicolundershoot=\dimen318
 \mult@nat@firstbox=\box120
 \colbreak@box=\box121
-\mc@col@check@num=\count356
+\mc@col@check@num=\count358
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count357
+\BKM@id=\count359
 ))
-\c@NumberOfAuthors=\count358
-\c@NumberOfSuperscripts=\count359
+\c@NumberOfAuthors=\count360
+\c@NumberOfSuperscripts=\count361
 
-Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 204.
+Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 242.
 
-\c@NumberOfAffiliations=\count360
+\c@NumberOfAffiliations=\count362
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -836,24 +876,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./dissertation.aux)
 \openout1 = `dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -894,7 +934,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 206.
+Package hyperref Info: Link coloring OFF on input line 244.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa7/config/APA7english.txt
 File: APA7english.txt 2020/12/02 v1.02 apa7 configuration for non-American English
 )
@@ -905,21 +945,21 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 206.
-Package microtype Info: Applying patch `item' on input line 206.
-Package microtype Info: Applying patch `toc' on input line 206.
-Package microtype Info: Applying patch `eqnum' on input line 206.
+LaTeX Info: Redefining \microtypecontext on input line 244.
+Package microtype Info: Applying patch `item' on input line 244.
+Package microtype Info: Applying patch `toc' on input line 244.
+Package microtype Info: Applying patch `eqnum' on input line 244.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 206.
+Package microtype Warning: Unable to apply patch `footnote' on input line 244.
 
-Package microtype Info: Applying patch `verbatim' on input line 206.
+Package microtype Info: Applying patch `verbatim' on input line 244.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 206.
+LaTeX Info: Redefining \showhyphens on input line 244.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -929,35 +969,35 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 
 Class apa7 Warning: Abstract not defined.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 207.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 207.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 207.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 207.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 207.
+(Font)              <12> on input line 245.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 207.
+(Font)              <8> on input line 245.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 207.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 207.
+(Font)              <6> on input line 245.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 245.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -966,34 +1006,29 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 ) [1{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
-] [1]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.250 \newpage
-               [2]
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 303--310
-[][]  
+] [2] [1]
+Overfull \hbox (6.9709pt too wide) in paragraph at lines 344--351
+[]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 313--316
-[][]  
+Overfull \hbox (6.9709pt too wide) in paragraph at lines 354--357
+[]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 323--328
-[][]  
+Overfull \hbox (6.9709pt too wide) in paragraph at lines 364--369
+[]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 331--334
-[][]  
+Overfull \hbox (6.9709pt too wide) in paragraph at lines 372--375
+[]  
  []
 
 
-Overfull \hbox (43.1059pt too wide) in paragraph at lines 337--340
-[][]  
+Overfull \hbox (6.9709pt too wide) in paragraph at lines 378--381
+[]  
  []
 
 [1] [2] [3] (./dissertation.toc
@@ -1001,123 +1036,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.33 ... 2: Incremental Validity}{18}{section*.35}
-                                                  % [1] [2])
+                                                  % [1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.66 ...ine {section}{References}{33}{section*.68}
+                                                  % [2]
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+ [][] [][]\T1/lmr/bx/n/12 (+20) Ap-pendix[]  
+ []
+
+)
 \tf@toc=\write6
 \openout6 = `dissertation.toc'.
 
-[3]
-Underfull \vbox (badness 4353) has occurred while \output is active []
-
-[4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 487.
+[3] [4] [5] [6] [7]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 523.
 (c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [8{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [9] [10] [11]
-Underfull \vbox (badness 4792) has occurred while \output is active []
-
-[12] [13] [14] [15] [16] [17] [18]
+) [8{c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
 \openout4 = `dissertation.ttt'.
 
-(dissertation.ttt)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(dissertation.ttt) [19] [20] [21] [22] [23] [24] [25] [26] [27]
+\openout5 = `dissertation.fff'.
 
-[19] [20] [21]
-Underfull \vbox (badness 2005) has occurred while \output is active []
-
-[22] [23]
-Underfull \vbox (badness 4792) has occurred while \output is active []
-
-[24]
-Underfull \vbox (badness 4792) has occurred while \output is active []
-
-[25] [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27]
-<dissertation_files/figure-latex/coefbg-1.pdf, id=414, 469.755pt x 325.215pt>
-File: dissertation_files/figure-latex/coefbg-1.pdf Graphic file (type pdf)
-<use dissertation_files/figure-latex/coefbg-1.pdf>
-Package pdftex.def Info: dissertation_files/figure-latex/coefbg-1.pdf  used on input line 2108.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (36.13383pt too wide) in paragraph at lines 2108--2109
-[][]  
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[28]
-<dissertation_files/figure-latex/featuresbg-1.pdf, id=423, 469.755pt x 325.215pt>
-File: dissertation_files/figure-latex/featuresbg-1.pdf Graphic file (type pdf)
-<use dissertation_files/figure-latex/featuresbg-1.pdf>
-Package pdftex.def Info: dissertation_files/figure-latex/featuresbg-1.pdf  used on input line 2110.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (36.13383pt too wide) in paragraph at lines 2110--2111
-[][]  
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[29 <./dissertation_files/figure-latex/coefbg-1.pdf>] [30 <./dissertation_files/figure-latex/featuresbg-1.pdf>]
-
-LaTeX Warning: Reference `fig:coefbg' on page 31 undefined on input line 2118.
-
-
-LaTeX Warning: Reference `fig:featuresbg' on page 31 undefined on input line 2118.
-
-<dissertation_files/figure-latex/coefbg2-1.pdf, id=448, 469.755pt x 325.215pt>
-File: dissertation_files/figure-latex/coefbg2-1.pdf Graphic file (type pdf)
-<use dissertation_files/figure-latex/coefbg2-1.pdf>
-Package pdftex.def Info: dissertation_files/figure-latex/coefbg2-1.pdf  used on input line 2204.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (36.13383pt too wide) in paragraph at lines 2204--2205
-[][]  
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[31]
-<dissertation_files/figure-latex/featuresbg2-1.pdf, id=455, 469.755pt x 325.215pt>
-File: dissertation_files/figure-latex/featuresbg2-1.pdf Graphic file (type pdf)
-<use dissertation_files/figure-latex/featuresbg2-1.pdf>
-Package pdftex.def Info: dissertation_files/figure-latex/featuresbg2-1.pdf  used on input line 2206.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (36.13383pt too wide) in paragraph at lines 2206--2207
-[][]  
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[32 <./dissertation_files/figure-latex/coefbg2-1.pdf>]
-
-LaTeX Warning: Reference `fig:coefbg2' on page 33 undefined on input line 2210.
-
-
-LaTeX Warning: Reference `fig:featuresbg2' on page 33 undefined on input line 2212.
-
-[33 <./dissertation_files/figure-latex/featuresbg2-1.pdf>] [34] [35] [36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[39]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[41] [42] AED endfloat: Processing end Figures and Tables [43] (./dissertation.ttt
+(dissertation.fff) [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] (./dissertation.ttt
 Overfull \hbox (75.67184pt too wide) in paragraph at lines 6--6
 [] [] 
  []
@@ -1142,12 +1085,23 @@ Overfull \hbox (151.34369pt too wide) in alignment at lines 15--121
  [] [] [] 
  []
 
-[44
+[38
 
 
+] [39] [40] [41
 
-] [45] [46] [47
 
+] [42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
 
 ] [48
 
@@ -1195,13 +1149,34 @@ Overfull \hbox (151.34369pt too wide) in alignment at lines 15--121
 
 ] [70
 
-] [71
+]
+Overfull \hbox (0.66727pt too wide) in paragraph at lines 1061--1061
+[] [] 
+ []
 
-] [72
 
-] [73
+Overfull \hbox (1.33453pt too wide) in alignment at lines 1060--1065
+ [] [] [] [] [] 
+ []
 
-] [74
+
+Overfull \hbox (0.66727pt too wide) in paragraph at lines 1066--1066
+[] [] 
+ []
+
+
+Overfull \hbox (1.33453pt too wide) in alignment at lines 1065--1070
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.33453pt too wide) in alignment at lines 1070--1132
+ [] [] [] [] [] 
+ []
+
+[71
+
+] [72] [73] [74
 
 ] [75
 
@@ -1213,38 +1188,66 @@ Overfull \hbox (151.34369pt too wide) in alignment at lines 15--121
 
 ] [79
 
-] [80
+]) [80
 
-] [81
+] (./dissertation.fff
+<dissertation_files/figure-latex/coefbg-1.pdf, id=714, 469.755pt x 325.215pt>
+File: dissertation_files/figure-latex/coefbg-1.pdf Graphic file (type pdf)
+<use dissertation_files/figure-latex/coefbg-1.pdf>
+Package pdftex.def Info: dissertation_files/figure-latex/coefbg-1.pdf  used on input line 5.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[81
 
-] [82
+ <./dissertation_files/figure-latex/coefbg-1.pdf>]
+<dissertation_files/figure-latex/featuresbg-1.pdf, id=724, 469.755pt x 325.215pt>
+File: dissertation_files/figure-latex/featuresbg-1.pdf Graphic file (type pdf)
+<use dissertation_files/figure-latex/featuresbg-1.pdf>
+Package pdftex.def Info: dissertation_files/figure-latex/featuresbg-1.pdf  used on input line 14.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[82
 
-] [83
+ <./dissertation_files/figure-latex/featuresbg-1.pdf>]
+<dissertation_files/figure-latex/coefbg2-1.pdf, id=735, 469.755pt x 325.215pt>
+File: dissertation_files/figure-latex/coefbg2-1.pdf Graphic file (type pdf)
+<use dissertation_files/figure-latex/coefbg2-1.pdf>
+Package pdftex.def Info: dissertation_files/figure-latex/coefbg2-1.pdf  used on input line 23.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+[83
 
-]) [84
+ <./dissertation_files/figure-latex/coefbg2-1.pdf>]
+<dissertation_files/figure-latex/featuresbg2-1.pdf, id=745, 469.755pt x 325.215pt>
+File: dissertation_files/figure-latex/featuresbg2-1.pdf Graphic file (type pdf)
+<use dissertation_files/figure-latex/featuresbg2-1.pdf>
+Package pdftex.def Info: dissertation_files/figure-latex/featuresbg2-1.pdf  used on input line 32.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+) [84
 
-] (./dissertation.aux)
+ <./dissertation_files/figure-latex/featuresbg2-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 2488.
+
+[85
+
+] AED endfloat: Processing end Figures and Tables (./dissertation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 29060 strings out of 476064
- 541735 string characters out of 5791135
+ 29394 strings out of 476044
+ 548180 string characters out of 5790176
  1972496 words of memory out of 5000000
- 50190 multiletter control sequences out of 15000+600000
- 608042 words of font info for 123 fonts, out of 8000000 for 9000
+ 50571 multiletter control sequences out of 15000+600000
+ 604126 words of font info for 125 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,12n,107p,1613b,782s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on dissertation.pdf (90 pages, 325883 bytes).
+ 99i,12n,107p,1613b,780s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/diego/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
+Output written on dissertation.pdf (91 pages, 308323 bytes).
 PDF statistics:
- 1122 PDF objects out of 1200 (max. 8388607)
- 994 compressed objects within 10 object streams
- 364 named destinations out of 1000 (max. 500000)
- 27185 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1057 PDF objects out of 1200 (max. 8388607)
+ 935 compressed objects within 10 object streams
+ 309 named destinations out of 1000 (max. 500000)
+ 25137 words of extra memory for PDF output out of 29859 (max. 10000000)
 

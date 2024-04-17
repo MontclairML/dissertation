@@ -54,36 +54,60 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -166,8 +190,23 @@
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
 \usepackage{csquotes}
+\usepackage[titles]{tocloft}
+\cftpagenumbersoff{figure}
+\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{.\space}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cftfignumwidth}{Figure 10.\qquad}
+\cftpagenumbersoff{table}
+\renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{.\space}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cfttabnumwidth}{Table 10.\qquad}
+\setlength{\parskip}{0pt}
 \newcommand{\bcenter}{\begin{center}}
 \newcommand{\ecenter}{\end{center}}
+\raggedbottom
 \usepackage{wrapfig}
 \usepackage{multicol}
 \setlength{\columnsep}{5cm}
@@ -177,18 +216,17 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression},
   pdfauthor={Diego Figueiras1},
   pdflang={en-EN},
   pdfkeywords={Employee turnover, machine learning},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression}
+\title{TITLE}
 \author{Diego Figueiras\textsuperscript{1}}
 \date{}
 
@@ -205,6 +243,9 @@ Correspondence concerning this article should be addressed to Diego Figueiras, D
 
 \begin{document}
 \maketitle
+
+\thispagestyle{empty}
+\newpage
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -295,32 +336,32 @@ Counseling
 
 \vskip 0.6in
 
-Certified by:
+\noindent{Certified by:}
 
 \vskip 0.6in  
 
 \linespread{1.0}\selectfont
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
-Dr. Scott Herness
+Dr. Kenneth Sumner 
 \newline
-Vice Provost for Research and
+Associate Provost for Academic Affairs and
 \newline
-Dean of the Graduate School
+Acting Dean of the Graduate School
 
 \vskip 0.3in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Date
 
 \columnbreak
 
-Dissertation Committee:
+\noindent{Dissertation Committee:}
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. Michael Bixter
 \newline
@@ -328,13 +369,13 @@ Dissertation Chair
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. Kevin Askew
 
 \vskip 0.6in
 
-\rule{6cm}{0.2mm}
+\noindent\rule{6cm}{0.2mm}
 \newline
 Dr. John T. Kulas
 
@@ -380,8 +421,7 @@ This dissertation explores the ongoing debate between traditional statistical re
 \section{Chapter 1 (Heading 1)}
 \newpage
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 Employee turnover is a critical concern for organizations, as it impacts productivity, performance, and overall organizational effectiveness (Griffeth et al., 2000).
 Accurate prediction of turnover is crucial for proactive human resource management and the implementation of effective retention strategies (T. R. Mitchell et al., 2001; Mobley et al., 1979).
@@ -441,16 +481,14 @@ The findings from this research will contribute to the existing literature on tu
 Understanding the relative performance of regression-based models and machine learning models when dealing with small sample sizes can guide decision-making regarding the choice of modeling techniques in resource-limited scenarios.
 Ultimately, this research aims to enhance our understanding of turnover prediction and inform effective retention strategies to mitigate the negative consequences of employee turnover.
 
-\hypertarget{what-constitutes-machine-learning}{%
-\subsection{What Constitutes Machine Learning}\label{what-constitutes-machine-learning}}
+\subsection{What Constitutes Machine Learning}\label{what-constitutes-machine-learning}
 
 The delineation between machine learning (ML) and statistical modeling has been extensively explored in the literature (Breiman, 2001b).
 However, the distinction remains ambiguous, as noted by Collins et al. (2014).
 Breiman's seminal work on the ``two cultures'' serves as a key reference in this discussion (Breiman, 2001b).
 Breiman highlights the contrast between theory-driven models like regression and empirical algorithms such as decision trees, artificial neural networks, support vector machines, and random forests.
 
-\hypertarget{theory-based-models}{%
-\subsection{Theory-based models}\label{theory-based-models}}
+\subsection{Theory-based models}\label{theory-based-models}
 
 Theory-based models are models that are based on theory and assumptions, such as traditional linear regression, and benefit from human intervention and subject knowledge for model specification.
 The analysis in this approach starts with assuming a stochastic data model for the inside of the black box.
@@ -462,8 +500,7 @@ However, these conclusions are about the model's mechanism, not about nature's m
 Breiman (2001) criticized this approach, pointing out that: ``A few decades ago, the commitment to data models was such that even simple precaution such as residual analysis or goodness-of-fit tests were not used. The belief in the infallibility of the data models was almost religious. It is a strange phenomenon -- once a model is made, then it becomes truth and the conclusions from it are infallible (p.~202).'' He concludes by using the following old saying: ``If all a man has is a hammer, then every problem looks like a nail (p.~202).'' To solve a wide range of problems, such as is the case in the social sciences with the abundance of variables, a larger set of tools is needed.
 The rapidly increasing ability of computers to store and manipulate data can provide us with more varied tools.
 
-\hypertarget{empirical-based-models}{%
-\subsection{Empirical-based models}\label{empirical-based-models}}
+\subsection{Empirical-based models}\label{empirical-based-models}
 
 In the mid-1980s, with the development of neural networks and decision trees, a new community of researchers appeared focused on predictive accuracy (Cristianini \& Scholkopf, 2002).
 They began using these algorithms on working in complex prediction problems where it was obvious that data models were not applicable, such as speech recognition, image recognition, handwriting recognition, times series analysis, or financial market analysis.
@@ -479,8 +516,7 @@ Meanwhile, others categorize any approach deviating from basic regression models
 It is essential to highlight that, according to the ``automatic learning from data'' definition, these methods do not strictly fall under machine learning.
 In this study, we refrain from classifying them as such.
 
-\hypertarget{common-terms-in-machine-learning}{%
-\subsection{Common Terms in Machine Learning}\label{common-terms-in-machine-learning}}
+\subsection{Common Terms in Machine Learning}\label{common-terms-in-machine-learning}
 
 \begin{itemize}
 \item
@@ -501,8 +537,7 @@ In this study, we refrain from classifying them as such.
   By leveraging the diversity among the constituent models, ensemble methods aim to improve generalization performance, mitigate overfitting, and enhance predictive accuracy across a variety of scenarios.
 \end{itemize}
 
-\hypertarget{data-hungriness}{%
-\subsection{Data Hungriness}\label{data-hungriness}}
+\subsection{Data Hungriness}\label{data-hungriness}
 
 The concept of data hungriness refers to the sample size needed for a method to generate a prediction model with a good predictive accuracy (Ploeg et al., 2014).
 The data hungriness of a predictive modeling technique is defined as the minimum number of events per variable at which the optimism of the generated model is less than 0.01.
@@ -518,21 +553,18 @@ The model's optimism, therefore, is the difference between the training error es
 The sample size needed to minimize this difference is what is referred to as data hungriness.
 Machine learning algorithms generally require big sample sizes to minimize this difference (Ploeg et al., 2014).
 
-\hypertarget{parsimony}{%
-\subsection{Parsimony}\label{parsimony}}
+\subsection{Parsimony}\label{parsimony}
 
 Parsimony is defined as the sample size and number of variables that a dataset must have in order to maximize the predictive accuracy of a model (Sanchez-Pinto, Luo, et al., 2018).
 A model is considered parsimonious when it both uses the least amount of variables possible (sparsity) and has good prediction accuracy.
 Typically, parsimony is reported as the performance metric of models that are sparse.
 
-\hypertarget{algorithms}{%
-\section{Algorithms}\label{algorithms}}
+\section{Algorithms}\label{algorithms}
 
 In this dissertation, various machine learning algorithms are described and assessed in their ability to predict dependent variables of interest in the field of I/O psychology, specifically turnover intention.
 This section provides a general overview of the underlying mechanicsms behind these algorithms.
 
-\hypertarget{decision-trees}{%
-\subsection{Decision Trees}\label{decision-trees}}
+\subsection{Decision Trees}\label{decision-trees}
 
 Decision trees are a type of supervised machine learning method.
 They create classification or regression models following a tree-like structure (Mahesh, 2020).
@@ -544,8 +576,7 @@ On the downside, their predictive power is not as high as other algorithms and t
 This could result in a large effect on the tree structure that is not meaningful.
 However, understanding how they operate becomes important in order to understand other algorithms, such as random forest and gradient boosting trees (Alpaydin, 2020; Marsland, 2011).
 
-\hypertarget{classification-and-regression-trees-cart}{%
-\subsection{Classification and Regression Trees (CART)}\label{classification-and-regression-trees-cart}}
+\subsection{Classification and Regression Trees (CART)}\label{classification-and-regression-trees-cart}
 
 A Classification and Regression Tree is an umbrella term that refers to the use of either classification and/or regression trees (Marsland, 2011).
 We already explained classification trees, so lets now explain regression.
@@ -557,8 +588,7 @@ Then the first branch is the upper threshold, with the leaf being the average DV
 The second branch is the middle threshold of the IVs, with the leaves being the average DV between the middle and the lower threshold and the average DV between the middle and the upper threshold.
 Because of this structure, regression trees are better at capturing non-linear associations than simple linear regression (Mahesh, 2020).
 
-\hypertarget{random-forests-rf}{%
-\subsection{Random Forests (RF)}\label{random-forests-rf}}
+\subsection{Random Forests (RF)}\label{random-forests-rf}
 
 Random forest are machine learning algorithms that take an ensemble approach that provides an improvement over decision trees (Mahesh, 2020).
 They are built by taking a random sample of the data and then building an ongoing series of decision trees on the subsets.
@@ -574,8 +604,7 @@ They greatly help reduce overfitting and bias because of this, which are two of 
 Similarly, they can fill in missing data by computing the weighted averages across the hundreds of samples, in the case of continuous data, and frequencies, in the case of categorical data.
 (Alpaydin, 2020).
 
-\hypertarget{gradient-boosting-trees-gbt}{%
-\subsection{Gradient Boosting Trees (GBT)}\label{gradient-boosting-trees-gbt}}
+\subsection{Gradient Boosting Trees (GBT)}\label{gradient-boosting-trees-gbt}
 
 Gradient boosting trees are very similar to random forests but with the difference that the former learn sequentially instead of randomly.
 The ways the individual trees are built and their results are combined is different.
@@ -589,8 +618,7 @@ This makes predictions with GBT fast and memory-efficient, although they are har
 Compared to random forest, they have a lot of model capacity that enables them to model complex relationships and decision boundaries.
 As with previous decision trees methods, there is also the danger of overfitting (Mahesh, 2020).
 
-\hypertarget{bayesian-additive-regression-trees-bart}{%
-\subsection{Bayesian Additive Regression Trees (BART)}\label{bayesian-additive-regression-trees-bart}}
+\subsection{Bayesian Additive Regression Trees (BART)}\label{bayesian-additive-regression-trees-bart}
 
 Bayesian Additive Regression Trees are also an ensemble method that uses many decision trees as its building blocks, much like RF or GBT.
 It could be said that BART tries to capture the best of RF and GBT; they construct the trees by sampling randomly, much like bagging in RF, and they also try to capture signal not yet accounted for by the current model, much like boosting in GBT.
@@ -599,15 +627,13 @@ They rely on recursive binary partitioning of predictor space into hyperrectangl
 Hyperrectangles are cubes used to classify data, since putting data in 3d space is a better way to classify mixed data.
 Once this is done, the trees are summed and regularized to avoid overfitting (Chipman et al., 2010; Marsland, 2011).
 
-\hypertarget{neural-networks-nn}{%
-\subsection{Neural Networks (NN)}\label{neural-networks-nn}}
+\subsection{Neural Networks (NN)}\label{neural-networks-nn}
 
 Neural networks were built with the intention of emulating the human nervous system. The input is associated with weights, bias, activation functions, and a computed output from all of this. Much like decision trees, NNs consist of nodes and connections between the nodes, with input nodes, output nodes, and different layers of nodes in between. A neural network may contain more than one layer between input and output to handle complex problems. These layers are referred to as hidden layers (Alpaydin, 2020).
 The way the algorithm works is that the input node moves to the hidden layer by being multiplied by the weight and having the bias added, each of which is associated with the input. This is done for every single value in the input (also called IV), and the results are put into the activation function formula associated to hidden layers. The activation function is what decides the predicted output, and the formula varies depending on which function is being used. Common activation functions are the sigmoid, soft plus, hyperbolic tangent, and rectified linear units (ReLu). The weights and bias come from fitting the NN to the data beforehand using a method called ``backpropagation.'' After scaling the portion of the activation function estimated, the resulting functions are aggregated, then multiplied by the weights associated with the output and the bias also associated with the output is later added, resulting in a function that fits the data and that is used to make predictions based on the input.
 To model very complex neural networks with high predictive power, one can extend the model by adding more hidden layers, which is what we know as deep learning. Due to the rapid development of hardware and continuous research on backpropagation techniques, NNs are a well studied area in machine learning (Alpaydin, 2020; Mahesh, 2020; Marsland, 2011).
 
-\hypertarget{support-vector-machines-svm-classifiers}{%
-\subsection{Support Vector Machines (SVM) classifiers}\label{support-vector-machines-svm-classifiers}}
+\subsection{Support Vector Machines (SVM) classifiers}\label{support-vector-machines-svm-classifiers}
 
 Support Vector Machines (SVMs) represent supervised machine learning algorithms frequently employed for classification tasks.
 These algorithms operate on the principle of identifying a hyperplane that optimally segregates the dataset into two distinct classes.
@@ -618,22 +644,19 @@ The objective of SVM is to select a hyperplane with the widest possible margin, 
 Cross-validation is employed to determine this margin.
 SVM finds extensive application in tasks such as text classification and image recognition, excelling in managing outliers by permitting misclassifications and overlapping classifications (Alpaydin, 2020; Mahesh, 2020; Marsland, 2011)
 
-\hypertarget{evaluation-metrics}{%
-\section{Evaluation metrics}\label{evaluation-metrics}}
+\section{Evaluation metrics}\label{evaluation-metrics}
 
 Performance metrics evaluate a model's predictive performance and tell you how good or poor the performance of the model is.
 In this study, various performance metrics will be used.
 This section provides a general description of them.
 
-\hypertarget{accuracy}{%
-\subsection{Accuracy}\label{accuracy}}
+\subsection{Accuracy}\label{accuracy}
 
 Accuracy is a prediction performance metric used for classification machine learning algorithms (those that predict a dependent variable that has categorical data rather than continuous).
 It is perhaps the simplest metric to use and implemented, and it's defined as the number of correct predictions divided by the total number of predictions.
 This ratio is usually stated as a percentage (Marsland, 2011).
 
-\hypertarget{precision}{%
-\subsection{Precision}\label{precision}}
+\subsection{Precision}\label{precision}
 
 Precision is also a ratio for classification algorithms, much like accuracy, but between true positives and total amount of positives predicted.
 This metric focuses on Type-I errors (Alpaydin, 2020); in other words, incorrectly labeling the dependent variable during prediction.
@@ -641,8 +664,7 @@ A precision score towards 1 means that the model did not miss any true positives
 A low precision score of less than 0.5 means that the classifier has a high number of false positives, which can be an outcome of imbalance class.
 This metric cannot measure the existence of Type-II error (Marsland, 2011).
 
-\hypertarget{recallsensitivity}{%
-\subsection{Recall/Sensitivity}\label{recallsensitivity}}
+\subsection{Recall/Sensitivity}\label{recallsensitivity}
 
 Recall, also called sensitivity, focuses on Type-II errors (Alpaydin, 2020).
 It is similar to precision but with a different denominator, which would be the number of true positives plus the number of false negatives.
@@ -650,16 +672,14 @@ Recall towards 1 will mean that the model did not miss any true positives and is
 A low recall score of less than 0.5 would mean that the classifier has a high number of false negatives, which can be an outcome of imbalance class.
 This metric cannot measure the existence of Type-I error (Alpaydin, 2020; Marsland, 2011).
 
-\hypertarget{f1-score}{%
-\subsection{F1-score}\label{f1-score}}
+\subsection{F1-score}\label{f1-score}
 
 This metric combines precision and recall, since it is the harmonic mean between the two (Alpaydin, 2020).
 A high F1 score means that there is high precision and high recall.
 A low F1 score has little to no meaning, since although it tells us that the precision and recall were low, it does not tell us which cases were incorrectly classified as true positives or false negatives.
 However, it is still useful in deducing the performance of the model (Marsland, 2011).
 
-\hypertarget{area-under-the-receiver-operating-characteristics-curve-auc-roc}{%
-\subsection{Area Under the Receiver Operating Characteristics Curve (AUC-ROC)}\label{area-under-the-receiver-operating-characteristics-curve-auc-roc}}
+\subsection{Area Under the Receiver Operating Characteristics Curve (AUC-ROC)}\label{area-under-the-receiver-operating-characteristics-curve-auc-roc}
 
 AUC-ROC is a useful metric to compare different machine learning classifiers.
 The true positives ratio (TPR) and false positives ratio (FPR) are plotted in a graph under different thresholds.
@@ -668,8 +688,7 @@ The area under this curve is what we call AUC, which is equivalent to the probab
 In other words, a high AUC means that the probability of a randomly chosen positive example is indeed positive.
 This tells that the model does a good job at discriminating negatives and positives, with most true positives at one end and positives in the other (Alpaydin, 2020; Marsland, 2011).
 
-\hypertarget{root-mean-square-error-rmse}{%
-\subsection{Root Mean Square Error (RMSE)}\label{root-mean-square-error-rmse}}
+\subsection{Root Mean Square Error (RMSE)}\label{root-mean-square-error-rmse}
 
 The root mean square error is another standard way of measuring the accuracy of a predictive model.
 It shows how far predictions fall from measured true values using Euclidean distance (Myers et al., 2013).
@@ -678,36 +697,31 @@ It tells you how spread out the errors are and how concentrated the data is arou
 It indicates the absolute fit of the model to the data and the average model prediction error in units of the dependent variable.
 The lower the RMSE, the better the predictive accuracy.
 
-\hypertarget{log-loss}{%
-\subsection{Log-loss}\label{log-loss}}
+\subsection{Log-loss}\label{log-loss}
 
 Log-loss is another important metric in assessing the performance of machine learning algorithms, especially classifiers.
 It indicates how close the prediction probability is to the true value, and the more the predicted probability is different from the actual value, the higher the log-loss (Alpaydin, 2020; Marsland, 2011).
 
-\hypertarget{kappa-statistic}{%
-\subsection{Kappa Statistic}\label{kappa-statistic}}
+\subsection{Kappa Statistic}\label{kappa-statistic}
 
 Kappa statistic, also called Cohen's kappa, is a metric used to assess the performance of a classification model.
 It is the same metric to compute inter-rater agreement, but in the context of machine learning, it can be used to compare the algorithm's predictions on different classes or labels of a dependent variable (Alpaydin, 2020; Marsland, 2011).
 
-\hypertarget{geometric-mean-score-g-mean}{%
-\subsection{Geometric mean score (G-mean)}\label{geometric-mean-score-g-mean}}
+\subsection{Geometric mean score (G-mean)}\label{geometric-mean-score-g-mean}
 
 The geometric mean is another useful metric in assessing accuracy of performance.
 It is the root of the product of a class-wise sensitivity.
 It tried to maximize the accuracy on each of the classes and keep them balanced at the same time.
 Mathematically, it is basically the square root of the product of sensitivity and specificity (Barandela et al., 2003; Kubat et al., 1997).
 
-\hypertarget{rationale}{%
-\section{Rationale}\label{rationale}}
+\section{Rationale}\label{rationale}
 
 Predictive modeling has gained significant attention in recent years across various disciplines due to its potential to make data-driven decisions.
 One of the fundamental questions that researchers and practitioners encounter in predictive modeling is whether traditional statistical regression models or machine learning (ML) algorithms are more effective in producing accurate predictions.
 This debate is crucial as it guides the selection of appropriate modeling techniques for specific datasets, which can vary in terms of sample size and the number of variables.
 In this section, we will review the literature and rationale leading to the hypotheses for Study 1 of the current dissertation proposal.
 
-\hypertarget{sample-size-and-predictive-modeling}{%
-\subsection{Sample Size and Predictive Modeling}\label{sample-size-and-predictive-modeling}}
+\subsection{Sample Size and Predictive Modeling}\label{sample-size-and-predictive-modeling}
 
 Predictive modeling techniques, such as regression models and ML algorithms, differ in their ability to handle different sample sizes effectively.
 Owing to its flexibility, ML methods are claimed to have better performance over traditional statistical modeling, and to better handle a larger number of potential predictors (Vijayakumar \& Cheung, 2019).
@@ -732,11 +746,9 @@ The median EPV was 44, which is small and more appropriate for predictive studie
 Only ten out of the twenty-eight articles in this literature review had a EPV above 87.
 Using machine learning algorithms with such small number of variables could compromise the bias-variance tradeoff, overfitting the data.
 
-\hypertarget{hypotheses}{%
-\section{Hypotheses}\label{hypotheses}}
+\section{Hypotheses}\label{hypotheses}
 
-\hypertarget{study-1-sample-size-and-number-of-variables}{%
-\subsection{Study 1: Sample Size and Number of Variables}\label{study-1-sample-size-and-number-of-variables}}
+\subsection{Study 1: Sample Size and Number of Variables}\label{study-1-sample-size-and-number-of-variables}
 
 This study is based on prior research (Kirasich et al., 2018; Sanchez-Pinto, Venable, et al., 2018), which suggests that ML algorithms outperform regression models consistently when the sample size is large.
 In their study, they compared machine learning methods with regression methods for variable selection for two differently sized datasets, focusing on parsimony in predictor selection, which balances predictive accuracy with the sparsity of predictors.
@@ -744,21 +756,20 @@ Their findings were that for the smaller dataset (N=6,565), regression achieved 
 However, the study's approach of using only two distinct sample sizes---one relatively small and the other significantly large---presents certain limitations. Specifically, this binary distinction may not sufficiently capture the nuances that could emerge with intermediate sample sizes. A broader range of dataset sizes might provide a more comprehensive understanding of how the performance of these methods scales with sample size. Including multiple datasets that vary incrementally in size could help delineate more precisely the thresholds at which machine learning begins to outperform traditional regression, or vice versa, thus offering deeper insights into the relative advantages of each analytical method across a spectrum of conditions.
 Since there is some recognition that regression models perform well with smaller datasets, where the number of observations is limited, and that ML algorithms tend to outperform when the dataset is very large, the following hypotheses for Study 1 are proposed:
 
-Hypothesis 1: As sample size increases, the relative advantage in predictive accuracy of turnover intention between ML and regression-based algorithms will increase.
+Hypothesis 1: As sample size increases, the relative advantage of ML algorithms over regression-based alogirithms in predictive accuracy of turnover intention will increase.
 
 In addition to sample size, the number of variables in a dataset is another critical factor affecting the choice between regression models and ML algorithms.
 Going back to the study done by Sanchez-Pinto, Venable, et al. (2018), predictive accuracy decreased for machine learning when the dataset had fewer variables compared to regression models, whose predictive accuracy remained the same or improved.
 Specifically, this happened when the EPV were below 200.
 This leads to the proposal of Hypothesis 2.
 
-Hypothesis 2: As the EPV decreases, the relative advantage in predictive accuracy of turnover intention betweel ML and regression-based algorithms will decrease.
+Hypothesis 2: As the number of variables increases, the relative advantage of ML algorithms over regression-based alogirithms in predictive accuracy of turnover intention will increase.
 
 In conclusion, Study 1 aims to investigate the interplay between sample size and the number of variables in predictive modeling by testing the hypotheses outlined above.
 Through a systematic exploration of these factors, we hope to contribute to the understanding of when regression models or ML algorithms are more suitable for predictive tasks in real-world scenarios.
 Both simulated and real-world data will be used to test these two hypotheses.
 
-\hypertarget{study-2-incremental-validity}{%
-\subsection{Study 2: Incremental Validity}\label{study-2-incremental-validity}}
+\subsection{Study 2: Incremental Validity}\label{study-2-incremental-validity}
 
 The literature review done on 28 articles that studied the predictive accuracy of machine learning models when predicting relevant variables from a job selection context, such as turnover or job satisfaction, noted that only 9\% of the studies looked at independent variables that I/O psychologists typically use in predicting job performance in selection contexts. The literature has proved that there variables are relevant in predicting job performance/turnover, such as job satisfaction, commitment, conscientiousness, organizational identification, perceived organization support and justice, involvement, or engagement (Choi, 2011; Ertas, 2015; Franzen et al., 2022; Kim \& Fernandez, 2017; Liss-Levinson et al., 2015, 2015; Maertz Jr et al., 2007; Meyer \& Allen, 1991; Pitts et al., 2011; Reeve \& Smith, 2001; Schaufeli et al., 2017; Shamir \& Kark, 2004; Shore \& Tetrick, 1991; Smith, 2005). None of the articles that were predicting turnover or turnover intention used any measure of any of these psychological constructs.
 The literature in the field of I/O psychology has much to contribute in using the appropriate predictors for building machine learning algorithms that want to predict job performance and turnover.
@@ -771,14 +782,11 @@ The proposed hypotheses are the following:
 
 Hypothesis 3: machine learning models trained with work-related psychological constructs will show better predictive accuracy metrics when predicting turnover intention than models trained using biodata.
 
-\hypertarget{study-1}{%
-\section{Study 1}\label{study-1}}
+\section{Study 1}\label{study-1}
 
-\hypertarget{methods}{%
-\subsection{Methods}\label{methods}}
+\subsection{Methods}\label{methods}
 
-\hypertarget{procedure-and-participants}{%
-\subsection{Procedure and Participants}\label{procedure-and-participants}}
+\subsection{Procedure and Participants}\label{procedure-and-participants}
 
 The data that will be used for this study are responses to the Federal Employee Viewpoint Survey (FEVS) publicly available at the website of the Office of Personnel Management here: \url{https://www.opm.gov/fevs/public-data-file/}.
 
@@ -787,8 +795,7 @@ This survey is administered annually by the Office of Personnel Management (OPM)
 The dataset consists of 105 variables and a sample size of 557,779 federal employees that took the survey in 2022. To ensure data anonymity, no identifying information was collected. Different samples will be randomly taken from this dataset to test for hypothesis 1. These will each have a sample of 100, 1,000, 10,000, 100,000.\\
 Additionally, to test for hypothesis 2, samples with varying number of predictors will be randomly selected from the FAVS. These will be with 40, 75, and the full 105.
 
-\hypertarget{data}{%
-\subsection{Data}\label{data}}
+\subsection{Data}\label{data}
 
 \begin{lltable}
 
@@ -918,8 +925,7 @@ Q99 & Pandemic, Transition to the Worksite, Workplace Flexibilities & My supervi
 
 All items used in the FEVS can be found in table \ref{tab:fevsitems}. The variables used in the FEVS are the following:
 
-\hypertarget{independent-variables}{%
-\subsection{Independent variables:}\label{independent-variables}}
+\subsection{Independent variables:}\label{independent-variables}
 
 The 2022 OPM FEVS was conducted via the Web. The 122-item survey included 20 demographic questions and 104 items that were grouped into twelve topic headings intended to organize the instruments and facilitate respondent comprehension. Below is a summary of the questions within topics. See table \ref{tab:fevsitems} for the actual items.
 
@@ -947,11 +953,9 @@ The 2022 OPM FEVS was conducted via the Web. The 122-item survey included 20 dem
   Paid Parental Leave: Items 100--104 asked about the experiences of using the new paid parental leave benefit for employees who indicated they had used it.
 \end{itemize}
 
-\hypertarget{dependent-variable}{%
-\subsection{Dependent variable:}\label{dependent-variable}}
+\subsection{Dependent variable:}\label{dependent-variable}
 
-\hypertarget{turnover-intention}{%
-\subsection{Turnover Intention}\label{turnover-intention}}
+\subsection{Turnover Intention}\label{turnover-intention}
 
 Some scholars advise against using turnover intention as a proxy for actual turnover in federal government agencies.
 Analyzing age and experience as the unit of analysis revealed strong correlations between turnover intention and actual turnover.
@@ -962,8 +966,7 @@ Given that this study investigates employees' perceptions of organizational work
 
 Turnover intention is assessed using a single survey item: ``Are you contemplating leaving your organization within the next year, and if so, why?'' Response options include ``No,'' ``Yes, to take another job within the Federal Government,'' ``Yes, to take another job outside the Federal Government,'' and ``Yes, other.'' Turnover intention was recoded as a binary outcome, with ``0'' indicating ``No'' and ``1'' indicating ``Yes, to take another job within the Federal Government,'' ``Yes, to take another job outside the Federal Government,'' and ``Yes, other.''
 
-\hypertarget{data-analysis}{%
-\subsection{Data analysis}\label{data-analysis}}
+\subsection{Data analysis}\label{data-analysis}
 
 Several machine learning models were trained, and the predictive accuracy measures of Turnover intention were estimated for each combination of data, sample sizes, number of variables, and model.
 The algorithms being used were determined by a prior literature review conducted by the author in which the most frequent and accurate algorithms used in predicting turnover were the following: Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN), and Support Vector Machines (SVM).
@@ -979,11 +982,9 @@ For each SVM, hyperparameter tuning was executed through RandomizedSearchCV. The
 
 For each random forest, the grid search focused on two key parameters: the number of trees in the forest, with tested values of 10, 50, 100, and 200, and the maximum depth of each tree, with values ranging from 1 to 4.
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
-\hypertarget{sample-size-100000}{%
-\subsection{Sample Size 100,000}\label{sample-size-100000}}
+\subsection{Sample Size 100,000}\label{sample-size-100000}
 
 \begin{table}[tbp]
 
@@ -1125,14 +1126,13 @@ weighted avg & 0.81 & 0.81 & 0.79 & 0.86 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in table \ref{tab:logitable100k}. The weighted average precision was 0.84, with a recall of 0.78 and an F1 score of 0.80, suggesting a moderate level of prediction consistency across categories.
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in table \ref{tab:logitable100k}. The weighted average precision was 0.84, with a recall of 0.84 and an F1 score of 0.83, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.86, as can be seen in table \ref{tab:xgbtable100k}. The weighted average precision was 0.86, with a recall of 0.86 and an F1 score of 0.85, suggesting moderate levels of predictive accuracy.
 The performance of a neural network model across categories was 0.82, as can be seen in table \ref{tab:nn100k}. The weighted average precision was 0.85, with a recall of 0.86 and an F1 score of 0.85, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.79, as can be seen in table \ref{tab:svm100k}. The weighted average precision was 0.84, with a recall of 0.84 and an F1 score of 0.82, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.75, as can be seen in table \ref{tab:rf100k}. The weighted average precision was 0.81, with a recall of 0.81 and an F1 score of 0.79, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-10000}{%
-\subsection{Sample Size 10,000}\label{sample-size-10000}}
+\subsection{Sample Size 10,000}\label{sample-size-10000}
 
 \begin{table}[tbp]
 
@@ -1276,14 +1276,13 @@ weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in Table \ref{tab:logitable10k}. The weighted average precision was 0.84, with a recall of 0.78 and an F1 score of 0.80, suggesting a moderate level of prediction consistency across categories.
+For all of these analyses, the dataset was split into a training dataset of 8,000 and a testing dataset of 2,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.84, as can be seen in Table \ref{tab:logitable10k}. The weighted average precision was 0.84, with a recall of 0.84 and an F1 score of 0.83, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.85, as can be seen in table \ref{tab:xgbtable10k}. The weighted average precision was 0.85, with a recall of 0.85 and an F1 score of 0.85, suggesting moderate levels of predictive accuracy.
 The performance of a neural network model across categories was 0.81, as can be seen in table \ref{tab:nn10k}. The weighted average precision was 0.84, with a recall of 0.84 and an F1 score of 0.84, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.79, as can be seen in table \ref{tab:svm10k}. The weighted average precision was 0.83, with a recall of 0.83 and an F1 score of 0.82, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.76, as can be seen in table \ref{tab:rf10k}. The weighted average precision was 0.81, with a recall of 0.80 and an F1 score of 0.79, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-1000}{%
-\subsection{Sample Size 1,000}\label{sample-size-1000}}
+\subsection{Sample Size 1,000}\label{sample-size-1000}
 
 \begin{table}[tbp]
 
@@ -1425,14 +1424,13 @@ weighted avg & 0.81 & 0.80 & 0.79 & 0.86 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.74, as can be seen in Table \ref{tab:logitable1k}. The weighted average precision was 0.73, with a recall of 0.70 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
+For all of these analyses, the dataset was split into a training dataset of 800 and a testing dataset of 200. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.74, as can be seen in Table \ref{tab:logitable1k}. The weighted average precision was 0.74, with a recall of 0.74 and an F1 score of 0.73, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.80, as can be seen in table \ref{tab:xgbtable1k}. The weighted average precision was 0.80, with a recall of 0.80 and an F1 score of 0.78, suggesting moderate levels of predictive accuracy.
 The performance of a neural network model across categories was 0.70, as can be seen in table \ref{tab:nn1k}. The weighted average precision was 0.76, with a recall of 0.76 and an F1 score of 0.74, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.73, as can be seen in table \ref{tab:svm1k}. The weighted average precision was 0.76, with a recall of 0.76 and an F1 score of 0.75, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.76, as can be seen in table \ref{tab:rf1k}. The weighted average precision was 0.81, with a recall of 0.80 and an F1 score of 0.79, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{sample-size-100}{%
-\subsection{Sample Size 100}\label{sample-size-100}}
+\subsection{Sample Size 100}\label{sample-size-100}
 
 \begin{table}[tbp]
 
@@ -1574,14 +1572,13 @@ weighted avg & 0.91 & 0.90 & 0.90 & 0.84 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.80, as can be seen in Table \ref{tab:logitable200}. The weighted average precision was 0.80, with a recall of 0.75 and an F1 score of 0.76, suggesting a moderate level of prediction consistency across categories.
+For all of these analyses, the dataset was split into a training dataset of 80 and a testing dataset of 20. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of 104 FEVS predictors. Overall accuracy across categories was 0.80, as can be seen in Table \ref{tab:logitable200}. The weighted average precision was 0.80, with a recall of 0.80 and an F1 score of 0.79, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.85, as can be seen in table \ref{tab:xgbtable200}. The weighted average precision was 0.88, with a recall of 0.85 and an F1 score of 0.84, suggesting moderate levels of predictive accuracy.
 The performance of a neural network model across categories was 0.81, as can be seen in table \ref{tab:nn200}. The weighted average precision was 0.88, with a recall of 0.85 and an F1 score of 0.84, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.88, as can be seen in table \ref{tab:svm200}. The weighted average precision was 0.91, with a recall of 0.90 and an F1 score of 0.90, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.88, as can be seen in table \ref{tab:rf200}. The weighted average precision was 0.91, with a recall of 0.90 and an F1 score of 0.90, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{number-of-variables-75}{%
-\subsection{Number of Variables 75}\label{number-of-variables-75}}
+\subsection{Number of Variables 75}\label{number-of-variables-75}
 
 \begin{table}[tbp]
 
@@ -1723,14 +1720,13 @@ weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable75}. The weighted average precision was 0.75, with a recall of 0.69 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 75 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable75}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.75, suggesting a moderate level of prediction consistency across categories.
 The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref{tab:xgbtable75}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.76, suggesting moderate levels of predictive accuracy.
 The performance of a neural network model across categories was 0.69, as can be seen in table \ref{tab:nn75}. The weighted average precision was 0.77, with a recall of 0.77 and an F1 score of 0.74, suggesting moderate levels of predictive accuracy.
 The performance of a SVM model across categories was 0.70, as can be seen in table \ref{tab:svm75}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.75, suggesting moderate levels of predictive accuracy.
 The performance of a random forest model across categories was 0.68, as can be seen in table \ref{tab:rf75}. The weighted average precision was 0.76, with a recall of 0.76 and an F1 score of 0.74, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{number-of-variables-40}{%
-\subsection{Number of Variables 40}\label{number-of-variables-40}}
+\subsection{Number of Variables 15}\label{number-of-variables-15}
 
 \begin{table}[tbp]
 
@@ -1743,10 +1739,10 @@ The performance of a random forest model across categories was 0.68, as can be s
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.46 & 0.56 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.40 & 0.51 & 0.76 & NA & 7,182.00\\
+Class 1 & 0.76 & 0.92 & 0.83 & 0.76 & NA & 15,045.00\\
+macro avg & 0.73 & 0.66 & 0.67 & 0.76 & 0.75 & NA\\
+weighted avg & 0.74 & 0.75 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1771,10 +1767,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.71 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.67 & 0.68 & 0.77 & 0.76 & NA\\
+weighted avg & 0.75 & 0.76 & 0.74 & 0.77 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1799,10 +1795,10 @@ weighted avg & 0.76 & 0.77 & 0.76 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.69 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.68 & 0.76 & 0.76 & NA\\
+weighted avg & 0.75 & 0.76 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1827,10 +1823,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.68 & 0.70 & 0.79 & 0.77 & NA\\
-weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.67 & 0.77 & 0.75 & NA\\
+weighted avg & 0.75 & 0.75 & 0.73 & 0.77 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1855,10 +1851,10 @@ weighted avg & 0.76 & 0.77 & 0.75 & 0.79 & NA & NA\\
 \toprule
  & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1.score} & \multicolumn{1}{c}{AUC} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{Support}\\
 \midrule
-Class 0 & 0.72 & 0.47 & 0.57 & 0.79 & NA & 7,182.00\\
-Class 1 & 0.78 & 0.91 & 0.84 & 0.79 & NA & 15,045.00\\
-macro avg & 0.75 & 0.68 & 0.69 & 0.78 & 0.76 & NA\\
-weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
+Class 0 & 0.70 & 0.43 & 0.53 & 0.77 & NA & 7,182.00\\
+Class 1 & 0.77 & 0.91 & 0.84 & 0.77 & NA & 15,045.00\\
+macro avg & 0.74 & 0.66 & 0.67 & 0.76 & 0.75 & NA\\
+weighted avg & 0.75 & 0.75 & 0.73 & 0.76 & NA & NA\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -1872,26 +1868,28 @@ weighted avg & 0.76 & 0.76 & 0.74 & 0.78 & NA & NA\\
 
 \end{table}
 
-For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.77, as can be seen in Table \ref{tab:logitable40}. The weighted average precision was 0.75, with a recall of 0.69 and an F1 score of 0.70, suggesting a moderate level of prediction consistency across categories.
-The performance of a xgboosting model across categories was 0.77, as can be seen in table \ref{tab:xgbtable40}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.76, suggesting moderate levels of predictive accuracy.
-The performance of a neural network model across categories was 0.70, as can be seen in table \ref{tab:nn40}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.75, suggesting moderate levels of predictive accuracy.
-The performance of a SVM model across categories was 0.70, as can be seen in table \ref{tab:svm40}. The weighted average precision was 0.76, with a recall of 0.77 and an F1 score of 0.75, suggesting moderate levels of predictive accuracy.
-The performance of a random forest model across categories was 0.69, as can be seen in table \ref{tab:rf40}. The weighted average precision was 0.76, with a recall of 0.76 and an F1 score of 0.74, suggesting moderate levels of predictive accuracy.
+For all of these analyses, the dataset was split into a training dataset of 80,000 and a testing dataset of 20,000. All predictive performance metrics were obtained through cross-validation on the testing dataset. A logistic regression analysis was conducted to predict turnover intention based on the set of FEVS predictors. From these predictors, 40 were randomly chosen to conduct the analyses. Overall accuracy across categories was 0.75, as can be seen in Table \ref{tab:logitable40}. The weighted average precision was 0.74, with a recall of 0.75 and an F1 score of 0.73, suggesting a moderate level of prediction consistency across categories.
+The performance of a xgboosting model across categories was 0.76, as can be seen in table \ref{tab:xgbtable40}. The weighted average precision was 0.75, with a recall of 0.76 and an F1 score of 0.74, suggesting moderate levels of predictive accuracy.
+The performance of a neural network model across categories was 0.68, as can be seen in table \ref{tab:nn40}. The weighted average precision was 0.75, with a recall of 0.76 and an F1 score of 0.73, suggesting moderate levels of predictive accuracy.
+The performance of a SVM model across categories was 0.67, as can be seen in table \ref{tab:svm40}. The weighted average precision was 0.75, with a recall of 0.75 and an F1 score of 0.73, suggesting moderate levels of predictive accuracy.
+The performance of a random forest model across categories was 0.67, as can be seen in table \ref{tab:rf40}. The weighted average precision was 0.75, with a recall of 0.75 and an F1 score of 0.73, suggesting moderate levels of predictive accuracy.
 
-\hypertarget{summary-results}{%
-\subsection{Summary Results}\label{summary-results}}
-
-\begin{table}[tbp]
+\subsection{Summary Results}\label{summary-results}
 
 \begin{center}
-\begin{threeparttable}
+\begin{ThreePartTable}
 
-\caption{\label{tab:summarytable}AUC scores for all models}
-
-\begin{tabular}{lllll}
+\begin{longtable}{lllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:summarytable}AUC scores for all models}\\
 \toprule
 Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
 \midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:summarytable} continued}}\\
+\toprule
+Algorithm & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{Sample.Size} & \multicolumn{1}{c}{Number.of.Variables} & \multicolumn{1}{c}{AUC.Score}\\
+\midrule
+\endhead
 xgb100 & xgboosting & 100.00 & 105.00 & 0.98\\
 nn100 & Neural Network & 100.00 & 105.00 & 0.98\\
 svm100 & Support Vector Machines & 100.00 & 105.00 & 0.98\\
@@ -1910,77 +1908,99 @@ xgb75 & xgboosting & 100,000.00 & 75.00 & 0.79\\
 nn75 & Neural Network & 100,000.00 & 75.00 & 0.79\\
 svm75 & Support Vector Machines & 100,000.00 & 75.00 & 0.79\\
 rf75 & Random Forest & 100,000.00 & 75.00 & 0.79\\
-xgb40 & xgboosting & 100,000.00 & 40.00 & 0.79\\
-nn40 & Neural Network & 100,000.00 & 40.00 & 0.79\\
-svm40 & Support Vector Machines & 100,000.00 & 40.00 & 0.79\\
-rf40 & Random Forest & 100,000.00 & 40.00 & 0.79\\
+logi75\_10k & Logistic Regression & 10,000.00 & 75.00 & 0.79\\
+xgb75\_10k & xgboosting & 10,000.00 & 75.00 & 0.79\\
+nn75\_10k & Neural Network & 10,000.00 & 75.00 & 0.79\\
+svm75\_10k & Support Vector Machines & 10,000.00 & 75.00 & 0.79\\
 logi75 & Logistic Regression & 100,000.00 & 75.00 & 0.79\\
-logi40 & Logistic Regression & 100,000.00 & 40.00 & 0.79\\
 logi100 & Logistic Regression & 100.00 & 105.00 & 0.78\\
+xgb15\_100 & xgboosting & 100.00 & 15.00 & 0.77\\
+nn15\_100 & Neural Network & 100.00 & 15.00 & 0.77\\
+svm15\_100 & Support Vector Machines & 100.00 & 15.00 & 0.77\\
+rf15\_100 & Random Forest & 100.00 & 15.00 & 0.77\\
+xgb15 & xgboosting & 100,000.00 & 15.00 & 0.77\\
+nn15 & Neural Network & 100,000.00 & 15.00 & 0.77\\
+svm15 & Support Vector Machines & 100,000.00 & 15.00 & 0.77\\
+rf15 & Random Forest & 100,000.00 & 15.00 & 0.77\\
+xgb15\_10k & xgboosting & 10,000.00 & 15.00 & 0.76\\
+nn15\_10k & Neural Network & 10,000.00 & 15.00 & 0.76\\
+svm15\_10k & Support Vector Machines & 10,000.00 & 15.00 & 0.76\\
+rf15\_10k & Random Forest & 10,000.00 & 15.00 & 0.76\\
+logi15\_10k & Logistic Regression & 10,000.00 & 15.00 & 0.76\\
+logi15 & Logistic Regression & 100,000.00 & 15.00 & 0.76\\
+logi15\_1k & Logistic Regression & 1,000.00 & 15.00 & 0.76\\
+logi75\_100 & Logistic Regression & 100.00 & 75.00 & 0.76\\
+logi15\_100 & Logistic Regression & 100.00 & 15.00 & 0.76\\
+xgb15\_1k & xgboosting & 1,000.00 & 15.00 & 0.75\\
+nn15\_1k & Neural Network & 1,000.00 & 15.00 & 0.75\\
+svm15\_1k & Support Vector Machines & 1,000.00 & 15.00 & 0.75\\
+rf15\_1k & Random Forest & 1,000.00 & 15.00 & 0.75\\
 xgb1k & xgboosting & 1,000.00 & 105.00 & 0.75\\
 nn1k & Neural Network & 1,000.00 & 105.00 & 0.75\\
 svm1k & Support Vector Machines & 1,000.00 & 105.00 & 0.75\\
 rf1k & Random Forest & 1,000.00 & 105.00 & 0.75\\
+rf75\_1k & Random Forest & 1,000.00 & 75.00 & 0.75\\
 logi1k & Logistic Regression & 1,000.00 & 105.00 & 0.74\\
+xgb75\_1k & xgboosting & 1,000.00 & 75.00 & 0.71\\
+nn75\_1k & Neural Network & 1,000.00 & 75.00 & 0.71\\
+svm75\_1k & Support Vector Machines & 1,000.00 & 75.00 & 0.71\\
+rf75\_10k & Random Forest & 10,000.00 & 75.00 & 0.71\\
+logi75\_1k & Logistic Regression & 1,000.00 & 75.00 & 0.70\\
+xgb75\_100 & xgboosting & 100.00 & 75.00 & 0.69\\
+nn75\_100 & Neural Network & 100.00 & 75.00 & 0.69\\
+svm75\_100 & Support Vector Machines & 100.00 & 75.00 & 0.69\\
+rf75\_100 & Random Forest & 100.00 & 75.00 & 0.69\\
 \bottomrule
-\end{tabular}
+\end{longtable}
 
-\end{threeparttable}
+\end{ThreePartTable}
 \end{center}
 
-\end{table}
+The AUC score for all combination of models, sample sizes and number of variables has been summarized in table \ref{tab:summarytable}. For the models with datasets of 75 and 15 variables, analysis under samples sizes of 100,000, 10,000, 1,000 and 100 were done very much the same as with the datasets that had 105 variables. The same pattern of predictive performance was observed.
 
-The AUC score for all combination of models, sample sizes and number of variables has been summarized in table \ref{tab:summarytable}.
+When sorting by sample size, ML models with 100,000 respondents did show slightly different AUC scores than logistic regression, with ML models having an AUC score 0.01 higher when the number of variables was 105 and 0.01 when the number of variables was 75. When the number of variables was 15 and the sample size 100,000, there was a small difference in performance, with ML algorithms giving an AUC score of 0.79 while logistic regression was 0.76.
 
-\hypertarget{study-2}{%
-\section{Study 2}\label{study-2}}
+Performance does improve for ML algorithms compared to logistic regression as number of variables decreases, although these differences are small, with an average delta of 0.02.
 
-\hypertarget{methods-1}{%
-\subsection{Methods}\label{methods-1}}
+Overall, the best performing algorithm is an xgboosting decision tree with a sample size of 100 and 105 number of variables, with an AUC score of 0.98. The next 12 best performing models were also ML-based. The 13th best performing model was a logistic regression, with an AUC of 0.88 and a delta of 0.1 when compared to ML models.
 
-\hypertarget{procedure-and-participants-1}{%
-\subsection{Procedure and Participants}\label{procedure-and-participants-1}}
+\section{Study 2}\label{study-2}
+
+\subsection{Methods}\label{methods-1}
+
+\subsection{Procedure and Participants}\label{procedure-and-participants-1}
 
 A Qualtrics survey including were sent out via Amazon's MTurk. Participants ere sourced to create a sample that closely mirrors the diverse working population across various industries. Quality assurance measures, including attention check items and tracking response times, were used. The Cloud Research platform was used to help ensure the quality of the data. The following MTurk and Cloud Research inclusion criteria were used for the online survey: approved 95\% HIT (task) rate on MTurk, 100+ HITs approved, geographical locations restricted to the United States, Cloud Research approved participants, duplicate IP addresses blocked, and suspicious geocodes blocked. Additionally, participants were compensated for their participation with \$1.50 per assessment. The sample size was 241 after exclusions.
 
-\hypertarget{data-1}{%
-\subsection{Data}\label{data-1}}
+\subsection{Data}\label{data-1}
 
 All survey items can be found in Appendix 2.
 
-\hypertarget{independent-variables-1}{%
-\subsection{Independent Variables}\label{independent-variables-1}}
+\subsection{Independent Variables}\label{independent-variables-1}
 
-\hypertarget{work-related-psychological-constructs}{%
-\subsubsection{Work-related psychological constructs}\label{work-related-psychological-constructs}}
+\subsection{Work-related psychological constructs}\label{work-related-psychological-constructs}
 
 The following publicly available instruments were added as independent variables: the 3-items Utrecht Work Engagement Scale (UWES-3) (Schaufeli et al., 2017) and the refined 9-items Lodahl and Kejner's Job Involvement Scale (JI) (Reeve \& Smith, 2001). The affective (ACS) and normative (NCS) components of the revised Three-Component Model (TCM) Employee Commitment Survey (Meyer \& Allen, 1991), will be used to measure commitment, and the 1-item Graphic Scale of Organizational Identification (GSOI) (Shamir \& Kark, 2004) will be used to measure organizational identification. The 8-item Survey of Perceived Organizational Support (SPOS) (Shore \& Tetrick, 1991) will be used to measure organizational support. Conscientiousness will be measured using the 6-items Big Five Inventory -- Short Form (BFI-2-S) (Franzen et al., 2022). All of these instruments are available in Appendix 2.
 
-\hypertarget{biodata}{%
-\subsubsection{Biodata}\label{biodata}}
+\subsection{Biodata}\label{biodata}
 
 Biodata, short for biographical data, is a psychological construct used in this study to predict turnover intentions and job satisfaction. The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
 
-\hypertarget{dependent-variables}{%
-\subsection{Dependent Variables}\label{dependent-variables}}
+\subsection{Dependent Variables}\label{dependent-variables}
 
-\hypertarget{turnover-intention-1}{%
-\subsubsection{Turnover Intention}\label{turnover-intention-1}}
+\subsection{Turnover Intention}\label{turnover-intention-1}
 
 To measured turnover intention a one item Turnover Intention (TI) scale was used, which asks the following: ``Are you contemplating leaving your organization within the next year?''
 
-\hypertarget{job-satisfaction}{%
-\subsubsection{Job Satisfaction}\label{job-satisfaction}}
+\subsection{Job Satisfaction}\label{job-satisfaction}
 
 To measure job satisfaction the Michigan Organizational Assessment Questionnaire (MOAQ) short form was used. This is a streamlined version of the original instrument, designed to efficiently assess aspects of job satisfaction and organizational climate. This condensed form retains the core elements of the original MOAQ but reduces the number of items to facilitate quicker administration and analysis while maintaining robust psychometric properties (Lawler et al., 1979). The short form typically includes items that measure three key dimensions: job satisfaction, organizational commitment, and perceived organizational support. Each item is rated on a Likert scale, allowing respondents to express varying degrees of agreement or disagreement, providing a quantitative measure of an employee's satisfaction and engagement with their organization (Lawler et al., 1979; Seashore et al., 1983) .
 
-\hypertarget{data-analysis-1}{%
-\subsection{Data Analysis}\label{data-analysis-1}}
+\subsection{Data Analysis}\label{data-analysis-1}
 
 Several machine learning algorithms were used to train a series of models using biodata features only. These models include GBT, RF, NN, and SVM. A multiple and logistic regressions were compared to these machine learning models. A second series of models that include work-related psychological constructs only in the data were trained. Performance metrics of each model were evaluated using accuracy, precision, recall, F1-scores, and AUC-ROC. Deltas between the AUC score of each set of models before and after adding work-related psychological constructs were computed to see whether there was a change in performance. This was done to test for hypothesis 3.
 
-\hypertarget{data-description}{%
-\subsection{Data Description}\label{data-description}}
+\subsection{Data Description}\label{data-description}
 
 \begin{table}[tbp]
 
@@ -2025,11 +2045,9 @@ BIO13 & 3.92 & 1.04 & 1.00 & 5.00\\
 
 The dataset used in this study consists of 241 observations, each represented by 22 variables. These variables encompass a mixture of continuous and categorical data types. Turnover Intention is the target variable, measured as a binary indicator (0 or 1). Job satisfaction, measures by the MOAQ, is also a target variable, and unlike Turnover Intention it is a continuous Likert-scale ranging from ``Strongly agree'' to ``Strongly disagree''. The work-related psychological constructs predictor variables were also continuous Likert-scales ranging from ``Strongly agree'' to ``Strongly disagree''. Biodata variables were continuous and varied in scale. Summary descriptive statistics for each variable in the dataset can be found in table \ref{tab:study2descr}.
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+\section{Results}\label{results-1}
 
-\hypertarget{predicting-turnover-intention}{%
-\subsection{Predicting Turnover Intention}\label{predicting-turnover-intention}}
+\subsection{Predicting Turnover Intention}\label{predicting-turnover-intention}
 
 \begin{table}[tbp]
 
@@ -2055,59 +2073,65 @@ Random Forest & 0.66\\
 
 \end{table}
 
-\begin{center}
-\begin{ThreePartTable}
+\begin{table}[tbp]
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:wrctable}Work-related psychological constructs only model}\\
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:wrctable}Work-related psychological constructs only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score WRPC}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:wrctable} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score WRPC}\\
-\midrule
-\endhead
 Logistic Regression & 0.81\\
 XGBoost & 0.78\\
 Neural Network & 0.74\\
 SVM & 0.67\\
 Random Forest & 0.77\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
 
-\begin{center}
-\begin{ThreePartTable}
+\end{table}
 
-\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:deltas}Work-related psychological constructs added to the models}\\
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:deltas}Work-related psychological constructs added to the models}
+
+\begin{tabular}{llll}
 \toprule
 Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:deltas} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{AUC Score Biodata} & \multicolumn{1}{c}{AUC Score when adding WRPC} & \multicolumn{1}{c}{Delta}\\
-\midrule
-\endhead
 Logistic Regression & 0.57 & 0.81 & 0.24\\
 XGBoost & 0.61 & 0.78 & 0.17\\
 Neural Network & 0.57 & 0.74 & 0.17\\
 SVM & 0.50 & 0.64 & 0.14\\
 Random Forest & 0.66 & 0.78 & 0.12\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
 
-\includegraphics{dissertation_files/figure-latex/coefbg-1.pdf}
+\end{table}
 
+\begin{figure}
+\centering
+\includegraphics{dissertation_files/figure-latex/coefbg-1.pdf}
+\caption{\label{fig:coefbg}Logits of the Logistic Regression}
+\end{figure}
+
+\begin{figure}
+\centering
 \includegraphics{dissertation_files/figure-latex/featuresbg-1.pdf}
+\caption{\label{fig:featuresbg}Features Importance of a Random Forest Model}
+\end{figure}
 
 The objective of this study was to evaluate the impact of incorporating work-related psychological constructs into models trained with biodata features for predicting turnover intention. To this end, machine learning algorithms including Gradient Boosting Trees (GBT), Random Forest (RF), Neural Networks (NN) and Support Vector Machines (SVM) were employed. A logistic regression was also employed. Models were initially trained using only biodata features. Subsequently, a second series of models was developed, integrating work-related psychological constructs.
 
@@ -2121,89 +2145,91 @@ In the logistic regression model, the feature ``ACS'' displayed the most signifi
 
 The Random Forest model presented a different hierarchy of feature importances. ``SPOS'' emerged as the most critical predictor with the highest importance score, indicating its predominant influence in the model. This was followed by ``MOAQ'' and ``ACS'', which also held significant importance but to a lesser extent than ``SPOS''. The features ``BFI'' and ``EES'', while contributing to the model, had relatively lower importance scores, suggesting their roles were not as decisive in the Random Forest model as in the logistic regression model.
 
-note: include deltas
+\subsection{Predicting Job Satisfaction}\label{predicting-job-satisfaction}
 
-\hypertarget{predicting-job-satisfaction}{%
-\subsection{Predicting Job Satisfaction}\label{predicting-job-satisfaction}}
+\begin{table}[tbp]
 
 \begin{center}
-\begin{ThreePartTable}
+\begin{threeparttable}
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:biotable2}Biodata only model}\\
+\caption{\label{tab:biotable2}Biodata only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE Biodata}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:biotable2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE Biodata}\\
-\midrule
-\endhead
 Linear Regression & 0.58\\
 XGBoost & 0.59\\
 Neural Network & 0.57\\
 SVM & 0.55\\
 Random Forest & 0.58\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
 
-\begin{center}
-\begin{ThreePartTable}
+\end{table}
 
-\begin{longtable}{ll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:wrctable2}Work-related psychological constructs only model}\\
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:wrctable2}Work-related psychological constructs only model}
+
+\begin{tabular}{ll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE WRPC}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:wrctable2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE WRPC}\\
-\midrule
-\endhead
 Logistic Regression & 0.00\\
 XGBoost & 0.01\\
 Neural Network & 0.26\\
 SVM & 0.05\\
 Random Forest & 0.01\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
 
-\begin{center}
-\begin{ThreePartTable}
+\end{table}
 
-\begin{longtable}{llll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
-\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}\\
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:deltas2}Work-related psychological constructs added to the models}
+
+\begin{tabular}{llll}
 \toprule
 Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
 \midrule
-\endfirsthead
-\caption*{\normalfont{Table \ref{tab:deltas2} continued}}\\
-\toprule
-Model & \multicolumn{1}{c}{RMSE Biodata} & \multicolumn{1}{c}{RMSE when adding WRPC} & \multicolumn{1}{c}{Delta}\\
-\midrule
-\endhead
-Linear Regression & 0.58 & NA & NA\\
+Linear Regression & 0.58 & 0.45 & -0.13\\
 XGBoost & 0.59 & 0.42 & -0.17\\
 Neural Network & 0.57 & 0.44 & -0.13\\
 SVM & 0.55 & 0.45 & -0.09\\
 Random Forest & 0.58 & 0.43 & -0.15\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-\end{ThreePartTable}
+\end{threeparttable}
 \end{center}
 
-\includegraphics{dissertation_files/figure-latex/coefbg2-1.pdf}
+\end{table}
 
+\begin{figure}
+\centering
+\includegraphics{dissertation_files/figure-latex/coefbg2-1.pdf}
+\caption{\label{fig:coefbg2}Betas waves of the Multiple Regression}
+\end{figure}
+
+\begin{figure}
+\centering
 \includegraphics{dissertation_files/figure-latex/featuresbg2-1.pdf}
+\caption{\label{fig:featuresbg2}Feature Importance of a Random Forest Model}
+\end{figure}
 
 The analysis revealed a consistent enhancement in model performance upon the addition of work-related psychological constructs across all algorithms. Specifically, models incorporating work-related psychological constructs demonstrated a notable improvement in RMSE scores (table \ref{tab:wrctable2}) compared to those based solely on biodata features (table \ref{tab:biotable2}). As can be seen in table \ref{tab:deltas2}, the deltas between the RMSE scores with Biodata and the RMSE scores when adding WRPC to the models are on average -0.14.
 
@@ -2213,10 +2239,9 @@ Conversely, figure \ref{fig:featuresbg2}, which stems from a Random Forest model
 
 This comparative evaluation reveals that ``SPOS'' and ``ACS'' are consistently recognized as the most influential features across both models when predicting job satisfaction.
 
-The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. These findings underscore the value of incorporating psychological constructs into predictive models within the domain of work-related outcomes.
+The results substantiate hypothesis 3, demonstrating that models trained with both biodata features and work-related psychological constructs outperform those trained with biodata features alone. .
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\section{Discussion}\label{discussion}
 
 The findings of the present study do not support the hypotheses that were based on the prior research by Sanchez (2018) and Kirasich et al.~(2018). The hypotheses posited were centered around the performance of machine learning (ML) algorithms compared to regression models, with a specific focus on the effects of sample size and the number of variables on predictive accuracy. Contrary to expectations, the results from this study did not demonstrate a significant relative advantage in predictive accuracy for ML algorithms as sample size increased, nor did they confirm the hypothesized impact of the number of variables in datasets on the choice between ML and regression models.
 
@@ -2243,230 +2268,231 @@ Using variables supported by previous research would be best practice in buildin
 
 \newpage
 
-\hypertarget{references}{%
-\section{References}\label{references}}
+\section{References}\label{references}
 
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-alpaydin2020introduction}{}}%
+\bibitem[\citeproctext]{ref-alpaydin2020introduction}
 Alpaydin, E. (2020). \emph{Introduction to machine learning}. MIT press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-alzate2022predictions}{}}%
+\bibitem[\citeproctext]{ref-alzate2022predictions}
 Alzate Vanegas, J. M., Wine, W., \& Drasgow, F. (2022). Predictions of attrition among US marine corps: Comparison of four predictive methods. \emph{Military Psychology}, \emph{34}(2), 147--166.
 
-\leavevmode\vadjust pre{\hypertarget{ref-barandela2003new}{}}%
+\bibitem[\citeproctext]{ref-barandela2003new}
 Barandela, R., Valdovinos, R. M., \& Sánchez, J. S. (2003). New applications of ensembles of classifiers. \emph{Pattern Analysis \& Applications}, \emph{6}, 245--256.
 
-\leavevmode\vadjust pre{\hypertarget{ref-beam2018big}{}}%
+\bibitem[\citeproctext]{ref-beam2018big}
 Beam, A. L., \& Kohane, I. S. (2018). Big data and machine learning in health care. \emph{Jama}, \emph{319}(13), 1317--1318.
 
-\leavevmode\vadjust pre{\hypertarget{ref-biswas2020prediction}{}}%
+\bibitem[\citeproctext]{ref-biswas2020prediction}
 Biswas, S., Fernandez Castellanos, D., \& Zaiser, M. (2020). Prediction of creep failure time using machine learning. \emph{Scientific Reports}, \emph{10}(1), 16910.
 
-\leavevmode\vadjust pre{\hypertarget{ref-boulesteix2014machine}{}}%
+\bibitem[\citeproctext]{ref-boulesteix2014machine}
 Boulesteix, A.-L., \& Schmid, M. (2014). Machine learning versus statistical modeling. \emph{Biometrical Journal}, \emph{56}(4), 588--593.
 
-\leavevmode\vadjust pre{\hypertarget{ref-breiman2001random}{}}%
+\bibitem[\citeproctext]{ref-breiman2001random}
 Breiman, L. (2001a). Random forests. \emph{Machine Learning}, \emph{45}, 5--32.
 
-\leavevmode\vadjust pre{\hypertarget{ref-breiman2001statistical}{}}%
+\bibitem[\citeproctext]{ref-breiman2001statistical}
 Breiman, L. (2001b). Statistical modeling: The two cultures (with comments and a rejoinder by the author). \emph{Statistical Science}, \emph{16}(3), 199--231.
 
-\leavevmode\vadjust pre{\hypertarget{ref-chipman2010bart}{}}%
+\bibitem[\citeproctext]{ref-chipman2010bart}
 Chipman, H. A., George, E. I., \& McCulloch, R. E. (2010). \emph{BART: Bayesian additive regression trees}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cho2012turnover}{}}%
+\bibitem[\citeproctext]{ref-cho2012turnover}
 Cho, Y. J., \& Lewis, G. B. (2012). Turnover intention and turnover behavior: Implications for retaining federal employees. \emph{Review of Public Personnel Administration}, \emph{32}(1), 4--23.
 
-\leavevmode\vadjust pre{\hypertarget{ref-choi2011organizational}{}}%
+\bibitem[\citeproctext]{ref-choi2011organizational}
 Choi, S. (2011). Organizational justice and employee work attitudes: The federal case. \emph{The American Review of Public Administration}, \emph{41}(2), 185--204.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cohen2016does}{}}%
+\bibitem[\citeproctext]{ref-cohen2016does}
 Cohen, G., Blake, R. S., \& Goodman, D. (2016). Does turnover intention matter? Evaluating the usefulness of turnover intention rate as a predictor of actual turnover rate. \emph{Review of Public Personnel Administration}, \emph{36}(3), 240--263.
 
-\leavevmode\vadjust pre{\hypertarget{ref-collins2014external}{}}%
+\bibitem[\citeproctext]{ref-collins2014external}
 Collins, G. S., Groot, J. A. de, Dutton, S., Omar, O., Shanyinde, M., Tajar, A., Voysey, M., Wharton, R., Yu, L.-M., Moons, K. G., et al. (2014). External validation of multivariable prediction models: A systematic review of methodological conduct and reporting. \emph{BMC Medical Research Methodology}, \emph{14}(1), 1--11.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cox1972regression}{}}%
+\bibitem[\citeproctext]{ref-cox1972regression}
 Cox, D. R. (1972). Regression models and life-tables. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}, \emph{34}(2), 187--202.
 
-\leavevmode\vadjust pre{\hypertarget{ref-craninx2008artificial}{}}%
+\bibitem[\citeproctext]{ref-craninx2008artificial}
 Craninx, M., Fievez, V., Vlaeminck, B., \& De Baets, B. (2008). Artificial neural network models of the rumen fermentation pattern in dairy cattle. \emph{Computers and Electronics in Agriculture}, \emph{60}(2), 226--238.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cristianini2002support}{}}%
+\bibitem[\citeproctext]{ref-cristianini2002support}
 Cristianini, N., \& Scholkopf, B. (2002). Support vector machines and kernel methods: The new generation of learning machines. \emph{Ai Magazine}, \emph{23}(3), 31--31.
 
-\leavevmode\vadjust pre{\hypertarget{ref-davis2006relationship}{}}%
+\bibitem[\citeproctext]{ref-davis2006relationship}
 Davis, J., \& Goadrich, M. (2006). The relationship between precision-recall and ROC curves. \emph{Proceedings of the 23rd International Conference on Machine Learning}, 233--240.
 
-\leavevmode\vadjust pre{\hypertarget{ref-deo2016learning}{}}%
+\bibitem[\citeproctext]{ref-deo2016learning}
 Deo, R. C., \& Nallamothu, B. K. (2016). Learning about machine learning: The promise and pitfalls of big data and the electronic health record. In \emph{Circulation: Cardiovascular Quality and Outcomes} (No. 6; Vol. 9, pp. 618--620). Am Heart Assoc.
 
-\leavevmode\vadjust pre{\hypertarget{ref-dietterich2000ensemble}{}}%
+\bibitem[\citeproctext]{ref-dietterich2000ensemble}
 Dietterich, T. G. (2000). Ensemble methods in machine learning. \emph{International Workshop on Multiple Classifier Systems}, 1--15.
 
-\leavevmode\vadjust pre{\hypertarget{ref-douglass2020book}{}}%
+\bibitem[\citeproctext]{ref-douglass2020book}
 Douglass, M. J. (2020). \emph{Book review: Hands-on machine learning with scikit-learn, keras, and tensorflow, by aur{é}lien g{é}ron: O'reilly media, 2019, 600 pp., ISBN: 978-1-492-03264-9}. Springer.
 
-\leavevmode\vadjust pre{\hypertarget{ref-ertas2015turnover}{}}%
+\bibitem[\citeproctext]{ref-ertas2015turnover}
 Ertas, N. (2015). Turnover intentions and work motivations of millennial employees in federal service. \emph{Public Personnel Management}, \emph{44}(3), 401--423.
 
-\leavevmode\vadjust pre{\hypertarget{ref-fallucchi2020predicting}{}}%
+\bibitem[\citeproctext]{ref-fallucchi2020predicting}
 Fallucchi, F., Coladangelo, M., Giuliano, R., \& William De Luca, E. (2020). Predicting employee attrition using machine learning techniques. \emph{Computers}, \emph{9}(4), 86.
 
-\leavevmode\vadjust pre{\hypertarget{ref-franzen2022developing}{}}%
+\bibitem[\citeproctext]{ref-franzen2022developing}
 Franzen, P., Arens, A. K., Greiff, S., Westhuizen, L. van der, Fischbach, A., Wollschläger, R., \& Niepel, C. (2022). Developing and validating a short-form questionnaire for the assessment of seven facets of conscientiousness in large-scale assessments. \emph{Journal of Personality Assessment}, \emph{104}(6), 759--773.
 
-\leavevmode\vadjust pre{\hypertarget{ref-froud2021relative}{}}%
+\bibitem[\citeproctext]{ref-froud2021relative}
 Froud, R., Hansen, S. H., Ruud, H. K., Foss, J., Ferguson, L., \& Fredriksen, P. M. (2021). Relative performance of machine learning and linear regression in predicting quality of life and academic performance of school children in norway: Data analysis of a quasi-experimental study. \emph{Journal of Medical Internet Research}, \emph{23}(7), e22021.
 
-\leavevmode\vadjust pre{\hypertarget{ref-griffeth2000meta}{}}%
+\bibitem[\citeproctext]{ref-griffeth2000meta}
 Griffeth, R. W., Hom, P. W., \& Gaertner, S. (2000). A meta-analysis of antecedents and correlates of employee turnover: Update, moderator tests, and research implications for the next millennium. \emph{Journal of Management}, \emph{26}(3), 463--488.
 
-\leavevmode\vadjust pre{\hypertarget{ref-guyon2003introduction}{}}%
+\bibitem[\citeproctext]{ref-guyon2003introduction}
 Guyon, I., \& Elisseeff, A. (2003). An introduction to variable and feature selection. \emph{Journal of Machine Learning Research}, \emph{3}(Mar), 1157--1182.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hastie2009elements}{}}%
+\bibitem[\citeproctext]{ref-hastie2009elements}
 Hastie, T., Tibshirani, R., Friedman, J. H., \& Friedman, J. H. (2009). \emph{The elements of statistical learning: Data mining, inference, and prediction} (Vol. 2). Springer.
 
-\leavevmode\vadjust pre{\hypertarget{ref-he2009learning}{}}%
+\bibitem[\citeproctext]{ref-he2009learning}
 He, H., \& Garcia, E. A. (2009). Learning from imbalanced data. \emph{IEEE Transactions on Knowledge and Data Engineering}, \emph{21}(9), 1263--1284.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hom2012reviewing}{}}%
+\bibitem[\citeproctext]{ref-hom2012reviewing}
 Hom, P. W., Mitchell, T. R., Lee, T. W., \& Griffeth, R. W. (2012). Reviewing employee turnover: Focusing on proximal withdrawal states and an expanded criterion. \emph{Psychological Bulletin}, \emph{138}(5), 831.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hom2009explaining}{}}%
+\bibitem[\citeproctext]{ref-hom2009explaining}
 Hom, P. W., Tsui, A. S., Wu, J. B., Lee, T. W., Zhang, A. Y., Fu, P. P., \& Li, L. (2009). Explaining employment relationships with social exchange and job embeddedness. \emph{Journal of Applied Psychology}, \emph{94}(2), 277.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hosmer2013applied}{}}%
+\bibitem[\citeproctext]{ref-hosmer2013applied}
 Hosmer Jr, D. W., Lemeshow, S., \& Sturdivant, R. X. (2013). \emph{Applied logistic regression} (Vol. 398). John Wiley \& Sons.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kermany2018identifying}{}}%
+\bibitem[\citeproctext]{ref-kermany2018identifying}
 Kermany, D. S., Goldbaum, M., Cai, W., Valentim, C. C., Liang, H., Baxter, S. L., McKeown, A., Yang, G., Wu, X., Yan, F., et al. (2018). Identifying medical diagnoses and treatable diseases by image-based deep learning. \emph{Cell}, \emph{172}(5), 1122--1131.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kim2017employee}{}}%
+\bibitem[\citeproctext]{ref-kim2017employee}
 Kim, S. Y., \& Fernandez, S. (2017). Employee empowerment and turnover intention in the US federal bureaucracy. \emph{The American Review of Public Administration}, \emph{47}(1), 4--22.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kirasich2018random}{}}%
+\bibitem[\citeproctext]{ref-kirasich2018random}
 Kirasich, K., Smith, T., \& Sadler, B. (2018). Random forest vs logistic regression: Binary classification for heterogeneous datasets. \emph{SMU Data Science Review}, \emph{1}(3), 9.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kubat1997addressing}{}}%
+\bibitem[\citeproctext]{ref-kubat1997addressing}
 Kubat, M., Matwin, S., et al. (1997). Addressing the curse of imbalanced training sets: One-sided selection. \emph{Icml}, \emph{97}, 179.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lawler1979michigan}{}}%
+\bibitem[\citeproctext]{ref-lawler1979michigan}
 Lawler, E., Cammann, C., Nadler, D., \& Jenkins, D. (1979). Michigan organizational assessment questionnaire. \emph{Journal of Vocational Behavior}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lee2021overlooked}{}}%
+\bibitem[\citeproctext]{ref-lee2021overlooked}
 Lee, G. R., Fernandez, S., \& Lee, S. (2021). An overlooked cost of contracting out: Evidence from employee turnover intention in US federal agencies. \emph{Public Personnel Management}, \emph{50}(3), 381--407.
 
-\leavevmode\vadjust pre{\hypertarget{ref-liss2015loving}{}}%
+\bibitem[\citeproctext]{ref-liss2015loving}
 Liss-Levinson, R., Bharthapudi, K., Leider, J. P., \& Sellers, K. (2015). Loving and leaving public health: Predictors of intentions to quit among state health agency workers. \emph{Journal of Public Health Management and Practice}, \emph{21}(Suppl 6), S91.
 
-\leavevmode\vadjust pre{\hypertarget{ref-luu2020machine}{}}%
+\bibitem[\citeproctext]{ref-luu2020machine}
 Luu, B. C., Wright, A. L., Haeberle, H. S., Karnuta, J. M., Schickendantz, M. S., Makhni, E. C., Nwachukwu, B. U., Williams III, R. J., \& Ramkumar, P. N. (2020). Machine learning outperforms logistic regression analysis to predict next-season NHL player injury: An analysis of 2322 players from 2007 to 2017. \emph{Orthopaedic Journal of Sports Medicine}, \emph{8}(9), 2325967120953404.
 
-\leavevmode\vadjust pre{\hypertarget{ref-macijauskieneartificial}{}}%
+\bibitem[\citeproctext]{ref-macijauskieneartificial}
 Macijauskien, I., \& Stankevi, ivil. (2021). Artificial intelligence solution in human resources management: Case study of chatbot's implication. \emph{STRATEGICA}, 517.
 
-\leavevmode\vadjust pre{\hypertarget{ref-maertz2007effects}{}}%
+\bibitem[\citeproctext]{ref-maertz2007effects}
 Maertz Jr, C. P., Griffeth, R. W., Campbell, N. S., \& Allen, D. G. (2007). The effects of perceived organizational support and perceived supervisor support on employee turnover. \emph{Journal of Organizational Behavior: The International Journal of Industrial, Occupational and Organizational Psychology and Behavior}, \emph{28}(8), 1059--1075.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mahesh2020machine}{}}%
+\bibitem[\citeproctext]{ref-mahesh2020machine}
 Mahesh, B. (2020). Machine learning algorithms-a review. \emph{International Journal of Science and Research (IJSR).{[}Internet{]}}, \emph{9}(1), 381--386.
 
-\leavevmode\vadjust pre{\hypertarget{ref-marsland2011machine}{}}%
+\bibitem[\citeproctext]{ref-marsland2011machine}
 Marsland, S. (2011). \emph{Machine learning: An algorithmic perspective}. Chapman; Hall/CRC.
 
-\leavevmode\vadjust pre{\hypertarget{ref-meyer1991three}{}}%
+\bibitem[\citeproctext]{ref-meyer1991three}
 Meyer, J. P., \& Allen, N. J. (1991). A three-component conceptualization of organizational commitment. \emph{Human Resource Management Review}, \emph{1}(1), 61--89.
 
-\leavevmode\vadjust pre{\hypertarget{ref-meyer2004employee}{}}%
+\bibitem[\citeproctext]{ref-meyer2004employee}
 Meyer, J. P., Becker, T. E., \& Vandenberghe, C. (2004). Employee commitment and motivation: A conceptual analysis and integrative model. \emph{Journal of Applied Psychology}, \emph{89}(6), 991.
 
-\leavevmode\vadjust pre{\hypertarget{ref-miller2016finding}{}}%
+\bibitem[\citeproctext]{ref-miller2016finding}
 Miller, P. J., Lubke, G. H., McArtor, D. B., \& Bergeman, C. (2016). Finding structure in data using multivariate tree boosting. \emph{Psychological Methods}, \emph{21}(4), 583.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mitchell1997machine}{}}%
+\bibitem[\citeproctext]{ref-mitchell1997machine}
 Mitchell, T. M. (1997). \emph{Machine learning}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mitchell2001people}{}}%
+\bibitem[\citeproctext]{ref-mitchell2001people}
 Mitchell, T. R., Holtom, B. C., Lee, T. W., Sablynski, C. J., \& Erez, M. (2001). Why people stay: Using job embeddedness to predict voluntary turnover. \emph{Academy of Management Journal}, \emph{44}(6), 1102--1121.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mobley1979review}{}}%
+\bibitem[\citeproctext]{ref-mobley1979review}
 Mobley, W. H., Griffeth, R. W., Hand, H. H., \& Meglino, B. M. (1979). Review and conceptual analysis of the employee turnover process. \emph{Psychological Bulletin}, \emph{86}(3), 493.
 
-\leavevmode\vadjust pre{\hypertarget{ref-myers2013research}{}}%
+\bibitem[\citeproctext]{ref-myers2013research}
 Myers, J. L., Well, A. D., \& Lorch Jr, R. F. (2013). \emph{Research design and statistical analysis}. Routledge.
 
-\leavevmode\vadjust pre{\hypertarget{ref-niculescu2005predicting}{}}%
+\bibitem[\citeproctext]{ref-niculescu2005predicting}
 Niculescu-Mizil, A., \& Caruana, R. (2005). \emph{Predicting good probabilities with supervised learning}. 625--632.
 
-\leavevmode\vadjust pre{\hypertarget{ref-pitts2011so}{}}%
+\bibitem[\citeproctext]{ref-pitts2011so}
 Pitts, D., Marvel, J., \& Fernandez, S. (2011). So hard to say goodbye? Turnover intention among US federal employees. \emph{Public Administration Review}, \emph{71}(5), 751--760.
 
-\leavevmode\vadjust pre{\hypertarget{ref-van2014modern}{}}%
+\bibitem[\citeproctext]{ref-van2014modern}
 Ploeg, T. van der, Austin, P. C., \& Steyerberg, E. W. (2014). Modern modelling techniques are data hungry: A simulation study for predicting dichotomous endpoints. \emph{BMC Medical Research Methodology}, \emph{14}(1), 1--13.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rkab2019recruitment}{}}%
+\bibitem[\citeproctext]{ref-rkab2019recruitment}
 Rąb-Kettler, K., \& Lehnervp, B. (2019). Recruitment in the times of machine learning. \emph{Management Systems in Production Engineering}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-raji2019actionable}{}}%
+\bibitem[\citeproctext]{ref-raji2019actionable}
 Raji, I. D., \& Buolamwini, J. (2019). Actionable auditing: Investigating the impact of publicly naming biased performance results of commercial ai products. \emph{Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society}, 429--435.
 
-\leavevmode\vadjust pre{\hypertarget{ref-reeve2001refining}{}}%
+\bibitem[\citeproctext]{ref-reeve2001refining}
 Reeve, C. L., \& Smith, C. S. (2001). Refining lodahl and kejner's job involvement scale with a convergent evidence approach: Applying multiple methods to multiple samples. \emph{Organizational Research Methods}, \emph{4}(2), 91--111.
 
-\leavevmode\vadjust pre{\hypertarget{ref-sanchez2018big}{}}%
+\bibitem[\citeproctext]{ref-sanchez2018big}
 Sanchez-Pinto, L. N., Luo, Y., \& Churpek, M. M. (2018). Big data and data science in critical care. \emph{Chest}, \emph{154}(5), 1239--1248.
 
-\leavevmode\vadjust pre{\hypertarget{ref-sanchez2018comparison}{}}%
+\bibitem[\citeproctext]{ref-sanchez2018comparison}
 Sanchez-Pinto, L. N., Venable, L. R., Fahrenbach, J., \& Churpek, M. M. (2018). Comparison of variable selection methods for clinical predictive modeling. \emph{International Journal of Medical Informatics}, \emph{116}, 10--17.
 
-\leavevmode\vadjust pre{\hypertarget{ref-schaufeli2017ultra}{}}%
+\bibitem[\citeproctext]{ref-schaufeli2017ultra}
 Schaufeli, W. B., Shimazu, A., Hakanen, J., Salanova, M., \& De Witte, H. (2017). An ultra-short measure for work engagement. \emph{European Journal of Psychological Assessment}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-schoenfeldt1999dust}{}}%
+\bibitem[\citeproctext]{ref-schoenfeldt1999dust}
 Schoenfeldt, L. F. (1999). From dust bowl empiricism to rational constructs in biographical data. \emph{Human Resource Management Review}, \emph{9}(2), 147--167.
 
-\leavevmode\vadjust pre{\hypertarget{ref-seashore1983assessing}{}}%
+\bibitem[\citeproctext]{ref-seashore1983assessing}
 Seashore, S. E., Lawler III, E. E., Mirvis, P. H., \& Cammann, C. E. (1983). \emph{Assessing organizational change: A guide to methods, measures, and practices.} John Wiley \& Sons Inc.
 
-\leavevmode\vadjust pre{\hypertarget{ref-shamir2004single}{}}%
+\bibitem[\citeproctext]{ref-shamir2004single}
 Shamir, B., \& Kark, R. (2004). A single-item graphic scale for the measurement of organizational identification. \emph{Journal of Occupational and Organizational Psychology}, \emph{77}(1), 115--123.
 
-\leavevmode\vadjust pre{\hypertarget{ref-shore1991construct}{}}%
+\bibitem[\citeproctext]{ref-shore1991construct}
 Shore, L. M., \& Tetrick, L. E. (1991). A construct validity study of the survey of perceived organizational support. \emph{Journal of Applied Psychology}, \emph{76}(5), 637.
 
-\leavevmode\vadjust pre{\hypertarget{ref-smith2005achieving}{}}%
+\bibitem[\citeproctext]{ref-smith2005achieving}
 Smith, I. (2005). Achieving readiness for organisational change. \emph{Library Management}, \emph{26}(6/7), 408--412.
 
-\leavevmode\vadjust pre{\hypertarget{ref-tambe2019artificial}{}}%
+\bibitem[\citeproctext]{ref-tambe2019artificial}
 Tambe, P., Cappelli, P., \& Yakubovich, V. (2019). Artificial intelligence in human resources management: Challenges and a path forward. \emph{California Management Review}, \emph{61}(4), 15--42.
 
-\leavevmode\vadjust pre{\hypertarget{ref-varoquaux2018cross}{}}%
+\bibitem[\citeproctext]{ref-varoquaux2018cross}
 Varoquaux, G. (2018). Cross-validation failure: Small sample sizes lead to large error bars. \emph{Neuroimage}, \emph{180}, 68--77.
 
-\leavevmode\vadjust pre{\hypertarget{ref-vijayakumar2019replicability}{}}%
+\bibitem[\citeproctext]{ref-vijayakumar2019replicability}
 Vijayakumar, R., \& Cheung, M. W.-L. (2019). Replicability of machine learning models in the social sciences. \emph{Zeitschrift F{ü}r Psychologie}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-xu2020deep}{}}%
+\bibitem[\citeproctext]{ref-xu2020deep}
 Xu, X., Jiang, X., Ma, C., Du, P., Li, X., Lv, S., Yu, L., Ni, Q., Chen, Y., Su, J., et al. (2020). A deep learning system to screen novel coronavirus disease 2019 pneumonia. \emph{Engineering}, \emph{6}(10), 1122--1129.
 
-\leavevmode\vadjust pre{\hypertarget{ref-zou2018ai}{}}%
+\bibitem[\citeproctext]{ref-zou2018ai}
 Zou, J., \& Schiebinger, L. (2018). \emph{AI can be sexist and racist---it's time to make it fair}. Nature Publishing Group UK London.
 
 \end{CSLReferences}
 
-\endgroup
-
 \newpage
 
-\hypertarget{appendix-1}{%
-\section{Appendix 1}\label{appendix-1}}
+\appendix
+
+\section{2}\label{aptables}
+
+
+\clearpage
+\renewcommand{\listfigurename}{Figure captions}
+
+\clearpage
+\renewcommand{\listtablename}{Table captions}
 
 
 \end{document}
