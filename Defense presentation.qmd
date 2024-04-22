@@ -1,0 +1,110 @@
+---
+title: "Influence of Parsimony and Work-related Psychological Constructs in Predicting Turnover Intention when Using Machine Learning VS Regression"
+author: "Diego Figueiras"
+editor: visual
+format: 
+  html:
+    code-fold: true
+jupyter: false
+runtime: shiny
+---
+
+## Introduction
+
+::: {layout="[80,20]"}
+::: first-column
+-   Widespread use of ML and AI `r emo::ji("left_right_arrow")`
+-   Focal issue(s):
+    -   Short-term:
+        -   APA (again) `r emo::ji("face_with_rolling_eyes")`
+    -   Long-term:
+        -   dissertation template `r emo::ji("graduation_cap")`
+-   Shared problem-solving
+:::
+
+::: second-column
+:::
+:::
+
+![](img/Intro_pic.PNG){.absolute top="170" right="-120" width="550" height="325"}
+
+## Benefits of ML over Regression
+
+::: {layout="[80,20]"}
+::: first-column
+-   Benefits of ML over Regression
+-   GIGO problem
+:::
+
+::: second-column
+:::
+:::
+
+![](img/Benefits_ML.PNG){.absolute top="60" right="-120" width="550" height="325"} ![](img/GIGO.PNG){.absolute top="400" right="-120" width="850" height="300"}
+
+## Parimony and sparsity
+
+Why use this...
+
+![](img/parsimony.PNG){.absolute top="260" right="20" width="750" height="525"}
+
+::: fragment
+when you can use this
+
+![](img/parsimony2.PNG){.absolute top="260" right="20" width="750" height="525"}
+:::
+
+## Hypotheses
+
+![](img/hypotheses.PNG){.absolute top="160" right="20" width="750" height="525"}
+
+## Study 1
+
+-   [Federal Employee Viewpoint Survey (FEVS).](https://www.opm.gov/fevs/reports/technical-reports/technical-report/technical-report/2022/2022-technical-report.pdf) -2022
+    -   Developed by the Office of Personnel Management (OPM)
+    -   105 variables
+    -   N=557,779
+
+## Study 1
+
+```{r}
+library(shiny)
+library(DT)
+library(dplyr)
+
+
+data <- read.csv("summary_table.csv")
+
+
+ui <- fluidPage(
+  titlePanel("Interactive Data Viewer"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("modelInput", "Choose a Model:", choices = unique(data$Model), selected = unique(data$Model)[1], multiple = TRUE),
+      selectInput("nInput", "Select N:", choices = unique(data$N), selected = unique(data$N)[1], multiple = TRUE),
+      selectInput("kInput", "Select k:", choices = unique(data$k), selected = unique(data$k)[1], multiple = TRUE)
+    ),
+    mainPanel(
+      DTOutput("table")
+    )
+  )
+)
+
+
+server <- function(input, output) {
+  filteredData <- reactive({
+    req(input$modelInput, input$nInput, input$kInput)
+    data %>%
+      filter(Model %in% input$modelInput, N %in% input$nInput, k %in% input$kInput)
+  })
+  
+  output$table <- renderDT({
+    datatable(filteredData(), options = list(pageLength = 100))
+  })
+}
+
+
+shinyApp(ui, server)
+```
+
+## Study 1

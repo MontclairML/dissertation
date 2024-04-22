@@ -18,7 +18,7 @@ floatsintext      : no
 figurelist        : yes
 tablelist         : yes
 footnotelist      : no
-linenumbers       : no
+linenumbers       : yes
 mask              : no
 draft             : no
 csl               : "apa7.csl"
@@ -272,8 +272,8 @@ Being able to predict the best suited personnel for positioning or that will tur
 Making the wrong decision when giving a promotion or demotion can cause waste of time and energy, as well as compromise the perceived organizational justice and support, resulting in more turnover.
 This is why personnel placement processes are some of the most pivotal in human resources [@macijauskieneartificial].
 
-When making decisions for placement using traditional regression-based methods, there is a high probability of this being affected by subjective factors that can cause biased choices from time to time [@fallucchi2020predicting].
-With machine learning, on the other hand, these decisions are based on a bit more objective foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods) [@zou2018ai; @raji2019actionable].
+When making decisions for placement using traditional regression-based methods, there is a high probability of this being affected by clinical rather than mechanical factors that can cause biased choices from time to time [@fallucchi2020predicting].
+With machine learning, on the other hand, these decisions are based on a bit more mechanical foundation than most other recommended methods, since it is based solely on the patterns the algorithm finds on the data (though there can still be bias in the development or implementation of particular algorithms, this is minimized in comparison with traditional methods) [@zou2018ai; @raji2019actionable].
 Not only this, but the decisions made in the personnel placement process can be explained to the candidates with their reasons, providing them with confidence in the results and diminishing the chances of low perceived organizational justice/support and high turnover.
 
 The aim of this dissertation is to investigate and compare the predictive capabilities of regression-based models and machine learning models in the context of turnover prediction, focusing specifically on sample sizes and number of variables.
@@ -691,7 +691,7 @@ The 2022 OPM FEVS was conducted via the Web. The 122-item survey included 20 dem
 
 ## Turnover Intention
 
-Some scholars advise against using turnover intention as a proxy for actual turnover in federal government agencies.
+Some experts advise against using turnover intention as a proxy for actual turnover in federal government agencies.
 Analyzing age and experience as the unit of analysis revealed strong correlations between turnover intention and actual turnover.
 Conversely, at the organizational level, turnover intention exhibited a negative correlation with actual turnover [@cho2012turnover].
 @cohen2016does also observed similar findings, noting that the turnover intention rate is not significantly associated with actual turnover at the organizational level.
@@ -2358,11 +2358,24 @@ The following publicly available instruments were added as independent variables
 
 ## Biodata
 
-Biodata, short for biographical data, is a psychological construct used in this study to predict turnover intentions and job satisfaction. The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
+Biodata, or biographical data, is a method commonly used in industrial and organizational (I/O) psychology to predict future job performance and turnover based on past life experiences and behaviors. Here are several articles that have discussed or utilized biodata in I/O academic research:
+
+- Biodata has been effectively used to predict job performance across various roles, demonstrating significant predictive validity [@mumford1992developmental].
+- In their comprehensive review, @reilly1982validity highlighted the utility of biodata for personnel selection and its predictive effectiveness regarding job performance and turnover.
+- @robertson2001personnel integrated biodata variables into their research on employee selection, finding correlations with job success.
+- @owens1969personnel discussed the applications of biodata in understanding career progression and job performance, suggesting its effectiveness in capturing relevant life experiences that translate into work settings.
+- Biodata's role in predicting managerial potential was explored by @judge2002personality, who validated its use in forecasting leadership effectiveness.
+- @mount2000incremental incorporated biodata in their research on predicting job performance and retention, further supporting its relevance in I/O psychology. 
+
+The biodata inventory consists of a series of structured biographical items carefully designed to capture a broad spectrum of life experiences, educational background, and behaviors that are empirically linked to work outcomes. As can be seen in Appendix 2, the inventory includes items such as educational and job-related experiences (BIO1, BIO10), training and skills (BIO2), historical performance indicators (BIO3, BIO5), job engagement metrics (BIO6), involvement in organized activities (BIO7), and recognition for achievements (BIO8). Additionally, items assessing general satisfaction with pay, benefits, and job location (BIO11-BIO13) are included to gauge overall job satisfaction. The response format for these items varied, with most employing a Likert scale ranging from 1 to 5, and others requiring specific factual responses (e.g., GPA in BIO9).
 
 ## Dependent Variables
 
 ## Turnover Intention
+
+To understand why these work-related psychological constructs are being used it is important to understand the constructs that influence an employee's intention to leave their organization. It is crucial for developing a effective turnover intention model. This section outlines a theoretical model of turnover intention, emphasizing the role of specific work-related psychological constructs and attitudes. These include job involvement, commitment, perceived organizational support, employee engagement, and job identification, each of which has been shown to significantly impact an employee’s likelihood to remain with their employer.
+Job involvement refers to the degree to which an individual psychologically identifies with their job and perceives their job performance as integral to their self-worth [@kanungo1982measurement]. Employees with high job involvement are less likely to exhibit turnover intentions as their jobs constitute a vital part of their self-identity [@tm1965definition]. Organizational commitment is characterized by an employee's emotional attachment to, identification with, and involvement in the organization [@meyer1991three]. Affective commitment, where employees feel an emotional attachment to their organization, is inversely related to turnover intentions. Employees who are emotionally invested are less likely to leave [@meyer1991three]. Perceived organizational support reflects the extent to which employees believe that their organization values their contributions and cares about their well-being [@eisenberger1986perceived]. Employees who perceive a high level of organizational support feel an obligation to reciprocate and are less likely to consider leaving [@rhoades2002perceived]. Employee engagement is a robust indicator of an employee's emotional and cognitive connection to their work, characterized by vigor, dedication, and absorption [@schaufeli2002measurement]. Engaged employees are more likely to stay with the organization as they experience positive emotions towards their work and a sense of challenge and significance in their roles [@schaufeli2004job]. Job identification describes the alignment of job roles with the employee’s self-concept [@ashforth1989social]. When employees identify strongly with their job roles, they are more committed to their responsibilities and less likely to leave [@van2001identification].
+
 
 To measured turnover intention a one item Turnover Intention (TI) scale was used, which asks the following: “Are you contemplating leaving your organization within the next year?” 
 
@@ -2644,11 +2657,10 @@ In support of Hypothesis 2, the data indicate that the performance of ML algorit
 ## Enhancement of Predictive Accuracy
 Study 2 findings substantiate the significant role of incorporating work-related psychological constructs (WRPC) into predictive models for turnover intention and job satisfaction, offering compelling evidence in support of Hypothesis 3. The enhanced predictive accuracy of models integrating WRPC alongside biodata features, as demonstrated by higher AUC-ROC and lower RMSE scores, underscores the value of these constructs in modeling work-related outcomes.
 
-
 The results clearly indicate that models trained with both biodata and psychological constructs outperform those trained solely with biodata. The addition of WRPC yielded an average increase in AUC scores of 0.17 for predicting turnover intention, and a decrease in RMSE scores by 0.14 for predicting job satisfaction. These improvements are not merely statistical but are likely to be practically significant, enhancing the models' utility in organizational settings. This finding aligns with previous research emphasizing the importance of psychological factors in understanding employee behavior (Lee et al., 2021; Meyer et al., 2004).
 
 ## Feature Importance and Model Interpretation
-The comparative analysis of feature importances in logistic regression and Random Forest models reveals intriguing differences in how each model values the same set of features. For instance, in the logistic regression model, the feature “ACS” exhibited a strong inverse relationship with turnover intention, while in the Random Forest model, “SPOS” was identified as the most critical predictor. These differences highlight the nuanced ways in which different algorithms process and prioritize information, suggesting that model choice should be considered carefully based on the specific features of interest and the nature of the predictive task.
+The comparative analysis of feature importances in logistic regression and Random Forest models reveals similarities in how each model values the same set of features. For instance, in both a logistic regression and a random forest, SPOS, ACS, and MOAQ were identified as relevant predictors of TI. Similarly, SPOS, ACS, and EES were identified as relevant features by both multiple regression and random forest when predicting job satisfaction. These similarities highlight that ML doesn't need to remain a mere predictive tool when the sample size is relatively small (as it is usually the case in academic settings), and can also be used for theory development to identify relevant features of a model.
 
 ## Implications and Future Directions
 These findings have several important implications for predictive modeling in organizational settings. First, the choice between using ML algorithms and logistic regression should consider the size and complexity of the dataset. For applications where data are abundant and variables are numerous and well-selected, ML algorithms may offer a slight predictive edge. However, in scenarios where data are limited or the number of predictors is constrained, logistic regression remains a robust choice.

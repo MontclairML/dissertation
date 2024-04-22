@@ -1,61 +1,61 @@
-Model,Sample.Size,Number.of.Variables,AUC.Score
-xgboosting,100,105,0.978
-Neural Network,100,105,0.978
-Support Vector Machines,100,105,0.978
-Random Forest,100,105,0.978
-xgboosting,100000,105,0.883
-Neural Network,100000,105,0.883
-Support Vector Machines,100000,105,0.883
-Random Forest,100000,105,0.883
-xgboosting,10000,105,0.88
-Neural Network,10000,105,0.88
-Support Vector Machines,10000,105,0.88
-Random Forest,10000,105,0.88
-Logistic Regression,100000,105,0.874
-Logistic Regression,10000,105,0.873
-xgboosting,100000,75,0.794
-Neural Network,100000,75,0.794
-Support Vector Machines,100000,75,0.794
-Random Forest,100000,75,0.794
-Logistic Regression,10000,75,0.791
-xgboosting,10000,75,0.791
-Neural Network,10000,75,0.791
-Support Vector Machines,10000,75,0.791
-xgboosting,100000,40,0.789
-Neural Network,100000,40,0.789
-Support Vector Machines,100000,40,0.789
-Random Forest,100000,40,0.789
-Logistic Regression,100000,75,0.788
-Logistic Regression,100000,40,0.786
-Logistic Regression,100,105,0.78
-xgboosting,100,15,0.769
-Neural Network,100,15,0.769
-Support Vector Machines,100,15,0.769
-Random Forest,100,15,0.769
-xgboosting,10000,15,0.763
-Neural Network,10000,15,0.763
-Support Vector Machines,10000,15,0.763
-Random Forest,10000,15,0.763
-Logistic Regression,10000,15,0.761
-Logistic Regression,1000,15,0.759
-Logistic Regression,100,75,0.758
-Logistic Regression,100,15,0.758
-xgboosting,1000,15,0.75
-Neural Network,1000,15,0.75
-Support Vector Machines,1000,15,0.75
-Random Forest,1000,15,0.75
-xgboosting,1000,105,0.748
-Neural Network,1000,105,0.748
-Support Vector Machines,1000,105,0.748
-Random Forest,1000,105,0.748
-Random Forest,1000,75,0.748
-Logistic Regression,1000,105,0.744
-xgboosting,1000,75,0.707
-Neural Network,1000,75,0.707
-Support Vector Machines,1000,75,0.707
-Random Forest,10000,75,0.707
-Logistic Regression,1000,75,0.696
-xgboosting,100,75,0.692
-Neural Network,100,75,0.692
-Support Vector Machines,100,75,0.692
-Random Forest,100,75,0.692
+"Algorithm","Model","N","k","AUC"
+"xgb100","xgboosting",100,105,0.978
+"nn100","Neural Network",100,105,0.978
+"svm100","Support Vector Machines",100,105,0.978
+"rf100","Random Forest",100,105,0.978
+"xgb100k","xgboosting",100000,105,0.883
+"nn100k","Neural Network",100000,105,0.883
+"svm100k","Support Vector Machines",100000,105,0.883
+"rf100k","Random Forest",100000,105,0.883
+"xgb10k","xgboosting",10000,105,0.88
+"nn10k","Neural Network",10000,105,0.88
+"svm10k","Support Vector Machines",10000,105,0.88
+"rf10k","Random Forest",10000,105,0.88
+"logi100k","Logistic Regression",100000,105,0.874
+"logi10k","Logistic Regression",10000,105,0.873
+"xgb75","xgboosting",100000,75,0.794
+"nn75","Neural Network",100000,75,0.794
+"svm75","Support Vector Machines",100000,75,0.794
+"rf75","Random Forest",100000,75,0.794
+"logi75_10k","Logistic Regression",10000,75,0.791
+"xgb75_10k","xgboosting",10000,75,0.791
+"nn75_10k","Neural Network",10000,75,0.791
+"svm75_10k","Support Vector Machines",10000,75,0.791
+"logi75","Logistic Regression",100000,75,0.788
+"logi100","Logistic Regression",100,105,0.78
+"xgb15_100","xgboosting",100,15,0.769
+"nn15_100","Neural Network",100,15,0.769
+"svm15_100","Support Vector Machines",100,15,0.769
+"rf15_100","Random Forest",100,15,0.769
+"xgb15","xgboosting",100000,15,0.766
+"nn15","Neural Network",100000,15,0.766
+"svm15","Support Vector Machines",100000,15,0.766
+"rf15","Random Forest",100000,15,0.766
+"xgb15_10k","xgboosting",10000,15,0.763
+"nn15_10k","Neural Network",10000,15,0.763
+"svm15_10k","Support Vector Machines",10000,15,0.763
+"rf15_10k","Random Forest",10000,15,0.763
+"logi15_10k","Logistic Regression",10000,15,0.761
+"logi15","Logistic Regression",100000,15,0.759
+"logi15_1k","Logistic Regression",1000,15,0.759
+"logi75_100","Logistic Regression",100,75,0.758
+"logi15_100","Logistic Regression",100,15,0.758
+"xgb15_1k","xgboosting",1000,15,0.75
+"nn15_1k","Neural Network",1000,15,0.75
+"svm15_1k","Support Vector Machines",1000,15,0.75
+"rf15_1k","Random Forest",1000,15,0.75
+"xgb1k","xgboosting",1000,105,0.748
+"nn1k","Neural Network",1000,105,0.748
+"svm1k","Support Vector Machines",1000,105,0.748
+"rf1k","Random Forest",1000,105,0.748
+"rf75_1k","Random Forest",1000,75,0.748
+"logi1k","Logistic Regression",1000,105,0.744
+"xgb75_1k","xgboosting",1000,75,0.707
+"nn75_1k","Neural Network",1000,75,0.707
+"svm75_1k","Support Vector Machines",1000,75,0.707
+"rf75_10k","Random Forest",10000,75,0.707
+"logi75_1k","Logistic Regression",1000,75,0.696
+"xgb75_100","xgboosting",100,75,0.692
+"nn75_100","Neural Network",100,75,0.692
+"svm75_100","Support Vector Machines",100,75,0.692
+"rf75_100","Random Forest",100,75,0.692
