@@ -2552,6 +2552,7 @@ apa_table(
 
 data_wrc2<-read.csv("addedWRC_model_rmse_scores.csv")
 colnames(data_wrc2)<- c("Model", "RMSE WRPC")
+data_wrc2$Model[1]<-'Linear Regression'
 
 apa_table(
   data_wrc2
